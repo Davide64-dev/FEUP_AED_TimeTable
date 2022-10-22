@@ -1,10 +1,7 @@
 # ninja log v5
-0	234	1666192168176908885	CMakeFiles/untitled3.dir/main.cpp.o	a74d99664ff2b8b8
-1	162	1666192192025017159	CMakeFiles/untitled3.dir/UcTurma.cpp.o	2120d389530b5eb6
-162	191	1666192192055516804	untitled3	5cff952bf9545da4
 2	243	1666197868969585047	CMakeFiles/untitled3.dir/UcTurma.cpp.o	c7bbcd1464ba97d6
+283	312	1666197869040939305	untitled3	581f2efb54d502af
+2	283	1666197869009915130	CMakeFiles/untitled3.dir/main.cpp.o	ec22622229e70588
+3	271	1666197868998488310	CMakeFiles/untitled3.dir/Horario.cpp.o	fb68c98c5cbccc0d
 3	244	1666197868969630711	CMakeFiles/untitled3.dir/Slot.cpp.o	e09593ab05e4aeba
 2	263	1666197868989646343	CMakeFiles/untitled3.dir/Estudante.cpp.o	dad356057ac3220b
-3	271	1666197868998488310	CMakeFiles/untitled3.dir/Horario.cpp.o	fb68c98c5cbccc0d
-2	283	1666197869009915130	CMakeFiles/untitled3.dir/main.cpp.o	ec22622229e70588
-283	312	1666197869040939305	untitled3	581f2efb54d502af
