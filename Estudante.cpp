@@ -17,3 +17,11 @@ string Estudante::getnome()const{
 list<UcTurma> Estudante::gethorario(){
     return horario;
 }
+
+bool Estudante::operator<(Estudante student) const {
+    return codigo < student.codigo;
+}
+
+void Estudante::addUCTurma(UcTurma turma) {
+    horario.push_back(turma);
+}

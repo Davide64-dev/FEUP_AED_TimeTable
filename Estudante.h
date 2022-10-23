@@ -19,6 +19,8 @@ public:
     int getcodigo() const;
     string getnome() const;
     list<UcTurma> gethorario();
+    bool operator<(Estudante student) const;
+    void addUCTurma(UcTurma turma);
 };
 
 
