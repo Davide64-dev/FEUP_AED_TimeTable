@@ -5,7 +5,6 @@
 #ifndef UNTITLED3_GESTOR_H
 #define UNTITLED3_GESTOR_H
 
-
 #include <queue>
 #include <set>
 #include "Estudante.h"
@@ -19,10 +18,12 @@ class Gestor {
     vector<Horario> horario;
     queue<Pedido> pedidos;
 public:
+    Gestor();
     Gestor(set<Estudante> i, vector<Horario> j,queue<Pedido> k);
     set<Estudante> getEstudantes() const;
     vector<Horario> getHorario() const;
     queue<Pedido> getPedidos() const;
+    void readEstudantes();
 };
 
 
