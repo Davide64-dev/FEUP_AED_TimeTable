@@ -7,6 +7,12 @@
 
 Horario::Horario(string i, string j, list<Slot> k): codUC(i), codTurma(j), aulas(k){};
 
+Horario::Horario(string codUC, string codTurma) {
+    this->codUC = codUC;
+    this->codTurma = codTurma;
+    aulas.clear();
+}
+
 string Horario::getcodUC() const{
     return codUC;
 }
@@ -18,3 +24,9 @@ string Horario::getcodTurma()const{
 list<Slot> Horario::getaulas() const{
     return aulas;
 }
+
+void Horario::addAula(Slot aula) {
+    aulas.push_back(aula);
+}
+
+

@@ -9,7 +9,9 @@ int main() {
 
     Gestor gestor{};
 
+    gestor.readHorarios();
     gestor.readEstudantes();
 
-    cout << gestor.getEstudantes().size();
+    cout << gestor.getEstudantes().size() << '\n';
+    cout << gestor.getHorario().size() << '\n';
 }

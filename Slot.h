@@ -12,9 +12,10 @@ using namespace std;
 class Slot {
     float horaini;
     float duracao;
+    string diaDaSemana;
     string tipo;
 public:
-    Slot(float i, float j, string k);
+    Slot(float horaini, float duracao, const string &diaDaSemana, const string &tipo);
     float gethoraini() const;
     float getduaracao() const;
     string gettipo() const;

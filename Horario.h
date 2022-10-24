@@ -16,9 +16,11 @@ class Horario {
     list<Slot> aulas;
 public:
     Horario(string i, string j, list<Slot> k);
+    Horario(string codUC, string codTurma);
     string getcodUC() const;
     string getcodTurma() const;
     list<Slot> getaulas() const;
+    void addAula(Slot aula);
 };
 
 #endif //UNTITLED3_HORARIO_H

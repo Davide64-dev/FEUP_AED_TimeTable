@@ -24,6 +24,8 @@ public:
     vector<Horario> getHorario() const;
     queue<Pedido> getPedidos() const;
     void readEstudantes();
+    void readHorarios();
+    void readAulas();
 };
 
 

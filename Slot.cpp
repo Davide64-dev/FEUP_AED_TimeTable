@@ -4,7 +4,10 @@
 
 #include "Slot.h"
 
-Slot::Slot(float i, float j, string k): horaini(i), duracao(j), tipo(k){};
+Slot::Slot(float horaini, float duracao, const string &diaDaSemana, const string &tipo) : horaini(horaini),
+                                                                                          duracao(duracao),
+                                                                                          diaDaSemana(diaDaSemana),
+                                                                                          tipo(tipo) {}
 
 float Slot::gethoraini() const{
     return horaini;
@@ -17,3 +20,4 @@ float Slot::getduaracao() const{
 string Slot::gettipo() const{
     return tipo;
 }
+
