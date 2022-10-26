@@ -16,6 +16,8 @@ public:
     string getcodUC() const;
     string getcodTurma() const;
     bool operator== (const UcTurma &other) const;
+    bool operator< (const UcTurma &other) const;
+    void print();
 };
 
 
