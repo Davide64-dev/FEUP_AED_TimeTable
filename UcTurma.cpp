@@ -7,7 +7,7 @@
 using namespace std;
 
 
-UcTurma::UcTurma(string i, string j): codUC(i), codTurma(j){};
+UcTurma::UcTurma(string i, string j): codUC(i), codTurma(j), Cap(100){};
 
 string UcTurma::getcodUC() const{
     return codUC;
@@ -15,4 +15,9 @@ string UcTurma::getcodUC() const{
 
 string UcTurma::getcodTurma()const{
     return codTurma;
+}
+
+bool UcTurma::operator==(const UcTurma &other) const{
+    return((codUC == other.getcodUC()) and (codTurma == other.getcodTurma()));
+
 }

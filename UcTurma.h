@@ -10,10 +10,12 @@ using namespace std;
 class UcTurma {
     string codUC;
     string codTurma;
+    int Cap;
 public:
     UcTurma(string i, string j);
     string getcodUC() const;
     string getcodTurma() const;
+    bool operator== (const UcTurma &other) const;
 };
 
 

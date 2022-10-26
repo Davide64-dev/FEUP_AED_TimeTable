@@ -21,6 +21,8 @@ public:
     list<UcTurma> gethorario();
     bool operator<(Estudante student) const;
     void addUCTurma(UcTurma turma);
+    void delUCTurma(UcTurma turma);
+    bool naTurma(UcTurma turma);
 };
 
 

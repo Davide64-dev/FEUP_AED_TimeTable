@@ -9,7 +9,7 @@
 
 using namespace std;
 
-Gestor::Gestor(set<Estudante> i , vector<Horario> j, queue<Pedido> k): estudantes(), horario(j), pedidos(k){};
+Gestor::Gestor(set<Estudante> i , vector<Horario> j, queue<Pedido> k): estudantes(i), horario(j), pedidos(k){};
 
 Gestor::Gestor() = default;
 
@@ -27,7 +27,7 @@ queue<Pedido> Gestor::getPedidos() const{
 
 void Gestor::readEstudantes() {
     vector<string> lineV(4);
-    ifstream in("..\\schedule\\students_classes.csv");
+    ifstream in("../schedule/students_classes.csv");
     string line, word;
     string name, codUc, codTurma;
     int sCode;
@@ -66,7 +66,7 @@ void Gestor::readHorarios() {
     readAulas();
 
     vector<string> lineV(6);
-    ifstream in("..\\schedule\\classes.csv");
+    ifstream in("../schedule/classes.csv");
     string classCode, ucCode, weekday, type;
     float sHour, duration;
 
@@ -100,7 +100,7 @@ void Gestor::readHorarios() {
 
 void Gestor::readAulas() {
     vector<string> lineV(2);
-    ifstream in("..\\schedule\\classes_per_uc.csv");
+    ifstream in("../schedule/classes_per_uc.csv");
     string classCode, ucCode;
 
     string line, word;
