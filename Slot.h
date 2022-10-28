@@ -19,6 +19,7 @@ public:
     float gethoraini() const;
     float getduaracao() const;
     string gettipo() const;
+    const string &getDiaDaSemana() const;
 };
 
 

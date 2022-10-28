@@ -7,6 +7,7 @@
 
 
 #include "PedidoIndividual.h"
+#include "Slot.h"
 
 using namespace std;
 
@@ -17,6 +18,8 @@ public:
     Pedido(int i, list<PedidoIndividual> j);
     int getcodigo_estudante() const;
     list<PedidoIndividual> getpedidos() const;
+    bool verifyOverlap(list<Slot> horario);
+    void filterTP(list<Slot> &horario);
 };
 
 

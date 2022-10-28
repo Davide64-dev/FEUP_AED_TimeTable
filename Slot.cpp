@@ -21,3 +21,7 @@ string Slot::gettipo() const{
     return tipo;
 }
 
+const string &Slot::getDiaDaSemana() const {
+    return diaDaSemana;
+}
+
