@@ -121,3 +121,29 @@ void Gestor::readAulas() {
     in.close();
 }
 
+void Gestor::fillNumEstudantes() {
+    for(Horario& hor : horario) {
+        hor.setNumEstudantes(countStudents(hor.getcodUC(), hor.getcodTurma()));
+    }
+}
+
+int Gestor::countStudents(string codUC, string codTurma) {
+    int count = 0;
+    for(const Estudante& student : estudantes) {
+        if(studentInClass(student, codUC, codTurma)) {
+            count++;
+        }
+    }
+    return count;
+}
+
+bool Gestor::studentInClass(Estudante student, string codUC, string codTurma) {
+    for(const UcTurma& ucTurma : student.gethorario()) {
+        if(ucTurma.getcodUC() == codUC && ucTurma.getcodTurma() == codTurma) {
+            return true;
+        }
+    }
+    return false;
+}
+
+

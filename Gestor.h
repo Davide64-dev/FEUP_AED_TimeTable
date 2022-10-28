@@ -26,6 +26,9 @@ public:
     void readEstudantes();
     void readHorarios();
     void readAulas();
+    void fillNumEstudantes();
+    int countStudents(string codUC, string codTurma);
+    bool studentInClass(Estudante student, string codUC, string codTurma);
 };
 
 

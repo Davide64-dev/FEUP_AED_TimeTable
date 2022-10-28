@@ -29,4 +29,12 @@ void Horario::addAula(Slot aula) {
     aulas.push_back(aula);
 }
 
+int Horario::getNumEstudantes() const {
+    return numEstudantes;
+}
+
+void Horario::setNumEstudantes(int numEstudantes) {
+    Horario::numEstudantes = numEstudantes;
+}
+
 

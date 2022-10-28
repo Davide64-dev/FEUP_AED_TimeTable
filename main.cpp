@@ -12,6 +12,7 @@ int main() {
 
     gestor.readHorarios();
     gestor.readEstudantes();
+    gestor.fillNumEstudantes();
 
     cout << gestor.getEstudantes().size() << '\n';
     cout << gestor.getHorario().size() << '\n';

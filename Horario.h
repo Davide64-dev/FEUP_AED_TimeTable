@@ -14,6 +14,12 @@ class Horario {
     string codUC;
     string codTurma;
     list<Slot> aulas;
+    int numEstudantes = 0;
+public:
+    int getNumEstudantes() const;
+
+    void setNumEstudantes(int numEstudantes);
+
 public:
     Horario(string i, string j, list<Slot> k);
     Horario(string codUC, string codTurma);
