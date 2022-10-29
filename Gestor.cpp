@@ -45,12 +45,17 @@ void Gestor::readEstudantes() {
         name = lineV[1];
         codUc = lineV[2];
         codTurma = lineV[3];
+
+        if (!codTurma.empty() && codTurma[codTurma.size() - 1] == '\r')
+            codTurma.erase(codTurma.size() - 1);
+
         UcTurma UCTurma(codUc, codTurma);
         list<UcTurma> turma(1, UCTurma);
         Estudante student(sCode, name, turma);
 
         if(estudantes.find(student) == estudantes.end()) {
             estudantes.insert(student);
+
         } else {
             auto existing = estudantes.find(student);
             Estudante tutu(*existing);
@@ -87,9 +92,12 @@ void Gestor::readHorarios() {
         duration = stof(lineV[4]);
         type = lineV[5];
 
+        if (!type.empty() && type[type.size() - 1] == '\r')
+            type.erase(type.size() - 1);
 
         // Procura linear -------- mudar pra binaria
         for(Horario& hor : horario) {
+
             string temp1 = hor.getcodUC();
             string temp2 = hor.getcodTurma();
 
@@ -124,6 +132,9 @@ void Gestor::readAulas() {
 
         ucCode = lineV[0];
         classCode = lineV[1];
+
+        if (!classCode.empty() && classCode[classCode.size() - 1] == '\r')
+            classCode.erase(classCode.size() - 1);
 
         horario.emplace_back(ucCode, classCode);
     }

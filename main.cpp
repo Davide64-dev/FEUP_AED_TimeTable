@@ -14,6 +14,7 @@ int main() {
     gestor.readEstudantes();
     gestor.fillNumEstudantes();
 
+    Estudante student = *gestor.getEstudantes().begin();
     cout << gestor.getEstudantes().size() << '\n';
     cout << gestor.getHorario().size() << '\n';
 
