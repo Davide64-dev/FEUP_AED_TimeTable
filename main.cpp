@@ -17,6 +17,9 @@ int main() {
     cout << gestor.getEstudantes().size() << '\n';
     cout << gestor.getHorario().size() << '\n';
 
+    vector <Horario> horario = gestor.getHorario();
+
+
 
     // Teste de Remoção de um aluno na turma
 

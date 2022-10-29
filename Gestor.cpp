@@ -90,7 +90,16 @@ void Gestor::readHorarios() {
 
         // Procura linear -------- mudar pra binaria
         for(Horario& hor : horario) {
-            if(hor.getcodUC() == ucCode && hor.getcodTurma() == classCode) {
+            string temp1 = hor.getcodUC();
+            string temp2 = hor.getcodTurma();
+
+            if (!temp1.empty() && temp1[temp1.size() - 1] == '\r')
+                temp1.erase(temp1.size() - 1);
+
+            if (!temp2.empty() && temp2[temp2.size() - 1] == '\r')
+                temp2.erase(temp2.size() - 1);
+
+            if(temp1 == ucCode && temp2 == classCode) {
                 hor.addAula(Slot(sHour, duration, weekday, type));
             }
         }
