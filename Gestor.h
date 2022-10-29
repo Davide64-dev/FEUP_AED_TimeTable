@@ -29,6 +29,7 @@ public:
     void fillNumEstudantes();
     int countStudents(string codUC, string codTurma);
     bool studentInClass(Estudante student, string codUC, string codTurma);
+    Estudante PesquisarEstudante(int numero);
 };
 
 

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <istream>
 #include <sstream>
+#include <iostream>
 #include "Gestor.h"
 
 using namespace std;
@@ -164,6 +165,29 @@ bool Gestor::studentInClass(Estudante student, string codUC, string codTurma) {
         }
     }
     return false;
+}
+
+Estudante Gestor::PesquisarEstudante(int numero){
+
+     list<UcTurma> temp;
+
+     temp.push_back(UcTurma("Hello, ", "World!"));
+
+    Estudante ghost = Estudante(numero, "", temp);
+    if(estudantes.find(ghost) == estudantes.end()){
+        cout << "Estudante não Inscrito" << "\n";
+    }
+    else{
+        auto existing = estudantes.find(ghost);
+        Estudante verdadeiro(*existing);
+
+        cout << "Estudante Encontrado" << "\n";
+        cout << "Número de Estudante: " << numero << "\n";
+        cout << "Nome: " << verdadeiro.getnome() << "\n";
+
+        return verdadeiro;
+    }
+
 }
 
 
