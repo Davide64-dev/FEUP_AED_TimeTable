@@ -176,6 +176,7 @@ Estudante Gestor::PesquisarEstudante(int numero){
     Estudante ghost = Estudante(numero, "", temp);
     if(estudantes.find(ghost) == estudantes.end()){
         cout << "Estudante não Inscrito" << "\n";
+        return ghost;
     }
     else{
         auto existing = estudantes.find(ghost);
