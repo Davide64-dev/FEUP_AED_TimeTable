@@ -43,4 +43,15 @@ int main() {
     cout << "Depois de ser ordenada" << endl;   // depois da
     for (UcTurma i : hor) i.print();            // ordenação
 
+
+    // Teste do sort do slot
+    Slot slot1 = Slot(2, 1.5, "Thursday", "TP");
+    Slot slot2 = Slot(5, 2, "Monday", "T");
+    Slot slot3 = Slot(6, 2, "Thursday", "PL");
+    list<Slot> listadeslots;
+    listadeslots.push_back(slot1);
+    listadeslots.push_back(slot2);
+    listadeslots.push_back(slot3);
+
+    listadeslots.sort();
 }

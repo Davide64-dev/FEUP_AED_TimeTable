@@ -39,7 +39,7 @@ int Slot::correspondencia(string dia){
 }
 
 
-bool diaMenor(string dia1, string dia2){
+bool Slot::diaMenor(string dia1, string dia2){
     if ((Slot::correspondencia(dia1) == -1) or (Slot::correspondencia(dia2) == -1)) return false;
     else return (Slot::correspondencia(dia1) < Slot::correspondencia(dia2));
 }
