@@ -6,6 +6,7 @@
 #include <istream>
 #include <sstream>
 #include <iostream>
+#include <map>
 #include "Gestor.h"
 
 using namespace std;
@@ -167,18 +168,18 @@ bool Gestor::studentInClass(Estudante student, string codUC, string codTurma) {
     return false;
 }
 
-Estudante Gestor::PesquisarEstudante(int numero){
+Estudante Gestor::PesquisarEstudante(int numero) {
 
-     list<UcTurma> temp;
+    list<UcTurma> temp;
 
-     temp.push_back(UcTurma("Hello, ", "World!"));
+    temp.push_back(UcTurma("Hello, ", "World!"));
 
-    Estudante ghost = Estudante(numero, "", temp);
-    if(estudantes.find(ghost) == estudantes.end()){
+    Estudante ghost = Estudante(numero, "error", temp);
+
+    if (estudantes.find(ghost) == estudantes.end()) {
         cout << "Estudante não Inscrito" << "\n";
         return ghost;
-    }
-    else{
+    } else {
         auto existing = estudantes.find(ghost);
         Estudante verdadeiro(*existing);
 
@@ -188,7 +189,142 @@ Estudante Gestor::PesquisarEstudante(int numero){
 
         return verdadeiro;
     }
-
 }
+
+bool Gestor::cmp(pair<Slot, UcTurma>& a, pair<Slot, UcTurma>& b){
+    return a.first < b.first;
+}
+
+void Gestor::HorariodoEstudante(int numero){
+
+    map<string, string> cadeiras;
+
+    cadeiras.insert(pair<string, string>("L.EIC001", "Álgebra Linear e Geometria Analítica"));
+    cadeiras.insert(pair<string, string>("L.EIC002", "Análise Matemática I"));
+    cadeiras.insert(pair<string, string>("L.EIC003", "Fundamentos de Programação"));
+    cadeiras.insert(pair<string, string>("L.EIC004", "Fundamentos de Sistemas Computacionais"));
+    cadeiras.insert(pair<string, string>("L.EIC005", "Matemática Discreta"));
+    cadeiras.insert(pair<string, string>("UP001", "Projeto UP"));
+    cadeiras.insert(pair<string, string>("L.EIC006", "Arquitetura de Computadores"));
+    cadeiras.insert(pair<string, string>("L.EIC007", "Análise Matemática II"));
+    cadeiras.insert(pair<string, string>("L.EIC008", "Física I"));
+    cadeiras.insert(pair<string, string>("L.EIC010", "Teoria da Computação"));
+    cadeiras.insert(pair<string, string>("L.EIC009", "Programação"));
+    cadeiras.insert(pair<string, string>("L.EIC011", "Algoritmos e Estruturas de Dados"));
+    cadeiras.insert(pair<string, string>("L.EIC012", "Bases de Dados"));
+    cadeiras.insert(pair<string, string>("L.EIC013", "Física II"));
+    cadeiras.insert(pair<string, string>("L.EIC014", "Laboratório de Desenho e Teste de Software"));
+    cadeiras.insert(pair<string, string>("L.EIC015", "Sistemas Operativos"));
+    cadeiras.insert(pair<string, string>("L.EIC016", "Desenho de Algoritmos"));
+    cadeiras.insert(pair<string, string>("L.EIC017", "Engenharia de Software"));
+    cadeiras.insert(pair<string, string>("L.EIC018", "Laboratório de Computadores"));
+    cadeiras.insert(pair<string, string>("L.EIC019", "Linguagens e Tecnologias Web"));
+    cadeiras.insert(pair<string, string>("L.EIC020", "Métodos Estatísticos"));
+    cadeiras.insert(pair<string, string>("L.EIC021", "Fundamentos de Segurança Informática"));
+    cadeiras.insert(pair<string, string>("L.EIC022", "Interação Pessoa Computador"));
+    cadeiras.insert(pair<string, string>("L.EIC023", "Laboratório de Bases de Dados e Aplicações Web"));
+    cadeiras.insert(pair<string, string>("L.EIC024", "Programação Funcional e Lógica"));
+    cadeiras.insert(pair<string, string>("L.EIC025", "redes de Computadores"));
+    cadeiras.insert(pair<string, string>("L.EIC026", "Compiladores"));
+    cadeiras.insert(pair<string, string>("L.EIC027", "Computação Gráfica"));
+    cadeiras.insert(pair<string, string>("L.EIC028", "Computação Paralela e Distribuida"));
+    cadeiras.insert(pair<string, string>("L.EIC029", "Inteligência Artificial"));
+    cadeiras.insert(pair<string, string>("L.EIC030", "Projeto Integrador"));
+
+
+
+
+
+    Estudante student = PesquisarEstudante(numero);
+    if (student.getnome() == "error"){
+    }
+    else{
+        list<UcTurma> turmas = student.gethorario();
+
+        multimap<Slot, UcTurma> mapa;
+
+        for (UcTurma turma : turmas){
+            for (Horario hor : horario){
+                if ((turma.getcodTurma() == hor.getcodTurma()) and (turma.getcodUC() == hor.getcodUC())){
+                    for (Slot i : hor.getaulas()){
+                        mapa.insert(pair<Slot, UcTurma>(i, turma));
+                    }
+                }
+            }
+        }
+        vector<pair<Slot, UcTurma>> A;
+
+        vector<pair<Slot, UcTurma>> mondays;
+        vector<pair<Slot, UcTurma>> tuesdays;
+        vector<pair<Slot, UcTurma>> wednesdays;
+        vector<pair<Slot, UcTurma>> thursdays;
+        vector<pair<Slot, UcTurma>> fridays;
+
+        sort(A.begin(), A.end(), cmp);
+
+        for (auto& it : mapa) {
+            if (it.first.getDiaDaSemana() == "Monday")
+                mondays.push_back(it);
+            else if (it.first.getDiaDaSemana() == "Tuesday")
+                tuesdays.push_back(it);
+            else if (it.first.getDiaDaSemana() == "Wednesday")
+                wednesdays.push_back(it);
+            else if (it.first.getDiaDaSemana() == "Thursday")
+                thursdays.push_back(it);
+            else if (it.first.getDiaDaSemana() == "Friday")
+                fridays.push_back(it);
+        }
+
+        cout << "=====================================" << "\n";
+        cout << "Segunda-Feira: ";
+        for (pair<Slot, UcTurma> i : mondays){
+            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
+            << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
+            cout << "               ";
+        }
+        cout << " " << "\n";
+
+        cout << "Terça-Feira: ";
+        for (pair<Slot, UcTurma> i : tuesdays){
+            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
+                 << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
+            cout << "             " ;
+
+        }
+
+        cout << " " << "\n";
+        cout << "Quarta-Feira: ";
+
+        for (pair<Slot, UcTurma> i : wednesdays){
+            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
+                 << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
+            cout << "              ";
+        }
+
+
+        cout <<" " << "\n";
+        cout << "Quinta-Feira: ";
+
+        for (pair<Slot, UcTurma> i : thursdays){
+            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
+                 << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
+            cout << "              ";
+        }
+
+        cout << " " << "\n";
+        cout << "Sexta-Feira: ";
+
+
+        for (pair<Slot, UcTurma> i : fridays){
+            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
+                 << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
+            cout << "             ";
+
+        }
+        cout << "" << "\n";
+    }
+}
+
+
 
 

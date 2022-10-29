@@ -30,6 +30,8 @@ public:
     int countStudents(string codUC, string codTurma);
     bool studentInClass(Estudante student, string codUC, string codTurma);
     Estudante PesquisarEstudante(int numero);
+    void HorariodoEstudante(int numero);
+    static bool cmp(pair<Slot, UcTurma>& a, pair<Slot, UcTurma>& b);
 };
 
 
