@@ -27,6 +27,8 @@ public:
     string getcodTurma() const;
     list<Slot> getaulas() const;
     void addAula(Slot aula);
+    bool operator<(Horario horario) const;
+    bool operator==(Horario horario) const;
 };
 
 #endif //UNTITLED3_HORARIO_H

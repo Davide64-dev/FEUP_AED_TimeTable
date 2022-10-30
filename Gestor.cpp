@@ -115,6 +115,7 @@ void Gestor::readHorarios() {
         }
     }
     in.close();
+    sort(horario.begin(), horario.end());
 }
 
 void Gestor::readAulas() {
@@ -197,6 +198,7 @@ bool Gestor::cmp(pair<Slot, UcTurma>& a, pair<Slot, UcTurma>& b){
 
 void Gestor::HorariodoEstudante(int numero){
 
+
     map<string, string> cadeiras;
 
     cadeiras.insert(pair<string, string>("L.EIC001", "Álgebra Linear e Geometria Analítica"));
@@ -245,23 +247,23 @@ void Gestor::HorariodoEstudante(int numero){
         vector<pair<Slot, UcTurma>> fridays;
 
         for (UcTurma turma : turmas){
-            for (Horario hor : horario){ // Pesquisa Linear (Mudar)
-                if ((turma.getcodTurma() == hor.getcodTurma()) and (turma.getcodUC() == hor.getcodUC())){
-                    for (Slot i : hor.getaulas()){
-                        if (i.getDiaDaSemana() == "Monday")
-                            mondays.push_back(pair<Slot, UcTurma>(i, turma));
-                        else if (i.getDiaDaSemana() == "Tuesday")
-                            tuesdays.push_back(pair<Slot, UcTurma>(i, turma));
-                        else if (i.getDiaDaSemana() == "Wednesday")
-                            wednesdays.push_back(pair<Slot, UcTurma>(i, turma));
-                        else if (i.getDiaDaSemana() == "Thursday")
-                            thursdays.push_back(pair<Slot, UcTurma>(i, turma));
-                        else if (i.getDiaDaSemana() == "Friday")
-                            fridays.push_back(pair<Slot, UcTurma>(i, turma));
+            list<Slot> k;
+            Horario temp = getHorariobyUcTurma(turma);
+            for (Slot i : temp.getaulas()){
+                if (i.getDiaDaSemana() == "Monday")
+                    mondays.push_back(pair<Slot, UcTurma>(i, turma));
+                else if (i.getDiaDaSemana() == "Tuesday")
+                    tuesdays.push_back(pair<Slot, UcTurma>(i, turma));
+                else if (i.getDiaDaSemana() == "Wednesday")
+                    wednesdays.push_back(pair<Slot, UcTurma>(i, turma));
+                else if (i.getDiaDaSemana() == "Thursday")
+                    thursdays.push_back(pair<Slot, UcTurma>(i, turma));
+                else if (i.getDiaDaSemana() == "Friday")
+                    fridays.push_back(pair<Slot, UcTurma>(i, turma));
                     }
-                }
-            }
         }
+
+
 
         sort(mondays.begin(), mondays.end(), cmp);
         sort(tuesdays.begin(), tuesdays.end(), cmp);
@@ -306,5 +308,21 @@ void Gestor::printHorario(vector<pair<Slot, UcTurma>> vetor, map<string, string>
     cout << " " << "\n";
 }
 
+Horario Gestor::getHorariobyUcTurma(UcTurma turma){
+    list<Slot> lista;
+    Horario temp = Horario(turma.getcodUC(), turma.getcodTurma(), lista);
+    std::vector<int>::iterator it;
+    int low = 0;
+    int high= horario.size()-1;
+    int middle;
+    while (low < high){
+        int middle = low + (high - low) / 2;
+        if (horario[middle] < temp) low = middle+1;
+        else high = middle;
+    }
+    middle = low + (high - low) / 2;
+    if (horario[middle] == temp) return horario[middle];
+    else return temp;
+}
 
 

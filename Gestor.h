@@ -34,6 +34,7 @@ public:
     void HorariodoEstudante(int numero);
     static bool cmp(pair<Slot, UcTurma>& a, pair<Slot, UcTurma>& b);
     static void printHorario(vector<pair<Slot, UcTurma>> vetor, map<string, string> cadeiras);
+    Horario getHorariobyUcTurma(UcTurma turma);
 };
 
 

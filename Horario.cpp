@@ -37,4 +37,17 @@ void Horario::setNumEstudantes(int numEstudantes) {
     Horario::numEstudantes = numEstudantes;
 }
 
+bool Horario::operator<(Horario horario) const{
+    if (codUC == horario.getcodUC()){
+        return codTurma < horario.getcodTurma();
+    }
+    else return codUC < horario.getcodUC();
+
+}
+bool Horario::operator==(Horario horario) const {
+
+    return ((codUC == horario.getcodUC()) and (codTurma == horario.getcodTurma()));
+
+}
+
 
