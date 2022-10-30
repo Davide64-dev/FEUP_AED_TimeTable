@@ -10,6 +10,7 @@
 #include "Estudante.h"
 #include "Horario.h"
 #include "Pedido.h"
+#include <map>
 
 using namespace std;
 
@@ -32,6 +33,7 @@ public:
     Estudante PesquisarEstudante(int numero);
     void HorariodoEstudante(int numero);
     static bool cmp(pair<Slot, UcTurma>& a, pair<Slot, UcTurma>& b);
+    static void printHorario(vector<pair<Slot, UcTurma>> vetor, map<string, string> cadeiras);
 };
 
 

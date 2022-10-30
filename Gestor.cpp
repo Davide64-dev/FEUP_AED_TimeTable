@@ -224,7 +224,7 @@ void Gestor::HorariodoEstudante(int numero){
     cadeiras.insert(pair<string, string>("L.EIC022", "Interação Pessoa Computador"));
     cadeiras.insert(pair<string, string>("L.EIC023", "Laboratório de Bases de Dados e Aplicações Web"));
     cadeiras.insert(pair<string, string>("L.EIC024", "Programação Funcional e Lógica"));
-    cadeiras.insert(pair<string, string>("L.EIC025", "redes de Computadores"));
+    cadeiras.insert(pair<string, string>("L.EIC025", "Redes de Computadores"));
     cadeiras.insert(pair<string, string>("L.EIC026", "Compiladores"));
     cadeiras.insert(pair<string, string>("L.EIC027", "Computação Gráfica"));
     cadeiras.insert(pair<string, string>("L.EIC028", "Computação Paralela e Distribuida"));
@@ -233,98 +233,78 @@ void Gestor::HorariodoEstudante(int numero){
 
 
 
-
-
     Estudante student = PesquisarEstudante(numero);
     if (student.getnome() == "error"){
     }
     else{
         list<UcTurma> turmas = student.gethorario();
-
-        multimap<Slot, UcTurma> mapa;
-
-        for (UcTurma turma : turmas){
-            for (Horario hor : horario){
-                if ((turma.getcodTurma() == hor.getcodTurma()) and (turma.getcodUC() == hor.getcodUC())){
-                    for (Slot i : hor.getaulas()){
-                        mapa.insert(pair<Slot, UcTurma>(i, turma));
-                    }
-                }
-            }
-        }
-        vector<pair<Slot, UcTurma>> A;
-
         vector<pair<Slot, UcTurma>> mondays;
         vector<pair<Slot, UcTurma>> tuesdays;
         vector<pair<Slot, UcTurma>> wednesdays;
         vector<pair<Slot, UcTurma>> thursdays;
         vector<pair<Slot, UcTurma>> fridays;
 
-        sort(A.begin(), A.end(), cmp);
-
-        for (auto& it : mapa) {
-            if (it.first.getDiaDaSemana() == "Monday")
-                mondays.push_back(it);
-            else if (it.first.getDiaDaSemana() == "Tuesday")
-                tuesdays.push_back(it);
-            else if (it.first.getDiaDaSemana() == "Wednesday")
-                wednesdays.push_back(it);
-            else if (it.first.getDiaDaSemana() == "Thursday")
-                thursdays.push_back(it);
-            else if (it.first.getDiaDaSemana() == "Friday")
-                fridays.push_back(it);
+        for (UcTurma turma : turmas){
+            for (Horario hor : horario){ // Pesquisa Linear (Mudar)
+                if ((turma.getcodTurma() == hor.getcodTurma()) and (turma.getcodUC() == hor.getcodUC())){
+                    for (Slot i : hor.getaulas()){
+                        if (i.getDiaDaSemana() == "Monday")
+                            mondays.push_back(pair<Slot, UcTurma>(i, turma));
+                        else if (i.getDiaDaSemana() == "Tuesday")
+                            tuesdays.push_back(pair<Slot, UcTurma>(i, turma));
+                        else if (i.getDiaDaSemana() == "Wednesday")
+                            wednesdays.push_back(pair<Slot, UcTurma>(i, turma));
+                        else if (i.getDiaDaSemana() == "Thursday")
+                            thursdays.push_back(pair<Slot, UcTurma>(i, turma));
+                        else if (i.getDiaDaSemana() == "Friday")
+                            fridays.push_back(pair<Slot, UcTurma>(i, turma));
+                    }
+                }
+            }
         }
+
+        sort(mondays.begin(), mondays.end(), cmp);
+        sort(tuesdays.begin(), tuesdays.end(), cmp);
+        sort(wednesdays.begin(), wednesdays.end(), cmp);
+        sort(thursdays.begin(), thursdays.end(), cmp);
+        sort(fridays.begin(), fridays.end(), cmp);
+
 
         cout << "=====================================" << "\n";
         cout << "Segunda-Feira: ";
-        for (pair<Slot, UcTurma> i : mondays){
-            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
-            << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
-            cout << "               ";
-        }
-        cout << " " << "\n";
+
+        printHorario(mondays, cadeiras);
 
         cout << "Terça-Feira: ";
-        for (pair<Slot, UcTurma> i : tuesdays){
-            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
-                 << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
-            cout << "             " ;
 
-        }
+        printHorario(tuesdays, cadeiras);
 
         cout << " " << "\n";
         cout << "Quarta-Feira: ";
 
-        for (pair<Slot, UcTurma> i : wednesdays){
-            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
-                 << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
-            cout << "              ";
-        }
-
+        printHorario(wednesdays, cadeiras);
 
         cout <<" " << "\n";
         cout << "Quinta-Feira: ";
 
-        for (pair<Slot, UcTurma> i : thursdays){
-            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
-                 << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
-            cout << "              ";
-        }
+        printHorario(thursdays, cadeiras);
 
         cout << " " << "\n";
         cout << "Sexta-Feira: ";
 
-
-        for (pair<Slot, UcTurma> i : fridays){
-            cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
-                 << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << " - "<<  i.second.getcodTurma() << "\n";
-            cout << "             ";
-
-        }
-        cout << "" << "\n";
+        printHorario(fridays, cadeiras);
     }
 }
 
+void Gestor::printHorario(vector<pair<Slot, UcTurma>> vetor, map<string, string> cadeiras){
+    for (pair<Slot, UcTurma> i : vetor){
+        cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
+             << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << "(" <<
+             i.second.getcodUC() << ")" << " - "<<  i.second.getcodTurma() << "\n";
+        cout << "               ";
+    }
+    cout << " " << "\n";
+}
 
 
 
