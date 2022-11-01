@@ -342,24 +342,46 @@ struct ordemAlfabeticaStruct {
     }
 };
 
-void Gestor::maisNUcs(int n) {
+struct ordemNumUcStruct{
+
+    bool operator()(Estudante const &student1, Estudante const &student2) const{
+
+        if (student1.gethorario().size() == student2.gethorario().size()){
+            return student1.getcodigo() < student2.getcodigo() ;
+        }
+        else return student1.gethorario().size() < student2.gethorario().size();
+    }
+
+};
+
+void Gestor::maisNUcsAlfabetico(int n) {
     set<Estudante, ordemAlfabeticaStruct> temp(estudantes.begin(), estudantes.end());
-    std::set<Estudante>::iterator it;
-    //temp = estudantes;
-    cout << "Id|Nome" << "\n";
+    set<Estudante>::iterator it;
+    cout << "Id|Nome|n" << "\n";
     for (it = temp.begin(); it != temp.end(); it++) {
         if (it->gethorario().size() >= n){
-            cout << it->getcodigo() << "|" << it->getnome() << "\n";
+            cout << it->getcodigo() << "|" << it->getnome() << "|" << it->gethorario().size() <<"\n";
         }
     }
 }
- /*
-struct ordemalfabeticaStruct {
-    bool operator()(Estudante const &student1, Estudante const &student2) const {
 
-        if (student1.getnome() == student2.getnome()) {
-            return student1.getcodigo() < student2.getcodigo();
-        } else return student1.getnome() < student2.getnome();
+void Gestor::maisNUcsNumero(int n){
+    set<Estudante, ordemNumUcStruct> temp(estudantes.begin(), estudantes.end());
+    set<Estudante>::iterator it;
+    cout << "Id|Nome|n" << "\n";
+    for (it = temp.begin(); it != temp.end(); it++){
+        if(it->gethorario().size() >= n){
+            cout << it->getcodigo() << "|" << it->getnome() << "|" << it->gethorario().size() << "\n";
+        }
     }
-};
-  */
+}
+
+void Gestor::maisNUcs(int n){
+   set<Estudante>::iterator it;
+   cout << "Id|Nome|n" << "\n";
+   for (it = estudantes.begin(); it != estudantes.end(); it++){
+       if (it->gethorario().size() >= n){
+             cout << it->getcodigo() << "|" << it->getnome() << "|" << it->gethorario().size() << "\n";
+       }
+   }
+}

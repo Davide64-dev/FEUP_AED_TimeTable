@@ -9,9 +9,9 @@ int main() {
     gestor.readHorarios();
     gestor.readEstudantes();
     gestor.fillNumEstudantes();
-    string op = "";
+    char op = ' ';
 
-    while(op != "q"){
+    while(op != 'q'){
         cout << "" << '\n';
         cout << "p - Pesquisar Estudante" << "\n";
 
@@ -31,7 +31,7 @@ int main() {
         cin >> op;
         cout << "" << "\n";
 
-        if (op == "p"){
+        if (op == 'p'){
             int num;
             string temp = "=====================================";
             cout << "Inserir Número Mecanográfico: ";
@@ -42,7 +42,7 @@ int main() {
 
         }
 
-        if (op == "h"){
+        if (op == 'h'){
             int num;
             string temp = "=====================================";
             cout << "Inserir Número Mecanográfico: ";
@@ -53,17 +53,62 @@ int main() {
 
         }
 
-        if (op == "u"){
-            int num;
-            string temp = "=====================================";
-            cout << "n≥";
-            cin >> num;
-            cout << temp << "\n";
-            gestor.maisNUcs(num);
-            cout << temp << "\n";
+        if (op == 'u'){
+            char op1 = ' ';
+            while(op1 != 'q') {
+                //cout << "" << '\n';
+                cout << "   a - Ordem Alfabética" << "\n";
+
+                cout << "" << "\n";
+                cout << "   u - Ordem Crescente de Número de Uc's" << "\n";
+
+                cout << "" << "\n";
+                cout << "   n - Ordem Número Mecanográfico" << "\n";
+
+                cout << "" << "\n";
+                cout << "   q - Sair" << "\n";
+
+                cout << "" << "\n";
+                cout << "   ?";
+
+                cin >> op1;
+                cout << "" << "\n";
+
+                int num;
+
+                if (op1 == 'a') {
+                    string temp = "=====================================";
+                    cout << "   n≥";
+                    cin >> num;
+                    cout << temp << "\n";
+                    gestor.maisNUcsAlfabetico(num);
+                    cout << temp << "\n";
+                    op1 = 'q';
+                }
+
+                else if (op1 == 'u') {
+                    string temp = "=====================================";
+                    cout << "   n≥";
+                    cin >> num;
+                    cout << temp << "\n";
+                    gestor.maisNUcsNumero(num);
+                    cout << temp << "\n";
+                    op1 = 'q';
+                }
+
+
+                else if (op1 == 'n') {
+                    string temp = "=====================================";
+                    cout << "   n≥";
+                    cin >> num;
+                    cout << temp << "\n";
+                    gestor.maisNUcs(num);
+                    cout << temp << "\n";
+                    op1 = 'q';
+                }
+            }
         }
 
     }
-
     return 0;
 }
