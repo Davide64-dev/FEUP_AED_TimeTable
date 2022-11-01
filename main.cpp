@@ -9,6 +9,8 @@ int main() {
     gestor.readHorarios();
     gestor.readEstudantes();
     gestor.fillNumEstudantes();
+    gestor.setMap();
+
     char op = ' ';
 
     while(op != 'q'){
@@ -20,6 +22,9 @@ int main() {
 
         cout << "" << "\n";
         cout << "u - Estudantes com mais de n UC's" << "\n";
+
+        cout << "" << "\n";
+        cout << "o - Ocupação de Turmas/UC" << "\n";
 
         cout << "" << "\n";
         cout << "q - Sair" << "\n";
@@ -51,6 +56,13 @@ int main() {
             gestor.HorariodoEstudante(num);
             cout << temp << "\n";
 
+        }
+
+        if (op == 'o'){
+            cout << "Codigo UC|Nome Uc|Código Turma|Número de Estudantes" << "\n";
+            for (Horario hor : gestor.getHorario()){
+               cout << hor.getcodUC() << "|" << gestor.cadeiras[hor.getcodUC()] << "|" << hor.getcodTurma() << "|" << hor.getNumEstudantes() << "\n";
+            }
         }
 
         if (op == 'u'){

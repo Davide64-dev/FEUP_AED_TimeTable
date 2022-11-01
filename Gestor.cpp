@@ -11,9 +11,45 @@
 
 using namespace std;
 
-Gestor::Gestor(set<Estudante> i , vector<Horario> j, queue<Pedido> k): estudantes(i), horario(j), pedidos(k){};
+Gestor::Gestor(set<Estudante> i , vector<Horario> j, queue<Pedido> k): estudantes(i), horario(j), pedidos(k) {}
+
+void Gestor::setMap(){
+    cadeiras.insert(pair<string, string>("L.EIC001", "Álgebra Linear e Geometria Analítica"));
+    cadeiras.insert(pair<string, string>("L.EIC002", "Análise Matemática I"));
+    cadeiras.insert(pair<string, string>("L.EIC003", "Fundamentos de Programação"));
+    cadeiras.insert(pair<string, string>("L.EIC004", "Fundamentos de Sistemas Computacionais"));
+    cadeiras.insert(pair<string, string>("L.EIC005", "Matemática Discreta"));
+    cadeiras.insert(pair<string, string>("UP001", "Projeto UP"));
+    cadeiras.insert(pair<string, string>("L.EIC006", "Arquitetura de Computadores"));
+    cadeiras.insert(pair<string, string>("L.EIC007", "Análise Matemática II"));
+    cadeiras.insert(pair<string, string>("L.EIC008", "Física I"));
+    cadeiras.insert(pair<string, string>("L.EIC010", "Teoria da Computação"));
+    cadeiras.insert(pair<string, string>("L.EIC009", "Programação"));
+    cadeiras.insert(pair<string, string>("L.EIC011", "Algoritmos e Estruturas de Dados"));
+    cadeiras.insert(pair<string, string>("L.EIC012", "Bases de Dados"));
+    cadeiras.insert(pair<string, string>("L.EIC013", "Física II"));
+    cadeiras.insert(pair<string, string>("L.EIC014", "Laboratório de Desenho e Teste de Software"));
+    cadeiras.insert(pair<string, string>("L.EIC015", "Sistemas Operativos"));
+    cadeiras.insert(pair<string, string>("L.EIC016", "Desenho de Algoritmos"));
+    cadeiras.insert(pair<string, string>("L.EIC017", "Engenharia de Software"));
+    cadeiras.insert(pair<string, string>("L.EIC018", "Laboratório de Computadores"));
+    cadeiras.insert(pair<string, string>("L.EIC019", "Linguagens e Tecnologias Web"));
+    cadeiras.insert(pair<string, string>("L.EIC020", "Métodos Estatísticos"));
+    cadeiras.insert(pair<string, string>("L.EIC021", "Fundamentos de Segurança Informática"));
+    cadeiras.insert(pair<string, string>("L.EIC022", "Interação Pessoa Computador"));
+    cadeiras.insert(pair<string, string>("L.EIC023", "Laboratório de Bases de Dados e Aplicações Web"));
+    cadeiras.insert(pair<string, string>("L.EIC024", "Programação Funcional e Lógica"));
+    cadeiras.insert(pair<string, string>("L.EIC025", "Redes de Computadores"));
+    cadeiras.insert(pair<string, string>("L.EIC026", "Compiladores"));
+    cadeiras.insert(pair<string, string>("L.EIC027", "Computação Gráfica"));
+    cadeiras.insert(pair<string, string>("L.EIC028", "Computação Paralela e Distribuida"));
+    cadeiras.insert(pair<string, string>("L.EIC029", "Inteligência Artificial"));
+    cadeiras.insert(pair<string, string>("L.EIC030", "Projeto Integrador"));
+}
+
 
 Gestor::Gestor() = default;
+
 
 set<Estudante> Gestor::getEstudantes() const{
     return estudantes;
@@ -197,43 +233,6 @@ bool Gestor::cmp(pair<Slot, UcTurma>& a, pair<Slot, UcTurma>& b){
 }
 
 void Gestor::HorariodoEstudante(int numero){
-
-
-    map<string, string> cadeiras;
-
-    cadeiras.insert(pair<string, string>("L.EIC001", "Álgebra Linear e Geometria Analítica"));
-    cadeiras.insert(pair<string, string>("L.EIC002", "Análise Matemática I"));
-    cadeiras.insert(pair<string, string>("L.EIC003", "Fundamentos de Programação"));
-    cadeiras.insert(pair<string, string>("L.EIC004", "Fundamentos de Sistemas Computacionais"));
-    cadeiras.insert(pair<string, string>("L.EIC005", "Matemática Discreta"));
-    cadeiras.insert(pair<string, string>("UP001", "Projeto UP"));
-    cadeiras.insert(pair<string, string>("L.EIC006", "Arquitetura de Computadores"));
-    cadeiras.insert(pair<string, string>("L.EIC007", "Análise Matemática II"));
-    cadeiras.insert(pair<string, string>("L.EIC008", "Física I"));
-    cadeiras.insert(pair<string, string>("L.EIC010", "Teoria da Computação"));
-    cadeiras.insert(pair<string, string>("L.EIC009", "Programação"));
-    cadeiras.insert(pair<string, string>("L.EIC011", "Algoritmos e Estruturas de Dados"));
-    cadeiras.insert(pair<string, string>("L.EIC012", "Bases de Dados"));
-    cadeiras.insert(pair<string, string>("L.EIC013", "Física II"));
-    cadeiras.insert(pair<string, string>("L.EIC014", "Laboratório de Desenho e Teste de Software"));
-    cadeiras.insert(pair<string, string>("L.EIC015", "Sistemas Operativos"));
-    cadeiras.insert(pair<string, string>("L.EIC016", "Desenho de Algoritmos"));
-    cadeiras.insert(pair<string, string>("L.EIC017", "Engenharia de Software"));
-    cadeiras.insert(pair<string, string>("L.EIC018", "Laboratório de Computadores"));
-    cadeiras.insert(pair<string, string>("L.EIC019", "Linguagens e Tecnologias Web"));
-    cadeiras.insert(pair<string, string>("L.EIC020", "Métodos Estatísticos"));
-    cadeiras.insert(pair<string, string>("L.EIC021", "Fundamentos de Segurança Informática"));
-    cadeiras.insert(pair<string, string>("L.EIC022", "Interação Pessoa Computador"));
-    cadeiras.insert(pair<string, string>("L.EIC023", "Laboratório de Bases de Dados e Aplicações Web"));
-    cadeiras.insert(pair<string, string>("L.EIC024", "Programação Funcional e Lógica"));
-    cadeiras.insert(pair<string, string>("L.EIC025", "Redes de Computadores"));
-    cadeiras.insert(pair<string, string>("L.EIC026", "Compiladores"));
-    cadeiras.insert(pair<string, string>("L.EIC027", "Computação Gráfica"));
-    cadeiras.insert(pair<string, string>("L.EIC028", "Computação Paralela e Distribuida"));
-    cadeiras.insert(pair<string, string>("L.EIC029", "Inteligência Artificial"));
-    cadeiras.insert(pair<string, string>("L.EIC030", "Projeto Integrador"));
-
-
 
     Estudante student = PesquisarEstudante(numero);
 

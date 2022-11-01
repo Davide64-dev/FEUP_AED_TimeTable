@@ -18,8 +18,8 @@ class Gestor {
     set<Estudante> estudantes;
     vector<Horario> horario;
     queue<Pedido> pedidos;
-    static map<string, string> cadeiras;
 public:
+    map<string, string> cadeiras;
     Gestor();
     Gestor(set<Estudante> i, vector<Horario> j,queue<Pedido> k);
     set<Estudante> getEstudantes() const;
@@ -39,6 +39,7 @@ public:
     void maisNUcsAlfabetico(int n);
     void maisNUcsNumero(int n);
     void maisNUcs(int n);
+    void setMap();
 };
 
 
