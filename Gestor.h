@@ -18,6 +18,7 @@ class Gestor {
     set<Estudante> estudantes;
     vector<Horario> horario;
     queue<Pedido> pedidos;
+    static map<string, string> cadeiras;
 public:
     Gestor();
     Gestor(set<Estudante> i, vector<Horario> j,queue<Pedido> k);
@@ -35,6 +36,7 @@ public:
     static bool cmp(pair<Slot, UcTurma>& a, pair<Slot, UcTurma>& b);
     static void printHorario(vector<pair<Slot, UcTurma>> vetor, map<string, string> cadeiras);
     Horario getHorariobyUcTurma(UcTurma turma);
+    void maisNUcs(int n);
 };
 
 

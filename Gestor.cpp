@@ -236,6 +236,7 @@ void Gestor::HorariodoEstudante(int numero){
 
 
     Estudante student = PesquisarEstudante(numero);
+
     if (student.getnome() == "error"){
     }
     else{
@@ -262,8 +263,6 @@ void Gestor::HorariodoEstudante(int numero){
                     fridays.push_back(pair<Slot, UcTurma>(i, turma));
                     }
         }
-
-
 
         sort(mondays.begin(), mondays.end(), cmp);
         sort(tuesdays.begin(), tuesdays.end(), cmp);
@@ -325,4 +324,42 @@ Horario Gestor::getHorariobyUcTurma(UcTurma turma){
     else return temp;
 }
 
+bool ordemAlfabetica(Estudante student1, Estudante student2){
+    if (student1.getnome() == student2.getnome()) {
+        return student1.getcodigo() < student2.getcodigo();
+    }
+    else return student1.getnome() < student2.getnome();
+}
 
+struct ordemAlfabeticaStruct {
+
+    bool operator()(Estudante const &student1, Estudante const &student2) const{
+
+        if (student1.getnome() == student2.getnome())         {
+            return student1.getcodigo() < student2.getcodigo();
+        }
+        else return student1.getnome() < student2.getnome();
+    }
+};
+
+void Gestor::maisNUcs(int n) {
+    set<Estudante, ordemAlfabeticaStruct> temp(estudantes.begin(), estudantes.end());
+    std::set<Estudante>::iterator it;
+    //temp = estudantes;
+    cout << "Id|Nome" << "\n";
+    for (it = temp.begin(); it != temp.end(); it++) {
+        if (it->gethorario().size() >= n){
+            cout << it->getcodigo() << "|" << it->getnome() << "\n";
+        }
+    }
+}
+ /*
+struct ordemalfabeticaStruct {
+    bool operator()(Estudante const &student1, Estudante const &student2) const {
+
+        if (student1.getnome() == student2.getnome()) {
+            return student1.getcodigo() < student2.getcodigo();
+        } else return student1.getnome() < student2.getnome();
+    }
+};
+  */

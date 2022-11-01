@@ -16,12 +16,26 @@ string Estudante::getnome()const{
     return nome;
 }
 
-list<UcTurma> Estudante::gethorario(){
+list<UcTurma> Estudante::gethorario() const{
     return horario;
 }
 
 bool Estudante::operator<(Estudante student) const {
     return codigo < student.codigo;
+}
+
+bool Estudante::ordemAlfabética(Estudante student) const {
+    if (nome == student.getnome()) {
+        return codigo < student.getcodigo();
+    }
+    else return nome < student.getnome();
+}
+
+bool Estudante::ordemNumeroUcs(Estudante student) const {
+    if (horario.size() == student.gethorario().size()){
+        return codigo < student.getcodigo();
+    }
+    else return horario.size() < student.gethorario().size();
 }
 
 void Estudante::addUCTurma(UcTurma turma) {
@@ -45,3 +59,4 @@ bool Estudante::naTurma(UcTurma turma){
         }
     }
 }
+

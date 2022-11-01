@@ -19,10 +19,15 @@ int main() {
         cout << "h - Consultar Horário" << "\n";
 
         cout << "" << "\n";
+        cout << "u - Estudantes com mais de n UC's" << "\n";
+
+        cout << "" << "\n";
         cout << "q - Sair" << "\n";
 
         cout << "" << "\n";
         cout << "?";
+
+
         cin >> op;
         cout << "" << "\n";
 
@@ -46,6 +51,16 @@ int main() {
             gestor.HorariodoEstudante(num);
             cout << temp << "\n";
 
+        }
+
+        if (op == "u"){
+            int num;
+            string temp = "=====================================";
+            cout << "n≥";
+            cin >> num;
+            cout << temp << "\n";
+            gestor.maisNUcs(num);
+            cout << temp << "\n";
         }
 
     }
