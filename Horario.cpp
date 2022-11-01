@@ -50,4 +50,3 @@ bool Horario::operator==(Horario horario) const {
 
 }
 
-
