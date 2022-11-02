@@ -7,6 +7,7 @@
 
 #include <string>
 #include "Slot.h"
+#include "UcTurma.h"
 
 using namespace std;
 

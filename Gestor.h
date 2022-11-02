@@ -45,6 +45,15 @@ public:
     void pedidoRemove();
     void pedidoAlter();
     _Rb_tree_const_iterator<Estudante> searchStudent(int code);
+    list<Horario> getHorario(list<UcTurma> turmas);
+
+    bool verifyOverlap(list<Horario> horario);
+
+    void filterTP(list<Slot> &horario);
+
+    list<Slot> getSlots(list<Horario> horario);
+
+    bool verifyCap();
 };
 
 

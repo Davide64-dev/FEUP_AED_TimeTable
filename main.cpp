@@ -1,6 +1,7 @@
 #include <iostream>
 #include "UcTurma.h"
 #include "Gestor.h"
+#include <algorithm>
 void u(Gestor gestor);
 void o (Gestor gestor);
 void h(Gestor gestor);
