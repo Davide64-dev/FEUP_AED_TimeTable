@@ -42,14 +42,15 @@ void Estudante::addUCTurma(UcTurma turma) {
     horario.push_back(turma);
 }
 
-void Estudante::delUCTurma(UcTurma turma){
+bool Estudante::delUCTurma(UcTurma turma){
     UcTurma temp = turma;
     std::list<UcTurma>::iterator it;
     it = find(horario.begin(), horario.end(), turma);
     if (it != horario.end())
         horario.erase(it);
     else
-        cout << "Não Inscrito na Turma" << '\n';
+        return false;
+    return true;
 }
 
 bool Estudante::naTurma(UcTurma turma){
