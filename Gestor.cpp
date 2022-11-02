@@ -7,6 +7,7 @@
 #include <sstream>
 #include <iostream>
 #include <map>
+#include <algorithm>
 #include "Gestor.h"
 
 using namespace std;
@@ -383,4 +384,58 @@ void Gestor::maisNUcs(int n){
              cout << it->getcodigo() << "|" << it->getnome() << "|" << it->gethorario().size() << "\n";
        }
    }
+}
+
+void Gestor::processPedidos() {
+    while(!pedidos.empty()) {
+        if(pedidos.front().getTipo() == "Add") pedidoAdd();
+        else if(pedidos.front().getTipo() == "Remove") pedidoRemove();
+        else if(pedidos.front().getTipo() == "Alter") pedidoAlter();
+    }
+}
+
+_Rb_tree_const_iterator<Estudante> Gestor::searchStudent(int code) {
+    list<UcTurma> temp;
+    temp.emplace_back("", "");
+    Estudante ghost = Estudante(code, "", temp);
+    return estudantes.find(ghost);
+}
+
+void Gestor::pedidoAdd() {
+    int studentCode = pedidos.front().getcodigo_estudante();
+    string turma = pedidos.front().getTurma().front();
+    string uc = pedidos.front().getUcR().front();
+
+    auto studentIt = searchStudent(studentCode);
+    Estudante student(*studentIt);
+
+    // construir novo horario
+    // fazer verificações
+
+    estudantes.erase(studentIt);
+    estudantes.insert(student);
+}
+
+void Gestor::pedidoRemove() {
+    int studentCode = pedidos.front().getcodigo_estudante();
+    string turma = pedidos.front().getTurma().front();
+    string uc = pedidos.front().getUcR().front();
+
+    auto studentIt = searchStudent(studentCode);
+    Estudante student(*studentIt);
+    // percorrer horarios dos estudantes e remover
+    // a do horario. depois decrementar nº de estudantes
+    // nos Horarios
+
+    estudantes.erase(studentIt);
+    estudantes.insert(student);
+
+}
+
+void Gestor::pedidoAlter() {
+    int studentCode = pedidos.front().getcodigo_estudante();
+    vector<string> turmas = pedidos.front().getTurma();
+    vector<string> ucRemove = pedidos.front().getUcR();
+    vector<string> ucAdd = pedidos.front().getUcA();
+
 }

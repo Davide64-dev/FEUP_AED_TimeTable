@@ -8,15 +8,11 @@
 
 using namespace std;
 
-Pedido::Pedido(int i, list<PedidoIndividual> j): codigo_estudante(i), pedidos(j){};
 
 int Pedido::getcodigo_estudante() const {
     return codigo_estudante;
 }
 
-list<PedidoIndividual> Pedido::getpedidos()const{
-    return pedidos;
-}
 
 //Retorna falso se houver sobreposicção de horários
 bool Pedido::verifyOverlap(list<Slot> horario)  {
@@ -45,3 +41,29 @@ void Pedido::filterTP(list<Slot> &horario) {
         }
     }
 }
+
+const string &Pedido::getTipo() const {
+    return tipo;
+}
+
+Pedido::Pedido(const string &tipo, int codigoEstudante, const string &ucR, const vector<string> &turma) : tipo(
+        tipo), codigo_estudante(codigoEstudante), turma(turma) {
+    this->ucR.push_back(ucR);
+}
+
+Pedido::Pedido(const string &tipo, int codigoEstudante, const vector<string> &ucR, const vector<string> &ucA,
+               const vector<string> &turma) : tipo(tipo), codigo_estudante(codigoEstudante), ucR(ucR), ucA(ucA),
+               turma(turma) {}
+
+const vector<string> &Pedido::getUcR() const {
+    return ucR;
+}
+
+const vector<string> &Pedido::getUcA() const {
+    return ucA;
+}
+
+const vector<string> &Pedido::getTurma() const {
+    return turma;
+}
+

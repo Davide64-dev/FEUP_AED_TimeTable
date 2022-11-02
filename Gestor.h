@@ -40,6 +40,11 @@ public:
     void maisNUcsNumero(int n);
     void maisNUcs(int n);
     void setMap();
+    void processPedidos();
+    void pedidoAdd();
+    void pedidoRemove();
+    void pedidoAlter();
+    _Rb_tree_const_iterator<Estudante> searchStudent(int code);
 };
 
 
