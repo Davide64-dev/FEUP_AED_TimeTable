@@ -44,7 +44,7 @@ public:
     void pedidoAdd();
     void pedidoRemove();
     void pedidoAlter();
-    _Rb_tree_const_iterator<Estudante> searchStudent(int code);
+    set<Estudante>::iterator searchStudent(int code);
     list<Horario> getHorario(list<UcTurma> turmas);
 
     bool verifyOverlap(list<Horario> horario);

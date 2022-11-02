@@ -404,7 +404,7 @@ void Gestor::processPedidos() {
  * @param code
  * @return
  */
-_Rb_tree_const_iterator<Estudante> Gestor::searchStudent(int code) {
+set<Estudante>::iterator Gestor::searchStudent(int code) {
     list<UcTurma> temp;
     temp.emplace_back("", "");
     Estudante ghost = Estudante(code, "", temp);
