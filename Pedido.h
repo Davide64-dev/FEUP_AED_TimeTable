@@ -13,30 +13,25 @@
 using namespace std;
 
 class Pedido {
-protected:
     string tipo;
     int codigo_estudante;
-    vector<string> ucR;
-    vector<string> ucA;
-    vector<string> turma;
+    vector<string> turmaR;
+    vector<string> turmaA;
+    vector<string> ucs;
     int CAP = 30;
 public:
-    Pedido(const string &tipo, int codigoEstudante, const string &ucR, const vector<string> &turma);
+    Pedido(const string &tipo, int codigoEstudante, const string &turmaR, const string &uc);
 
-    Pedido(const string &tipo, int codigoEstudante, const vector<string> &ucR, const vector<string> &ucA,
-           const vector<string> &turma);
+    Pedido(const string &tipo, int codigoEstudante, const vector<string> &turmaR, const vector<string> &turmaA,
+           const vector<string> &ucs);
 
     int getcodigo_estudante() const;
 
-    const vector<string> &getUcR() const;
+    const vector<string> &getTurmaR() const;
 
-    const vector<string> &getUcA() const;
+    const vector<string> &getTurmaA() const;
 
-    const vector<string> &getTurma() const;
-
-    bool verifyOverlap(list<Slot> horario);
-
-    void filterTP(list<Slot> &horario);
+    const vector<string> &getUCs() const;
 
     const string &getTipo() const;
 };
