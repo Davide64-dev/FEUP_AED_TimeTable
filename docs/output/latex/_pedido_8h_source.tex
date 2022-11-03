@@ -1,0 +1,46 @@
+\hypertarget{_pedido_8h_source}{}\doxysection{Pedido.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by Davide Teixeira on 22/10/2022.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef UNTITLED3\_PEDIDO\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define UNTITLED3\_PEDIDO\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}PedidoIndividual.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}Slot.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_pedido}{Pedido}} \{}
+\DoxyCodeLine{16     \textcolor{keywordtype}{string} tipo;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} codigo\_estudante;}
+\DoxyCodeLine{18     vector<string> turmaR;}
+\DoxyCodeLine{19     vector<string> turmaA;}
+\DoxyCodeLine{20     vector<string> ucs;}
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} CAP = 30;}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_pedido}{Pedido}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&tipo, \textcolor{keywordtype}{int} codigoEstudante, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&turmaR, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&uc);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \mbox{\hyperlink{class_pedido}{Pedido}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&tipo, \textcolor{keywordtype}{int} codigoEstudante, \textcolor{keyword}{const} vector<string> \&turmaR, \textcolor{keyword}{const} vector<string> \&turmaA,}
+\DoxyCodeLine{26            \textcolor{keyword}{const} vector<string> \&ucs);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} getcodigo\_estudante() \textcolor{keyword}{const};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{const} vector<string> \&getTurmaR() \textcolor{keyword}{const};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keyword}{const} vector<string> \&getTurmaA() \textcolor{keyword}{const};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keyword}{const} vector<string> \&getUCs() \textcolor{keyword}{const};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&getTipo() \textcolor{keyword}{const};}
+\DoxyCodeLine{37 \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//UNTITLED3\_PEDIDO\_H}}
+
+\end{DoxyCode}

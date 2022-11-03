@@ -1,0 +1,40 @@
+\hypertarget{_horario_8h_source}{}\doxysection{Horario.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by Davide Teixeira on 19/10/2022.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef UNTITLED3\_HORARIO\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define UNTITLED3\_HORARIO\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Slot.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}UcTurma.h"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_horario}{Horario}} \{}
+\DoxyCodeLine{15     \textcolor{keywordtype}{string} codUC;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{string} codTurma;}
+\DoxyCodeLine{17     list<Slot> aulas;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} numEstudantes = 0;}
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} getNumEstudantes() \textcolor{keyword}{const};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} setNumEstudantes(\textcolor{keywordtype}{int} numEstudantes);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_horario}{Horario}}(\textcolor{keywordtype}{string} i, \textcolor{keywordtype}{string} j, list<Slot> k);}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_horario}{Horario}}(\textcolor{keywordtype}{string} codUC, \textcolor{keywordtype}{string} codTurma);}
+\DoxyCodeLine{27     \textcolor{keywordtype}{string} getcodUC() \textcolor{keyword}{const};}
+\DoxyCodeLine{28     \textcolor{keywordtype}{string} getcodTurma() \textcolor{keyword}{const};}
+\DoxyCodeLine{29     list<Slot> getaulas() \textcolor{keyword}{const};}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} addAula(\mbox{\hyperlink{class_slot}{Slot}} aula);}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} operator<(\mbox{\hyperlink{class_horario}{Horario}} horario) \textcolor{keyword}{const};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} operator==(\mbox{\hyperlink{class_horario}{Horario}} horario) \textcolor{keyword}{const};}
+\DoxyCodeLine{33 \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//UNTITLED3\_HORARIO\_H}}
+
+\end{DoxyCode}

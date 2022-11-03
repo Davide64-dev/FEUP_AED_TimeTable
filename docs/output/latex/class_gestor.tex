@@ -1,0 +1,434 @@
+\hypertarget{class_gestor}{}\doxysection{Gestor Class Reference}
+\label{class_gestor}\index{Gestor@{Gestor}}
+
+
+{\ttfamily \#include $<$Gestor.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_gestor_a2468c48b7c6b6cbf76986f1ef7be2013}{Gestor}} (set$<$ \mbox{\hyperlink{class_estudante}{Estudante}} $>$ i, vector$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ j, queue$<$ \mbox{\hyperlink{class_pedido}{Pedido}} $>$ k)
+\item 
+set$<$ \mbox{\hyperlink{class_estudante}{Estudante}} $>$ \mbox{\hyperlink{class_gestor_ab8c4957bf509be90d39e2654b1470d97}{get\+Estudantes}} () const
+\item 
+vector$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ \mbox{\hyperlink{class_gestor_af7495b053cd4b20f7df7999343bf1388}{get\+Horario}} () const
+\item 
+queue$<$ \mbox{\hyperlink{class_pedido}{Pedido}} $>$ \mbox{\hyperlink{class_gestor_a517e3b70b337f140aa433b64c6e3811d}{get\+Pedidos}} () const
+\item 
+void \mbox{\hyperlink{class_gestor_a64ff74a8aad298d89c925bf339adaaef}{read\+Estudantes}} ()
+\item 
+void \mbox{\hyperlink{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}{read\+Horarios}} ()
+\item 
+void \mbox{\hyperlink{class_gestor_a1d1927e0eaaa6bd8c2ebcbbce73e9f93}{read\+Aulas}} ()
+\item 
+void \mbox{\hyperlink{class_gestor_a15ff94cbf595524c71d91f56421750e5}{fill\+Num\+Estudantes}} ()
+\item 
+int \mbox{\hyperlink{class_gestor_ae68e520f371655cc6da93ba0bcbbbe4b}{count\+Students}} (string cod\+UC, string cod\+Turma)
+\item 
+bool \mbox{\hyperlink{class_gestor_a23bf645805fd5a086ad6f2f294a25c10}{student\+In\+Class}} (\mbox{\hyperlink{class_estudante}{Estudante}} student, string cod\+UC, string cod\+Turma)
+\item 
+\mbox{\hyperlink{class_estudante}{Estudante}} \mbox{\hyperlink{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}{Pesquisar\+Estudante}} (int numero)
+\item 
+void \mbox{\hyperlink{class_gestor_a8d9e1d9372e1b50e2d04ce9fb9c8976e}{Horariodo\+Estudante}} (int numero)
+\item 
+\mbox{\hyperlink{class_horario}{Horario}} \mbox{\hyperlink{class_gestor_a3a46e6d5e9bc053e118c19cd2ca0ed90}{get\+Horarioby\+Uc\+Turma}} (\mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} turma)
+\item 
+void \mbox{\hyperlink{class_gestor_a22a0a516650619365f14d5edb67a52cd}{mais\+NUcs\+Alfabetico}} (int n)
+\item 
+void \mbox{\hyperlink{class_gestor_aa2aeb38f4532974227191ea76c9b40e7}{mais\+NUcs\+Numero}} (int n)
+\item 
+void \mbox{\hyperlink{class_gestor_a2102bf990245b6f9d0418e2821abbfc2}{mais\+NUcs}} (int n)
+\item 
+void \mbox{\hyperlink{class_gestor_a12b2ff53c546858442f6449e81391f5a}{set\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_gestor_a7bce715ae0b40727343d8850c7dd850e}{process\+Pedidos}} ()
+\item 
+void \mbox{\hyperlink{class_gestor_aff41cf69a5a4a932f725d996378fe746}{pedido\+Add}} ()
+\item 
+void \mbox{\hyperlink{class_gestor_a89559c053dd70d2c435ebc25608f2c7e}{pedido\+Remove}} ()
+\item 
+void \mbox{\hyperlink{class_gestor_a668b63dfcf09455a5edd824bc435f5c3}{pedido\+Alter}} ()
+\item 
+set$<$ \mbox{\hyperlink{class_estudante}{Estudante}} $>$\+::iterator \mbox{\hyperlink{class_gestor_af28ed64b4bf27cbd8fc0d4d465e99ea3}{search\+Student}} (int code)
+\item 
+list$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ \mbox{\hyperlink{class_gestor_a9f6ad76b956dd39122222fe070a27dbf}{get\+Horario}} (list$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ turmas)
+\item 
+bool \mbox{\hyperlink{class_gestor_ac5130fc7f77f444ca64c1dc63f9f61db}{verify\+Overlap}} (list$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ \mbox{\hyperlink{class_gestor_a18b85b52d4057681bfd6b750868128bb}{horario}})
+\item 
+void \mbox{\hyperlink{class_gestor_a7f69e30e717406c61eb27b45ab2a761a}{filter\+TP}} (list$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \&\mbox{\hyperlink{class_gestor_a18b85b52d4057681bfd6b750868128bb}{horario}})
+\item 
+list$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \mbox{\hyperlink{class_gestor_ad07180a2da86da287c1280aa40cdbd09}{get\+Slots}} (list$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ \mbox{\hyperlink{class_gestor_a18b85b52d4057681bfd6b750868128bb}{horario}})
+\item 
+bool \mbox{\hyperlink{class_gestor_a8882c3ab19ecf9278e2b8a66aa70c5b3}{verify\+Cap}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_gestor_aaa33f3969c952b2010fc9c2607299b2d}{cmp}} (pair$<$ \mbox{\hyperlink{class_slot}{Slot}}, \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ \&a, pair$<$ \mbox{\hyperlink{class_slot}{Slot}}, \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ \&b)
+\item 
+static void \mbox{\hyperlink{class_gestor_a24ab9af3e2373934b7f3fa5ad73457e7}{print\+Horario}} (vector$<$ pair$<$ \mbox{\hyperlink{class_slot}{Slot}}, \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ $>$ vetor, map$<$ string, string $>$ \mbox{\hyperlink{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}{cadeiras}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, string $>$ \mbox{\hyperlink{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}{cadeiras}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+set$<$ \mbox{\hyperlink{class_estudante}{Estudante}} $>$ \mbox{\hyperlink{class_gestor_a3e9d3bf33c41a929e93bab795ef0950d}{estudantes}}
+\item 
+vector$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ \mbox{\hyperlink{class_gestor_a18b85b52d4057681bfd6b750868128bb}{horario}}
+\item 
+queue$<$ \mbox{\hyperlink{class_pedido}{Pedido}} $>$ \mbox{\hyperlink{class_gestor_a8cf7cbfaf7a00a71b56a26099185ce12}{pedidos}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esta classe representa a entidade com responsabilidade de consultar os \char`\"{}\+Estudante\char`\"{}, assim como os seus horários, consultar as \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} e gerir os pedidos 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gestor_a2468c48b7c6b6cbf76986f1ef7be2013}\label{class_gestor_a2468c48b7c6b6cbf76986f1ef7be2013}} 
+\index{Gestor@{Gestor}!Gestor@{Gestor}}
+\index{Gestor@{Gestor}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{Gestor()}{Gestor()}}
+{\footnotesize\ttfamily Gestor\+::\+Gestor (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{class_estudante}{Estudante}} $>$}]{i,  }\item[{vector$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$}]{j,  }\item[{queue$<$ \mbox{\hyperlink{class_pedido}{Pedido}} $>$}]{k }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Árvore Binária de Pesquisa com os estudantes \\
+\hline
+{\em j} & Vetor com todos os objetos da classe \char`\"{}\+Horario\char`\"{} \\
+\hline
+{\em k} & Fila que contém todos os objetos da classe \char`\"{}\+Pedido\char`\"{} a serem processados \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gestor_aaa33f3969c952b2010fc9c2607299b2d}\label{class_gestor_aaa33f3969c952b2010fc9c2607299b2d}} 
+\index{Gestor@{Gestor}!cmp@{cmp}}
+\index{cmp@{cmp}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{cmp()}{cmp()}}
+{\footnotesize\ttfamily bool Gestor\+::cmp (\begin{DoxyParamCaption}\item[{pair$<$ \mbox{\hyperlink{class_slot}{Slot}}, \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ \&}]{a,  }\item[{pair$<$ \mbox{\hyperlink{class_slot}{Slot}}, \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Método auxiliar para ordenar pares com \mbox{\hyperlink{class_slot}{Slot}} e Turma 
+\begin{DoxyParams}{Parameters}
+{\em a} & Primeiro par \\
+\hline
+{\em b} & Segundo par \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro, se o primeiro \mbox{\hyperlink{class_slot}{Slot}} for menor do que o segundo \mbox{\hyperlink{class_slot}{Slot}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_ae68e520f371655cc6da93ba0bcbbbe4b}\label{class_gestor_ae68e520f371655cc6da93ba0bcbbbe4b}} 
+\index{Gestor@{Gestor}!countStudents@{countStudents}}
+\index{countStudents@{countStudents}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{countStudents()}{countStudents()}}
+{\footnotesize\ttfamily int Gestor\+::count\+Students (\begin{DoxyParamCaption}\item[{string}]{cod\+UC,  }\item[{string}]{cod\+Turma }\end{DoxyParamCaption})}
+
+Método que conta o número de estudantes que estão inscritos numa dada \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} 
+\begin{DoxyParams}{Parameters}
+{\em cod\+UC} & Código da UC \\
+\hline
+{\em cod\+Turma} & Código da Turma \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de estudantes que têm essa unidade curricular 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_a15ff94cbf595524c71d91f56421750e5}\label{class_gestor_a15ff94cbf595524c71d91f56421750e5}} 
+\index{Gestor@{Gestor}!fillNumEstudantes@{fillNumEstudantes}}
+\index{fillNumEstudantes@{fillNumEstudantes}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{fillNumEstudantes()}{fillNumEstudantes()}}
+{\footnotesize\ttfamily void Gestor\+::fill\+Num\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Adiciona à classe \mbox{\hyperlink{class_horario}{Horario}} o atributo com o número de estudantes inscritos numa \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} \mbox{\Hypertarget{class_gestor_a7f69e30e717406c61eb27b45ab2a761a}\label{class_gestor_a7f69e30e717406c61eb27b45ab2a761a}} 
+\index{Gestor@{Gestor}!filterTP@{filterTP}}
+\index{filterTP@{filterTP}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{filterTP()}{filterTP()}}
+{\footnotesize\ttfamily void Gestor\+::filter\+TP (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \&}]{horario }\end{DoxyParamCaption})}
+
+Retira slots que não correspondam a aulas TP 
+\begin{DoxyParams}{Parameters}
+{\em horario} & lista de \mbox{\hyperlink{class_slot}{Slot}} (associado a uma UC) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gestor_ab8c4957bf509be90d39e2654b1470d97}\label{class_gestor_ab8c4957bf509be90d39e2654b1470d97}} 
+\index{Gestor@{Gestor}!getEstudantes@{getEstudantes}}
+\index{getEstudantes@{getEstudantes}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{getEstudantes()}{getEstudantes()}}
+{\footnotesize\ttfamily set$<$ \mbox{\hyperlink{class_estudante}{Estudante}} $>$ Gestor\+::get\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Retorna a BST com os estudantes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_af7495b053cd4b20f7df7999343bf1388}\label{class_gestor_af7495b053cd4b20f7df7999343bf1388}} 
+\index{Gestor@{Gestor}!getHorario@{getHorario}}
+\index{getHorario@{getHorario}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{getHorario()}{getHorario()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ Gestor\+::get\+Horario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Retorna o vetor com os horarios 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_a9f6ad76b956dd39122222fe070a27dbf}\label{class_gestor_a9f6ad76b956dd39122222fe070a27dbf}} 
+\index{Gestor@{Gestor}!getHorario@{getHorario}}
+\index{getHorario@{getHorario}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{getHorario()}{getHorario()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ Gestor\+::get\+Horario (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$}]{turmas }\end{DoxyParamCaption})}
+
+Retorna uma lista de Horarios correspondentes as Uc\+Turmas passadas por parametro 
+\begin{DoxyParams}{Parameters}
+{\em turmas} & lista com todas as \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+lista com todas os \mbox{\hyperlink{class_horario}{Horario}} homólogos à \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_a3a46e6d5e9bc053e118c19cd2ca0ed90}\label{class_gestor_a3a46e6d5e9bc053e118c19cd2ca0ed90}} 
+\index{Gestor@{Gestor}!getHorariobyUcTurma@{getHorariobyUcTurma}}
+\index{getHorariobyUcTurma@{getHorariobyUcTurma}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{getHorariobyUcTurma()}{getHorariobyUcTurma()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_horario}{Horario}} Gestor\+::get\+Horarioby\+Uc\+Turma (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}}]{turma }\end{DoxyParamCaption})}
+
+Função que dado um objeto \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, retorna o objeto \mbox{\hyperlink{class_horario}{Horario}} homólogo 
+\begin{DoxyParams}{Parameters}
+{\em turma} & Objeto da classe \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Objeto da classe \mbox{\hyperlink{class_horario}{Horario}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_a517e3b70b337f140aa433b64c6e3811d}\label{class_gestor_a517e3b70b337f140aa433b64c6e3811d}} 
+\index{Gestor@{Gestor}!getPedidos@{getPedidos}}
+\index{getPedidos@{getPedidos}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{getPedidos()}{getPedidos()}}
+{\footnotesize\ttfamily queue$<$ \mbox{\hyperlink{class_pedido}{Pedido}} $>$ Gestor\+::get\+Pedidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+Retorna a fila com os pedidos 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_ad07180a2da86da287c1280aa40cdbd09}\label{class_gestor_ad07180a2da86da287c1280aa40cdbd09}} 
+\index{Gestor@{Gestor}!getSlots@{getSlots}}
+\index{getSlots@{getSlots}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{getSlots()}{getSlots()}}
+{\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ Gestor\+::get\+Slots (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$}]{horario }\end{DoxyParamCaption})}
+
+Cria lista com todos os \mbox{\hyperlink{class_slot}{Slot}} de uma lista de Horarios 
+\begin{DoxyParams}{Parameters}
+{\em horario} & Lista de objetos \mbox{\hyperlink{class_horario}{Horario}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista com todos os \mbox{\hyperlink{class_slot}{Slot}} contidos em cada objeto \mbox{\hyperlink{class_horario}{Horario}} na lista passada por parâmetro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_a8d9e1d9372e1b50e2d04ce9fb9c8976e}\label{class_gestor_a8d9e1d9372e1b50e2d04ce9fb9c8976e}} 
+\index{Gestor@{Gestor}!HorariodoEstudante@{HorariodoEstudante}}
+\index{HorariodoEstudante@{HorariodoEstudante}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{HorariodoEstudante()}{HorariodoEstudante()}}
+{\footnotesize\ttfamily void Gestor\+::\+Horariodo\+Estudante (\begin{DoxyParamCaption}\item[{int}]{numero }\end{DoxyParamCaption})}
+
+Método que procura um estudante na BST e imprime o seu número, nome e horário~\newline
+Utiliza a função \mbox{\hyperlink{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}{Gestor\+::\+Pesquisar\+Estudante}} para auxiliar na pesquisa e a função \mbox{\hyperlink{class_gestor_a24ab9af3e2373934b7f3fa5ad73457e7}{Gestor\+::print\+Horario}} para imprimir o horário 
+\begin{DoxyParams}{Parameters}
+{\em numero} & Número Mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gestor_a2102bf990245b6f9d0418e2821abbfc2}\label{class_gestor_a2102bf990245b6f9d0418e2821abbfc2}} 
+\index{Gestor@{Gestor}!maisNUcs@{maisNUcs}}
+\index{maisNUcs@{maisNUcs}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{maisNUcs()}{maisNUcs()}}
+{\footnotesize\ttfamily void Gestor\+::mais\+NUcs (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por ordem crescente de número mecanográfico 
+\begin{DoxyParams}{Parameters}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gestor_a22a0a516650619365f14d5edb67a52cd}\label{class_gestor_a22a0a516650619365f14d5edb67a52cd}} 
+\index{Gestor@{Gestor}!maisNUcsAlfabetico@{maisNUcsAlfabetico}}
+\index{maisNUcsAlfabetico@{maisNUcsAlfabetico}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{maisNUcsAlfabetico()}{maisNUcsAlfabetico()}}
+{\footnotesize\ttfamily void Gestor\+::mais\+NUcs\+Alfabetico (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por ordem alfabética 
+\begin{DoxyParams}{Parameters}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gestor_aa2aeb38f4532974227191ea76c9b40e7}\label{class_gestor_aa2aeb38f4532974227191ea76c9b40e7}} 
+\index{Gestor@{Gestor}!maisNUcsNumero@{maisNUcsNumero}}
+\index{maisNUcsNumero@{maisNUcsNumero}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{maisNUcsNumero()}{maisNUcsNumero()}}
+{\footnotesize\ttfamily void Gestor\+::mais\+NUcs\+Numero (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por ordem crescente do número de UC\textquotesingle{}s 
+\begin{DoxyParams}{Parameters}
+{\em n} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gestor_aff41cf69a5a4a932f725d996378fe746}\label{class_gestor_aff41cf69a5a4a932f725d996378fe746}} 
+\index{Gestor@{Gestor}!pedidoAdd@{pedidoAdd}}
+\index{pedidoAdd@{pedidoAdd}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{pedidoAdd()}{pedidoAdd()}}
+{\footnotesize\ttfamily void Gestor\+::pedido\+Add (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Processa os pedidos de adicionar um aluno a uma UC/\+Turma. Verifica se o novo horario cumpre as condiçoes TODO verificar CAP \mbox{\Hypertarget{class_gestor_a668b63dfcf09455a5edd824bc435f5c3}\label{class_gestor_a668b63dfcf09455a5edd824bc435f5c3}} 
+\index{Gestor@{Gestor}!pedidoAlter@{pedidoAlter}}
+\index{pedidoAlter@{pedidoAlter}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{pedidoAlter()}{pedidoAlter()}}
+{\footnotesize\ttfamily void Gestor\+::pedido\+Alter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Processa os pedidos de alterar a ucs de UCs. Faz as verificações \mbox{\Hypertarget{class_gestor_a89559c053dd70d2c435ebc25608f2c7e}\label{class_gestor_a89559c053dd70d2c435ebc25608f2c7e}} 
+\index{Gestor@{Gestor}!pedidoRemove@{pedidoRemove}}
+\index{pedidoRemove@{pedidoRemove}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{pedidoRemove()}{pedidoRemove()}}
+{\footnotesize\ttfamily void Gestor\+::pedido\+Remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Processa os pedidos de remoção do aluno de uma UC/\+Turma \mbox{\Hypertarget{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}\label{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}} 
+\index{Gestor@{Gestor}!PesquisarEstudante@{PesquisarEstudante}}
+\index{PesquisarEstudante@{PesquisarEstudante}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{PesquisarEstudante()}{PesquisarEstudante()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_estudante}{Estudante}} Gestor\+::\+Pesquisar\+Estudante (\begin{DoxyParamCaption}\item[{int}]{numero }\end{DoxyParamCaption})}
+
+Método que procura um estudante na BST e imprime o seu número e nome 
+\begin{DoxyParams}{Parameters}
+{\em numero} & Número Mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O objeto \mbox{\hyperlink{class_estudante}{Estudante}} com o número dado. Caso não exista vai retornar um objeto error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_a24ab9af3e2373934b7f3fa5ad73457e7}\label{class_gestor_a24ab9af3e2373934b7f3fa5ad73457e7}} 
+\index{Gestor@{Gestor}!printHorario@{printHorario}}
+\index{printHorario@{printHorario}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{printHorario()}{printHorario()}}
+{\footnotesize\ttfamily void Gestor\+::print\+Horario (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ \mbox{\hyperlink{class_slot}{Slot}}, \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ $>$}]{vetor,  }\item[{map$<$ string, string $>$}]{cadeiras }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Função auxiliar para imprimir um dado horário 
+\begin{DoxyParams}{Parameters}
+{\em vetor} & Vetor de pair$<$\+Slot, Turma$>$ (já ordenado) \\
+\hline
+{\em cadeiras} & Mapa para fazer corresponder o código da UC ao seu nome \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_gestor_a7bce715ae0b40727343d8850c7dd850e}\label{class_gestor_a7bce715ae0b40727343d8850c7dd850e}} 
+\index{Gestor@{Gestor}!processPedidos@{processPedidos}}
+\index{processPedidos@{processPedidos}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{processPedidos()}{processPedidos()}}
+{\footnotesize\ttfamily void Gestor\+::process\+Pedidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Pocessa os pedidos até a fila ficar vazia \mbox{\Hypertarget{class_gestor_a1d1927e0eaaa6bd8c2ebcbbce73e9f93}\label{class_gestor_a1d1927e0eaaa6bd8c2ebcbbce73e9f93}} 
+\index{Gestor@{Gestor}!readAulas@{readAulas}}
+\index{readAulas@{readAulas}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{readAulas()}{readAulas()}}
+{\footnotesize\ttfamily void Gestor\+::read\+Aulas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Método que lê o ficheiro classes\+\_\+per\+\_\+uc.\+csv e cria os objetos da classe \mbox{\hyperlink{class_horario}{Horario}} \mbox{\Hypertarget{class_gestor_a64ff74a8aad298d89c925bf339adaaef}\label{class_gestor_a64ff74a8aad298d89c925bf339adaaef}} 
+\index{Gestor@{Gestor}!readEstudantes@{readEstudantes}}
+\index{readEstudantes@{readEstudantes}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{readEstudantes()}{readEstudantes()}}
+{\footnotesize\ttfamily void Gestor\+::read\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Método que lê o ficheiro student\+\_\+classes.\+csv e cria os objetos da classe \mbox{\hyperlink{class_estudante}{Estudante}} \mbox{\Hypertarget{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}\label{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}} 
+\index{Gestor@{Gestor}!readHorarios@{readHorarios}}
+\index{readHorarios@{readHorarios}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{readHorarios()}{readHorarios()}}
+{\footnotesize\ttfamily void Gestor\+::read\+Horarios (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Método que lê o ficheiro classes.\+csv e cria os objetos da classe \mbox{\hyperlink{class_slot}{Slot}} e adiciona-\/os à classe \mbox{\hyperlink{class_horario}{Horario}} correspondente \mbox{\Hypertarget{class_gestor_af28ed64b4bf27cbd8fc0d4d465e99ea3}\label{class_gestor_af28ed64b4bf27cbd8fc0d4d465e99ea3}} 
+\index{Gestor@{Gestor}!searchStudent@{searchStudent}}
+\index{searchStudent@{searchStudent}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{searchStudent()}{searchStudent()}}
+{\footnotesize\ttfamily set$<$ \mbox{\hyperlink{class_estudante}{Estudante}} $>$\+::iterator Gestor\+::search\+Student (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})}
+
+Procura um estudante por code. Retorna o const iterator. 
+\begin{DoxyParams}{Parameters}
+{\em code} & Número Mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterador do \mbox{\hyperlink{class_estudante}{Estudante}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_a12b2ff53c546858442f6449e81391f5a}\label{class_gestor_a12b2ff53c546858442f6449e81391f5a}} 
+\index{Gestor@{Gestor}!setMap@{setMap}}
+\index{setMap@{setMap}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{setMap()}{setMap()}}
+{\footnotesize\ttfamily void Gestor\+::set\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Método que adidicona ao mapa todas as correspondências entre o código e o nome da UC \mbox{\Hypertarget{class_gestor_a23bf645805fd5a086ad6f2f294a25c10}\label{class_gestor_a23bf645805fd5a086ad6f2f294a25c10}} 
+\index{Gestor@{Gestor}!studentInClass@{studentInClass}}
+\index{studentInClass@{studentInClass}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{studentInClass()}{studentInClass()}}
+{\footnotesize\ttfamily bool Gestor\+::student\+In\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_estudante}{Estudante}}}]{student,  }\item[{string}]{cod\+UC,  }\item[{string}]{cod\+Turma }\end{DoxyParamCaption})}
+
+Método que verifica se um estudante se encontra inscrito numa dade \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} 
+\begin{DoxyParams}{Parameters}
+{\em student} & \mbox{\hyperlink{class_estudante}{Estudante}} a verificar \\
+\hline
+{\em cod\+UC} & Código da UC \\
+\hline
+{\em cod\+Turma} & Código da Turma \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna true se o estudante estiver inscrito na turma e false em qualquer outro caso 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_a8882c3ab19ecf9278e2b8a66aa70c5b3}\label{class_gestor_a8882c3ab19ecf9278e2b8a66aa70c5b3}} 
+\index{Gestor@{Gestor}!verifyCap@{verifyCap}}
+\index{verifyCap@{verifyCap}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{verifyCap()}{verifyCap()}}
+{\footnotesize\ttfamily bool Gestor\+::verify\+Cap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Verifica se não há desiquilibrio nas turmas nem que o numero de alunos não passou de CAP \begin{DoxyReturn}{Returns}
+true 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_gestor_ac5130fc7f77f444ca64c1dc63f9f61db}\label{class_gestor_ac5130fc7f77f444ca64c1dc63f9f61db}} 
+\index{Gestor@{Gestor}!verifyOverlap@{verifyOverlap}}
+\index{verifyOverlap@{verifyOverlap}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{verifyOverlap()}{verifyOverlap()}}
+{\footnotesize\ttfamily bool Gestor\+::verify\+Overlap (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$}]{horario }\end{DoxyParamCaption})}
+
+Verifca se a sobreposições de horarios 
+\begin{DoxyParams}{Parameters}
+{\em horario} & A lista de \mbox{\hyperlink{class_horario}{Horario}} a verificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Falso se houver sobreposição, verdadeiro em qualquer outro caso 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}\label{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}} 
+\index{Gestor@{Gestor}!cadeiras@{cadeiras}}
+\index{cadeiras@{cadeiras}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{cadeiras}{cadeiras}}
+{\footnotesize\ttfamily map$<$string, string$>$ Gestor\+::cadeiras}
+
+Mapa com as cadeiras que relaciona o código da UC com o nome da mesma \mbox{\Hypertarget{class_gestor_a3e9d3bf33c41a929e93bab795ef0950d}\label{class_gestor_a3e9d3bf33c41a929e93bab795ef0950d}} 
+\index{Gestor@{Gestor}!estudantes@{estudantes}}
+\index{estudantes@{estudantes}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{estudantes}{estudantes}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{class_estudante}{Estudante}}$>$ Gestor\+::estudantes\hspace{0.3cm}{\ttfamily [private]}}
+
+Árvore Binária de Pesquisa com todos os objetos da classe \char`\"{}\+Estudante\char`\"{} inscritos \mbox{\Hypertarget{class_gestor_a18b85b52d4057681bfd6b750868128bb}\label{class_gestor_a18b85b52d4057681bfd6b750868128bb}} 
+\index{Gestor@{Gestor}!horario@{horario}}
+\index{horario@{horario}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{horario}{horario}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_horario}{Horario}}$>$ Gestor\+::horario\hspace{0.3cm}{\ttfamily [private]}}
+
+Vetor com todos os objetos da classe \char`\"{}\+Horario\char`\"{} \mbox{\Hypertarget{class_gestor_a8cf7cbfaf7a00a71b56a26099185ce12}\label{class_gestor_a8cf7cbfaf7a00a71b56a26099185ce12}} 
+\index{Gestor@{Gestor}!pedidos@{pedidos}}
+\index{pedidos@{pedidos}!Gestor@{Gestor}}
+\doxysubsubsection{\texorpdfstring{pedidos}{pedidos}}
+{\footnotesize\ttfamily queue$<$\mbox{\hyperlink{class_pedido}{Pedido}}$>$ Gestor\+::pedidos\hspace{0.3cm}{\ttfamily [private]}}
+
+Fila que contém todos os objetos da classe \char`\"{}\+Pedido\char`\"{} a serem processados 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gestor.\+h\item 
+Gestor.\+cpp\end{DoxyCompactItemize}

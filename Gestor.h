@@ -13,12 +13,28 @@
 #include <map>
 
 using namespace std;
+/**
+ * Esta classe representa a entidade com responsabilidade de consultar os "Estudante", assim como os seus horários,
+ * consultar as UcTurma e gerir os pedidos
+ */
 
 class Gestor {
+    /**
+     * Árvore Binária de Pesquisa com todos os objetos da classe "Estudante" inscritos
+     */
     set<Estudante> estudantes;
+    /**
+     * Vetor com todos os objetos da classe "Horario"
+     */
     vector<Horario> horario;
+    /**
+     * Fila que contém todos os objetos da classe "Pedido" a serem processados
+     */
     queue<Pedido> pedidos;
 public:
+    /**
+     * Mapa com as cadeiras que relaciona o código da UC com o nome da mesma
+     */
     map<string, string> cadeiras;
     Gestor();
     Gestor(set<Estudante> i, vector<Horario> j,queue<Pedido> k);

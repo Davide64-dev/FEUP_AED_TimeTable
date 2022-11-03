@@ -11,9 +11,17 @@
 #include "Gestor.h"
 
 using namespace std;
-
+/**
+ *
+ * @param i Árvore Binária de Pesquisa com os estudantes
+ * @param j Vetor com todos os objetos da classe "Horario"
+ * @param k Fila que contém todos os objetos da classe "Pedido" a serem processados
+ */
 Gestor::Gestor(set<Estudante> i , vector<Horario> j, queue<Pedido> k): estudantes(i), horario(j), pedidos(k) {}
 
+/**
+ * Método que adidicona ao mapa todas as correspondências entre o código e o nome da UC
+ */
 void Gestor::setMap(){
     cadeiras.insert(pair<string, string>("L.EIC001", "Álgebra Linear e Geometria Analítica"));
     cadeiras.insert(pair<string, string>("L.EIC002", "Análise Matemática I"));
@@ -51,19 +59,33 @@ void Gestor::setMap(){
 
 Gestor::Gestor() = default;
 
-
+/**
+ *
+ * @return Retorna a BST com os estudantes
+ */
 set<Estudante> Gestor::getEstudantes() const{
     return estudantes;
 }
 
+/**
+ *
+ * @return Retorna o vetor com os horarios
+ */
 vector<Horario> Gestor::getHorario() const{
     return horario;
 }
 
+/**
+ *
+ * @return Retorna a fila com os pedidos
+ */
 queue<Pedido> Gestor::getPedidos() const{
     return pedidos;
 }
 
+/**
+ * Método que lê o ficheiro student_classes.csv e cria os objetos da classe Estudante
+ */
 void Gestor::readEstudantes() {
     vector<string> lineV(4);
     ifstream in("../schedule/students_classes.csv");
@@ -106,6 +128,9 @@ void Gestor::readEstudantes() {
     in.close();
 }
 
+/**
+ * Método que lê o ficheiro classes.csv e cria os objetos da classe Slot e adiciona-os à classe Horario correspondente
+ */
 void Gestor::readHorarios() {
     readAulas();
 
@@ -155,6 +180,9 @@ void Gestor::readHorarios() {
     sort(horario.begin(), horario.end());
 }
 
+/**
+ * Método que lê o ficheiro classes_per_uc.csv e cria os objetos da classe Horario
+ */
 void Gestor::readAulas() {
     vector<string> lineV(2);
     ifstream in("../schedule/classes_per_uc.csv");
@@ -180,13 +208,21 @@ void Gestor::readAulas() {
     }
     in.close();
 }
-
+/**
+ * Adiciona à classe Horario o atributo com o número de estudantes inscritos numa UcTurma
+ */
 void Gestor::fillNumEstudantes() {
     for(Horario& hor : horario) {
         hor.setNumEstudantes(countStudents(hor.getcodUC(), hor.getcodTurma()));
     }
 }
 
+/**
+ * Método que conta o número de estudantes que estão inscritos numa dada UcTurma
+ * @param codUC Código da UC
+ * @param codTurma Código da Turma
+ * @return Número de estudantes que têm essa unidade curricular
+ */
 int Gestor::countStudents(string codUC, string codTurma) {
     int count = 0;
     for(const Estudante& student : estudantes) {
@@ -197,6 +233,13 @@ int Gestor::countStudents(string codUC, string codTurma) {
     return count;
 }
 
+/**
+ * Método que verifica se um estudante se encontra inscrito numa dade UcTurma
+ * @param student Estudante a verificar
+ * @param codUC Código da UC
+ * @param codTurma Código da Turma
+ * @return Retorna true se o estudante estiver inscrito na turma e false em qualquer outro caso
+ */
 bool Gestor::studentInClass(Estudante student, string codUC, string codTurma) {
     for(const UcTurma& ucTurma : student.gethorario()) {
         if(ucTurma.getcodUC() == codUC && ucTurma.getcodTurma() == codTurma) {
@@ -206,6 +249,11 @@ bool Gestor::studentInClass(Estudante student, string codUC, string codTurma) {
     return false;
 }
 
+/**
+ * Método que procura um estudante na BST e imprime o seu número e nome
+ * @param numero Número Mecanográfico do Estudante
+ * @return O objeto Estudante com o número dado. Caso não exista vai retornar um objeto error
+ */
 Estudante Gestor::PesquisarEstudante(int numero) {
 
     list<UcTurma> temp;
@@ -229,10 +277,22 @@ Estudante Gestor::PesquisarEstudante(int numero) {
     }
 }
 
+/**
+ * Método auxiliar para ordenar pares com Slot e Turma
+ * @param a Primeiro par
+ * @param b Segundo par
+ * @return Retorna verdadeiro, se o primeiro Slot for menor do que o segundo Slot
+ */
 bool Gestor::cmp(pair<Slot, UcTurma>& a, pair<Slot, UcTurma>& b){
     return a.first < b.first;
 }
 
+/**
+ * Método que procura um estudante na BST e imprime o seu número, nome e horário\n
+ * Utiliza a função Gestor::PesquisarEstudante para auxiliar na pesquisa e a função Gestor::printHorario
+ * para imprimir o horário
+ * @param numero Número Mecanográfico do Estudante
+ */
 void Gestor::HorariodoEstudante(int numero){
 
     Estudante student = PesquisarEstudante(numero);
@@ -297,6 +357,11 @@ void Gestor::HorariodoEstudante(int numero){
     }
 }
 
+/**
+ * Função auxiliar para imprimir um dado horário
+ * @param vetor Vetor de pair<Slot, Turma> (já ordenado)
+ * @param cadeiras Mapa para fazer corresponder o código da UC ao seu nome
+ */
 void Gestor::printHorario(vector<pair<Slot, UcTurma>> vetor, map<string, string> cadeiras){
     for (pair<Slot, UcTurma> i : vetor){
         cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
@@ -307,6 +372,11 @@ void Gestor::printHorario(vector<pair<Slot, UcTurma>> vetor, map<string, string>
     cout << " " << "\n";
 }
 
+/**
+ * Função que dado um objeto UcTurma, retorna o objeto Horario homólogo
+ * @param turma Objeto da classe UcTurma
+ * @return Objeto da classe Horario
+ */
 Horario Gestor::getHorariobyUcTurma(UcTurma turma){
     list<Slot> lista;
     Horario temp = Horario(turma.getcodUC(), turma.getcodTurma(), lista);
@@ -324,13 +394,9 @@ Horario Gestor::getHorariobyUcTurma(UcTurma turma){
     else return temp;
 }
 
-bool ordemAlfabetica(Estudante student1, Estudante student2){
-    if (student1.getnome() == student2.getnome()) {
-        return student1.getcodigo() < student2.getcodigo();
-    }
-    else return student1.getnome() < student2.getnome();
-}
-
+/**
+ * Struct auxiliar para ordenar o set de estudantes por ordem alfabética
+ */
 struct ordemAlfabeticaStruct {
 
     bool operator()(Estudante const &student1, Estudante const &student2) const{
@@ -342,6 +408,9 @@ struct ordemAlfabeticaStruct {
     }
 };
 
+/**
+ * Struct auxiliar para ordenar o set de estudantes por ordem de número de UC's
+ */
 struct ordemNumUcStruct{
 
     bool operator()(Estudante const &student1, Estudante const &student2) const{
@@ -354,6 +423,10 @@ struct ordemNumUcStruct{
 
 };
 
+/**
+ * Método que imprime todos os estudantes com mais de n UC's por ordem alfabética
+ * @param n
+ */
 void Gestor::maisNUcsAlfabetico(int n) {
     set<Estudante, ordemAlfabeticaStruct> temp(estudantes.begin(), estudantes.end());
     set<Estudante>::iterator it;
@@ -365,6 +438,10 @@ void Gestor::maisNUcsAlfabetico(int n) {
     }
 }
 
+/**
+ * Método que imprime todos os estudantes com mais de n UC's por ordem crescente do número de UC's
+ * @param n
+ */
 void Gestor::maisNUcsNumero(int n){
     set<Estudante, ordemNumUcStruct> temp(estudantes.begin(), estudantes.end());
     set<Estudante>::iterator it;
@@ -376,6 +453,10 @@ void Gestor::maisNUcsNumero(int n){
     }
 }
 
+/**
+ * Método que imprime todos os estudantes com mais de n UC's por ordem crescente de número mecanográfico
+ * @param n
+ */
 void Gestor::maisNUcs(int n){
    set<Estudante>::iterator it;
    cout << "Id|Nome|n" << "\n";
@@ -385,10 +466,14 @@ void Gestor::maisNUcs(int n){
        }
    }
 }
+
+
+ //* Processa os pedidos até a queue ficar vazia.
+ //* TODO Criar caso em que os pedidos não são satisfeitos -> Meter no registo
+ //* TODO pedidos retornarem V/F
+
 /**
- * Processa os pedidos até a queue ficar vazia.
- * TODO Criar caso em que os pedidos não são satisfeitos -> Meter no registo
- * TODO pedidos retornarem V/F
+ * Pocessa os pedidos até a fila ficar vazia
  */
 void Gestor::processPedidos() {
     while(!pedidos.empty()) {
@@ -401,9 +486,10 @@ void Gestor::processPedidos() {
 
 /**
  * Procura um estudante por code. Retorna o const iterator.
- * @param code
- * @return
+ * @param code Número Mecanográfico do Estudante
+ * @return Iterador do Estudante
  */
+
 set<Estudante>::iterator Gestor::searchStudent(int code) {
     list<UcTurma> temp;
     temp.emplace_back("", "");
@@ -480,8 +566,8 @@ void Gestor::pedidoAlter() {
 /**
  * Retorna uma lista de Horarios correspondentes as UcTurmas
  * passadas por parametro
- * @param turmas
- * @return
+ * @param turmas lista com todas as UcTurma
+ * @return lista com todas os Horario homólogos à UcTurma
  */
 list<Horario> Gestor::getHorario(list<UcTurma> turmas) {
     list<Horario> hor;
@@ -493,7 +579,7 @@ list<Horario> Gestor::getHorario(list<UcTurma> turmas) {
 /**
  * Verifica se não há desiquilibrio nas turmas
  * nem que o numero de alunos não passou de CAP
- * @return
+ * @return true
  */
 bool Gestor::verifyCap() {
     return true;
@@ -502,8 +588,8 @@ bool Gestor::verifyCap() {
 
 /**
  * Verifca se a sobreposições de horarios
- * @param horario
- * @return Falso se houver sobreposição
+ * @param horario A lista de Horario a verificar
+ * @return Falso se houver sobreposição, verdadeiro em qualquer outro caso
  */
 bool Gestor::verifyOverlap(list<Horario> horario)  {
     list<Slot> slots = getSlots(horario);
@@ -523,10 +609,10 @@ bool Gestor::verifyOverlap(list<Horario> horario)  {
 }
 
 /**
- * Cria lista com todos os slots de uma lista
+ * Cria lista com todos os Slot de uma lista
  * de Horarios
- * @param horario
- * @return
+ * @param horario Lista de objetos Horario
+ * @return Lista com todos os Slot contidos em cada objeto Horario na lista passada por parâmetro
  */
 list<Slot> Gestor::getSlots(list<Horario> horario) {
     list<Slot> slots;
@@ -540,7 +626,7 @@ list<Slot> Gestor::getSlots(list<Horario> horario) {
 
 /**
  * Retira slots que não correspondam a aulas TP
- * @param horario
+ * @param horario lista de Slot (associado a uma UC)
  */
 void Gestor::filterTP(list<Slot> &horario) {
     auto it = horario.begin();

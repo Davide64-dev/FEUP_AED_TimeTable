@@ -1,0 +1,65 @@
+\hypertarget{_gestor_8h_source}{}\doxysection{Gestor.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by Davide Teixeira on 22/10/2022.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef UNTITLED3\_GESTOR\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define UNTITLED3\_GESTOR\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}Estudante.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}Horario.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}Pedido.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_gestor}{Gestor}} \{}
+\DoxyCodeLine{25     set<Estudante> \mbox{\hyperlink{class_gestor_a3e9d3bf33c41a929e93bab795ef0950d}{estudantes}};}
+\DoxyCodeLine{29     vector<Horario> \mbox{\hyperlink{class_gestor_a18b85b52d4057681bfd6b750868128bb}{horario}};}
+\DoxyCodeLine{33     queue<Pedido> \mbox{\hyperlink{class_gestor_a8cf7cbfaf7a00a71b56a26099185ce12}{pedidos}};}
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38     map<string, string> \mbox{\hyperlink{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}{cadeiras}};}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_gestor}{Gestor}}();}
+\DoxyCodeLine{40     \mbox{\hyperlink{class_gestor}{Gestor}}(set<Estudante> i, vector<Horario> j,queue<Pedido> k);}
+\DoxyCodeLine{41     set<Estudante> \mbox{\hyperlink{class_gestor_ab8c4957bf509be90d39e2654b1470d97}{getEstudantes}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{42     vector<Horario> \mbox{\hyperlink{class_gestor_af7495b053cd4b20f7df7999343bf1388}{getHorario}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{43     queue<Pedido> \mbox{\hyperlink{class_gestor_a517e3b70b337f140aa433b64c6e3811d}{getPedidos}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a64ff74a8aad298d89c925bf339adaaef}{readEstudantes}}();}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}{readHorarios}}();}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a1d1927e0eaaa6bd8c2ebcbbce73e9f93}{readAulas}}();}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a15ff94cbf595524c71d91f56421750e5}{fillNumEstudantes}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_gestor_ae68e520f371655cc6da93ba0bcbbbe4b}{countStudents}}(\textcolor{keywordtype}{string} codUC, \textcolor{keywordtype}{string} codTurma);}
+\DoxyCodeLine{49     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_gestor_a23bf645805fd5a086ad6f2f294a25c10}{studentInClass}}(\mbox{\hyperlink{class_estudante}{Estudante}} student, \textcolor{keywordtype}{string} codUC, \textcolor{keywordtype}{string} codTurma);}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_estudante}{Estudante}} \mbox{\hyperlink{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}{PesquisarEstudante}}(\textcolor{keywordtype}{int} numero);}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a8d9e1d9372e1b50e2d04ce9fb9c8976e}{HorariodoEstudante}}(\textcolor{keywordtype}{int} numero);}
+\DoxyCodeLine{52     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_gestor_aaa33f3969c952b2010fc9c2607299b2d}{cmp}}(pair<Slot, UcTurma>\& a, pair<Slot, UcTurma>\& b);}
+\DoxyCodeLine{53     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a24ab9af3e2373934b7f3fa5ad73457e7}{printHorario}}(vector<pair<Slot, UcTurma>> vetor, map<string, string> \mbox{\hyperlink{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}{cadeiras}});}
+\DoxyCodeLine{54     \mbox{\hyperlink{class_horario}{Horario}} \mbox{\hyperlink{class_gestor_a3a46e6d5e9bc053e118c19cd2ca0ed90}{getHorariobyUcTurma}}(\mbox{\hyperlink{class_uc_turma}{UcTurma}} turma);}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a22a0a516650619365f14d5edb67a52cd}{maisNUcsAlfabetico}}(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_aa2aeb38f4532974227191ea76c9b40e7}{maisNUcsNumero}}(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a2102bf990245b6f9d0418e2821abbfc2}{maisNUcs}}(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a12b2ff53c546858442f6449e81391f5a}{setMap}}();}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a7bce715ae0b40727343d8850c7dd850e}{processPedidos}}();}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_aff41cf69a5a4a932f725d996378fe746}{pedidoAdd}}();}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a89559c053dd70d2c435ebc25608f2c7e}{pedidoRemove}}();}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a668b63dfcf09455a5edd824bc435f5c3}{pedidoAlter}}();}
+\DoxyCodeLine{63     set<Estudante>::iterator \mbox{\hyperlink{class_gestor_af28ed64b4bf27cbd8fc0d4d465e99ea3}{searchStudent}}(\textcolor{keywordtype}{int} code);}
+\DoxyCodeLine{64     list<Horario> \mbox{\hyperlink{class_gestor_af7495b053cd4b20f7df7999343bf1388}{getHorario}}(list<UcTurma> turmas);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_gestor_ac5130fc7f77f444ca64c1dc63f9f61db}{verifyOverlap}}(list<Horario> \mbox{\hyperlink{class_gestor_a18b85b52d4057681bfd6b750868128bb}{horario}});}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_gestor_a7f69e30e717406c61eb27b45ab2a761a}{filterTP}}(list<Slot> \&\mbox{\hyperlink{class_gestor_a18b85b52d4057681bfd6b750868128bb}{horario}});}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     list<Slot> \mbox{\hyperlink{class_gestor_ad07180a2da86da287c1280aa40cdbd09}{getSlots}}(list<Horario> \mbox{\hyperlink{class_gestor_a18b85b52d4057681bfd6b750868128bb}{horario}});}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_gestor_a8882c3ab19ecf9278e2b8a66aa70c5b3}{verifyCap}}();}
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//UNTITLED3\_GESTOR\_H}}
+
+\end{DoxyCode}
