@@ -6,10 +6,21 @@
 #define UNTITLED3_UCTURMA_H
 
 using namespace std;
-
+/**
+ * Esta classe representa um par Uc/Turma
+ */
 class UcTurma {
+    /**
+     * Código da UC
+     */
     string codUC;
+    /**
+     * Código da Turma
+     */
     string codTurma;
+    /**
+     * Capacidade máxima da turma
+     */
     int Cap;
 public:
     UcTurma(string i, string j);
@@ -17,7 +28,6 @@ public:
     string getcodTurma() const;
     bool operator== (const UcTurma &other) const;
     bool operator< (const UcTurma &other) const;
-    void print();
 };
 
 
