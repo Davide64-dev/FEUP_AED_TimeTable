@@ -1,10 +1,10 @@
-\hypertarget{class_slot}{}\doxysection{Slot Class Reference}
+\hypertarget{class_slot}{}\doxysection{Referência à classe Slot}
 \label{class_slot}\index{Slot@{Slot}}
 
 
 {\ttfamily \#include $<$Slot.\+h$>$}
 
-\doxysubsection*{Public Member Functions}
+\doxysubsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_slot_ac9975ec4a8a34f0aad3d98f3b0efb009}{Slot}} (float \mbox{\hyperlink{class_slot_ac5ed6c59ecd6da2d48deb3b9f4c5cbfc}{horaini}}, float \mbox{\hyperlink{class_slot_add64d8e3ebea3fb9c0c6c2f8cf22d7d0}{duracao}}, const string \&\mbox{\hyperlink{class_slot_a269c8cc55cf8a3c2b705121a5c8ecc85}{dia\+Da\+Semana}}, const string \&\mbox{\hyperlink{class_slot_a1698c3a18f30d4247689aa29d2eb49d6}{tipo}})
@@ -19,14 +19,14 @@ const string \& \mbox{\hyperlink{class_slot_aac2952b016a1b298ac79ed19b1260b5e}{g
 \item 
 bool \mbox{\hyperlink{class_slot_aa6db9708e1ac972bba66a4ad83c2e7a4}{operator$<$}} (\mbox{\hyperlink{class_slot}{Slot}} slot) const
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
+\doxysubsection*{Membros públicos estáticos}
 \begin{DoxyCompactItemize}
 \item 
 static bool \mbox{\hyperlink{class_slot_a6ac4239875c09f691ebb6535089f04ab}{dia\+Menor}} (string dia1, string dia2)
 \item 
 static int \mbox{\hyperlink{class_slot_af5f794f1b39f3edd962d0c140318c225}{correspondencia}} (string dia)
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
 float \mbox{\hyperlink{class_slot_ac5ed6c59ecd6da2d48deb3b9f4c5cbfc}{horaini}}
@@ -39,10 +39,10 @@ string \mbox{\hyperlink{class_slot_a1698c3a18f30d4247689aa29d2eb49d6}{tipo}}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Descrição detalhada}
 Esta classe pretende modular uma aula de um dado para Uc/\+Turma 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentação dos Construtores \& Destrutor}
 \mbox{\Hypertarget{class_slot_ac9975ec4a8a34f0aad3d98f3b0efb009}\label{class_slot_ac9975ec4a8a34f0aad3d98f3b0efb009}} 
 \index{Slot@{Slot}!Slot@{Slot}}
 \index{Slot@{Slot}!Slot@{Slot}}
@@ -50,7 +50,7 @@ Esta classe pretende modular uma aula de um dado para Uc/\+Turma
 {\footnotesize\ttfamily Slot\+::\+Slot (\begin{DoxyParamCaption}\item[{float}]{horaini,  }\item[{float}]{duracao,  }\item[{const string \&}]{dia\+Da\+Semana,  }\item[{const string \&}]{tipo }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em horaini} & Hora a que a aula começa \\
 \hline
 {\em duracao} & Duração da aula \\
@@ -62,7 +62,7 @@ Esta classe pretende modular uma aula de um dado para Uc/\+Turma
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentação dos métodos}
 \mbox{\Hypertarget{class_slot_af5f794f1b39f3edd962d0c140318c225}\label{class_slot_af5f794f1b39f3edd962d0c140318c225}} 
 \index{Slot@{Slot}!correspondencia@{correspondencia}}
 \index{correspondencia@{correspondencia}!Slot@{Slot}}
@@ -70,11 +70,11 @@ Esta classe pretende modular uma aula de um dado para Uc/\+Turma
 {\footnotesize\ttfamily int Slot\+::correspondencia (\begin{DoxyParamCaption}\item[{string}]{dia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Função auxiliar que faz uma correspondência entre o dia da semana e um número de forma a poder comparar os dias da semana 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em dia} & Dia da semana \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna um número 0...6 correspondente (Monday...Sunday). Caso não seja dado nenhuma string correta, retorna -\/1 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_a6ac4239875c09f691ebb6535089f04ab}\label{class_slot_a6ac4239875c09f691ebb6535089f04ab}} 
@@ -84,13 +84,13 @@ Retorna um número 0...6 correspondente (Monday...Sunday). Caso não seja dado n
 {\footnotesize\ttfamily bool Slot\+::dia\+Menor (\begin{DoxyParamCaption}\item[{string}]{dia1,  }\item[{string}]{dia2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Função que retorna o menor de dois dias 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em dia1} & Primeiro dia (da semana) \\
 \hline
 {\em dia2} & Segundo dia (da semana) \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna true se o primeiro dia for menor. Retorna false em qualquer outro caso 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_aac2952b016a1b298ac79ed19b1260b5e}\label{class_slot_aac2952b016a1b298ac79ed19b1260b5e}} 
@@ -99,7 +99,7 @@ Retorna true se o primeiro dia for menor. Retorna false em qualquer outro caso
 \doxysubsubsection{\texorpdfstring{getDiaDaSemana()}{getDiaDaSemana()}}
 {\footnotesize\ttfamily const string \& Slot\+::get\+Dia\+Da\+Semana (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna o Dia da Semana 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_a6216379f40626cd3c089d7cf8e25fffa}\label{class_slot_a6216379f40626cd3c089d7cf8e25fffa}} 
@@ -108,7 +108,7 @@ Retorna o Dia da Semana
 \doxysubsubsection{\texorpdfstring{getduaracao()}{getduaracao()}}
 {\footnotesize\ttfamily float Slot\+::getduaracao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna a duração da aula 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_af86baab105d2d88745f5b06b44b50902}\label{class_slot_af86baab105d2d88745f5b06b44b50902}} 
@@ -117,7 +117,7 @@ Retorna a duração da aula
 \doxysubsubsection{\texorpdfstring{gethoraini()}{gethoraini()}}
 {\footnotesize\ttfamily float Slot\+::gethoraini (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna a hora a que começa a aula 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_aabd4da68e16c3c37a7911c57b9c70bec}\label{class_slot_aabd4da68e16c3c37a7911c57b9c70bec}} 
@@ -126,7 +126,7 @@ Retorna a hora a que começa a aula
 \doxysubsubsection{\texorpdfstring{gettipo()}{gettipo()}}
 {\footnotesize\ttfamily string Slot\+::gettipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna o tipo da aula 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_aa6db9708e1ac972bba66a4ad83c2e7a4}\label{class_slot_aa6db9708e1ac972bba66a4ad83c2e7a4}} 
@@ -136,16 +136,16 @@ Retorna o tipo da aula
 {\footnotesize\ttfamily bool Slot\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_slot}{Slot}}}]{slot }\end{DoxyParamCaption}) const}
 
 Override do operador \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em slot} & Objeto da classe \mbox{\hyperlink{class_slot}{Slot}} \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna true se o dia e hora do primeiro Sdlot forem menores que o dia e hora do segundo \mbox{\hyperlink{class_slot}{Slot}} 
 \end{DoxyReturn}
 
 
-\doxysubsection{Member Data Documentation}
+\doxysubsection{Documentação dos dados membro}
 \mbox{\Hypertarget{class_slot_a269c8cc55cf8a3c2b705121a5c8ecc85}\label{class_slot_a269c8cc55cf8a3c2b705121a5c8ecc85}} 
 \index{Slot@{Slot}!diaDaSemana@{diaDaSemana}}
 \index{diaDaSemana@{diaDaSemana}!Slot@{Slot}}
@@ -172,7 +172,7 @@ Hora a que a aula começa \mbox{\Hypertarget{class_slot_a1698c3a18f30d4247689aa2
 
 Tipo de aula (T, TP, PL, ...) 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
 \item 
 Slot.\+h\item 
 Slot.\+cpp\end{DoxyCompactItemize}

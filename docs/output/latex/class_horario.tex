@@ -1,10 +1,10 @@
-\hypertarget{class_horario}{}\doxysection{Horario Class Reference}
+\hypertarget{class_horario}{}\doxysection{Referência à classe Horario}
 \label{class_horario}\index{Horario@{Horario}}
 
 
 {\ttfamily \#include $<$Horario.\+h$>$}
 
-\doxysubsection*{Public Member Functions}
+\doxysubsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_horario_ad7e52996f4bb6282feba6d064c84b49c}{get\+Num\+Estudantes}} () const
@@ -27,7 +27,7 @@ bool \mbox{\hyperlink{class_horario_a8ee4e91d85c755905e87ae8b7c140b72}{operator$
 \item 
 bool \mbox{\hyperlink{class_horario_acf4ae120f4206e0f36dbd44e2aa28793}{operator==}} (\mbox{\hyperlink{class_horario}{Horario}} horario) const
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_horario_aa19f52a53c3a565f836b5bc323988c27}{cod\+UC}}
@@ -40,10 +40,10 @@ int \mbox{\hyperlink{class_horario_adff6f7afe1c67c8f2dc0660a58eee56a}{num\+Estud
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Descrição detalhada}
 Esta classe pretende armazenar todas os pares Uc/\+Turma existentes, com o respetivo horário 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentação dos Construtores \& Destrutor}
 \mbox{\Hypertarget{class_horario_aaf4a2ffc1e16dfa836bab84c6c605d79}\label{class_horario_aaf4a2ffc1e16dfa836bab84c6c605d79}} 
 \index{Horario@{Horario}!Horario@{Horario}}
 \index{Horario@{Horario}!Horario@{Horario}}
@@ -51,7 +51,7 @@ Esta classe pretende armazenar todas os pares Uc/\+Turma existentes, com o respe
 {\footnotesize\ttfamily Horario\+::\+Horario (\begin{DoxyParamCaption}\item[{string}]{i,  }\item[{string}]{j,  }\item[{list$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$}]{k }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em i} & Código da UC \\
 \hline
 {\em j} & Código da Turma \\
@@ -66,7 +66,7 @@ Esta classe pretende armazenar todas os pares Uc/\+Turma existentes, com o respe
 {\footnotesize\ttfamily Horario\+::\+Horario (\begin{DoxyParamCaption}\item[{string}]{cod\+UC,  }\item[{string}]{cod\+Turma }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em cod\+UC} & Código da UC \\
 \hline
 {\em cod\+Turma} & Código da Turma \\
@@ -74,7 +74,7 @@ Esta classe pretende armazenar todas os pares Uc/\+Turma existentes, com o respe
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentação dos métodos}
 \mbox{\Hypertarget{class_horario_a5b084d92e3b5972128893d5e5bc0924c}\label{class_horario_a5b084d92e3b5972128893d5e5bc0924c}} 
 \index{Horario@{Horario}!addAula@{addAula}}
 \index{addAula@{addAula}!Horario@{Horario}}
@@ -82,7 +82,7 @@ Esta classe pretende armazenar todas os pares Uc/\+Turma existentes, com o respe
 {\footnotesize\ttfamily void Horario\+::add\+Aula (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_slot}{Slot}}}]{aula }\end{DoxyParamCaption})}
 
 Adiciona uma aula ao \mbox{\hyperlink{class_horario}{Horario}} 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em aula} & Objeto \mbox{\hyperlink{class_slot}{Slot}} com as informações relativas à aula \\
 \hline
 \end{DoxyParams}
@@ -92,7 +92,7 @@ Adiciona uma aula ao \mbox{\hyperlink{class_horario}{Horario}}
 \doxysubsubsection{\texorpdfstring{getaulas()}{getaulas()}}
 {\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ Horario\+::getaulas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna a lista com as datas e horas das aulas 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_aa074f0fdd3f8f4de68848d51b230be4f}\label{class_horario_aa074f0fdd3f8f4de68848d51b230be4f}} 
@@ -101,7 +101,7 @@ Retorna a lista com as datas e horas das aulas
 \doxysubsubsection{\texorpdfstring{getcodTurma()}{getcodTurma()}}
 {\footnotesize\ttfamily string Horario\+::getcod\+Turma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna o código da turma 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_ae9c239d9f5f40fad2428d786a1aba0db}\label{class_horario_ae9c239d9f5f40fad2428d786a1aba0db}} 
@@ -110,7 +110,7 @@ Retorna o código da turma
 \doxysubsubsection{\texorpdfstring{getcodUC()}{getcodUC()}}
 {\footnotesize\ttfamily string Horario\+::getcod\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna o código da UC 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_ad7e52996f4bb6282feba6d064c84b49c}\label{class_horario_ad7e52996f4bb6282feba6d064c84b49c}} 
@@ -119,7 +119,7 @@ Retorna o código da UC
 \doxysubsubsection{\texorpdfstring{getNumEstudantes()}{getNumEstudantes()}}
 {\footnotesize\ttfamily int Horario\+::get\+Num\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna o número de estudnates 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_a8ee4e91d85c755905e87ae8b7c140b72}\label{class_horario_a8ee4e91d85c755905e87ae8b7c140b72}} 
@@ -129,11 +129,11 @@ Retorna o número de estudnates
 {\footnotesize\ttfamily bool Horario\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horario}{Horario}}}]{horario }\end{DoxyParamCaption}) const}
 
 Função Override do operador \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em horario} & Objeto da classe \mbox{\hyperlink{class_horario}{Horario}} \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna true se o código da UC do primeiro Horário for menor do que o do segundo. Caso seja igual, o critério de desempate é o código da Turma. Retorna false em qualquer outro caso 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_acf4ae120f4206e0f36dbd44e2aa28793}\label{class_horario_acf4ae120f4206e0f36dbd44e2aa28793}} 
@@ -143,11 +143,11 @@ Retorna true se o código da UC do primeiro Horário for menor do que o do segun
 {\footnotesize\ttfamily bool Horario\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horario}{Horario}}}]{horario }\end{DoxyParamCaption}) const}
 
 Função Override do operador \textquotesingle{}==\textquotesingle{} 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em horario} & Objeto da classe \mbox{\hyperlink{class_horario}{Horario}} \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna true se o código da UC e o código da Turma forem iguais. Retorna false em qualquer outro caso 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_ac8fcf386fbdca6ad10368e9790f587a4}\label{class_horario_ac8fcf386fbdca6ad10368e9790f587a4}} 
@@ -157,13 +157,13 @@ Retorna true se o código da UC e o código da Turma forem iguais. Retorna false
 {\footnotesize\ttfamily void Horario\+::set\+Num\+Estudantes (\begin{DoxyParamCaption}\item[{int}]{num\+Estudantes }\end{DoxyParamCaption})}
 
 Método que define o número de estudantes 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em num\+Estudantes} & Número de estudantes que vai substituir o atributo antigo \\
 \hline
 \end{DoxyParams}
 
 
-\doxysubsection{Member Data Documentation}
+\doxysubsection{Documentação dos dados membro}
 \mbox{\Hypertarget{class_horario_adbe19f7082c8d6f9a24c1ea3dda444d3}\label{class_horario_adbe19f7082c8d6f9a24c1ea3dda444d3}} 
 \index{Horario@{Horario}!aulas@{aulas}}
 \index{aulas@{aulas}!Horario@{Horario}}
@@ -190,7 +190,7 @@ Código da UC \mbox{\Hypertarget{class_horario_adff6f7afe1c67c8f2dc0660a58eee56a
 
 Número de estudantes inscritos no par Uc/\+Turma 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
 \item 
 Horario.\+h\item 
 Horario.\+cpp\end{DoxyCompactItemize}

@@ -1,10 +1,10 @@
-\hypertarget{class_estudante}{}\doxysection{Estudante Class Reference}
+\hypertarget{class_estudante}{}\doxysection{Referência à classe Estudante}
 \label{class_estudante}\index{Estudante@{Estudante}}
 
 
 {\ttfamily \#include $<$Estudante.\+h$>$}
 
-\doxysubsection*{Public Member Functions}
+\doxysubsection*{Membros públicos}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_estudante_a2d3755fb0f3f050698c38762c006ebb8}{Estudante}} (int i, string j, list$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ k)
@@ -25,7 +25,7 @@ bool \mbox{\hyperlink{class_estudante_abca36ef9b07f7254adad21ada0279798}{ordem\+
 \item 
 bool \mbox{\hyperlink{class_estudante_ad6849897ead591d6b8ae8a116beb0e99}{ordem\+Numero\+Ucs}} (\mbox{\hyperlink{class_estudante}{Estudante}} student) const
 \end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
+\doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_estudante_a735af0d02144c4a93888ef0f8d5c8295}{codigo}}
@@ -36,10 +36,10 @@ list$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ \mbox{\hyperlink{class_
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
+\doxysubsection{Descrição detalhada}
 Esta classe pretende representar todos os estudantes inscritos 
 
-\doxysubsection{Constructor \& Destructor Documentation}
+\doxysubsection{Documentação dos Construtores \& Destrutor}
 \mbox{\Hypertarget{class_estudante_a2d3755fb0f3f050698c38762c006ebb8}\label{class_estudante_a2d3755fb0f3f050698c38762c006ebb8}} 
 \index{Estudante@{Estudante}!Estudante@{Estudante}}
 \index{Estudante@{Estudante}!Estudante@{Estudante}}
@@ -47,7 +47,7 @@ Esta classe pretende representar todos os estudantes inscritos
 {\footnotesize\ttfamily Estudante\+::\+Estudante (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{string}]{j,  }\item[{list$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$}]{k }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em i} & Código do \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline
 {\em j} & Nome do \mbox{\hyperlink{class_estudante}{Estudante}} \\
@@ -57,7 +57,7 @@ Esta classe pretende representar todos os estudantes inscritos
 \end{DoxyParams}
 
 
-\doxysubsection{Member Function Documentation}
+\doxysubsection{Documentação dos métodos}
 \mbox{\Hypertarget{class_estudante_a2ea5f364597ceaad7a2a9c8b4438c624}\label{class_estudante_a2ea5f364597ceaad7a2a9c8b4438c624}} 
 \index{Estudante@{Estudante}!addUCTurma@{addUCTurma}}
 \index{addUCTurma@{addUCTurma}!Estudante@{Estudante}}
@@ -65,7 +65,7 @@ Esta classe pretende representar todos os estudantes inscritos
 {\footnotesize\ttfamily void Estudante\+::add\+UCTurma (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}}]{turma }\end{DoxyParamCaption})}
 
 Adiciona a um estudante uma \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, sem qualquer restrição 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em turma} & Objeto da classe \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} (Turma a remover o \mbox{\hyperlink{class_estudante}{Estudante}}) \\
 \hline
 \end{DoxyParams}
@@ -76,11 +76,11 @@ Adiciona a um estudante uma \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, sem qu
 {\footnotesize\ttfamily bool Estudante\+::del\+UCTurma (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}}]{turma }\end{DoxyParamCaption})}
 
 Remove a um estudante uma \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, apenas com a restrição de ter de estar inscrito a essa mesma turma 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em turma} & Objeto da classe \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} (Turma a adicionar o \mbox{\hyperlink{class_estudante}{Estudante}}) \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna true, se for possível adicionar, retorna false em qualquer outro cado 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_a8de08f75b764a12acb8e680e3d96b6eb}\label{class_estudante_a8de08f75b764a12acb8e680e3d96b6eb}} 
@@ -89,7 +89,7 @@ Retorna true, se for possível adicionar, retorna false em qualquer outro cado
 \doxysubsubsection{\texorpdfstring{getcodigo()}{getcodigo()}}
 {\footnotesize\ttfamily int Estudante\+::getcodigo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna o número mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_af349c038976b3c5b7b2040fd1afcb18d}\label{class_estudante_af349c038976b3c5b7b2040fd1afcb18d}} 
@@ -98,7 +98,7 @@ Retorna o número mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}
 \doxysubsubsection{\texorpdfstring{gethorario()}{gethorario()}}
 {\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ Estudante\+::gethorario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna uma lista com todas as Uc\+Turmas às quais o \mbox{\hyperlink{class_estudante}{Estudante}} se encontra inscrito 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_ac5d969ae19de150afc5877646e16944f}\label{class_estudante_ac5d969ae19de150afc5877646e16944f}} 
@@ -107,7 +107,7 @@ Retorna uma lista com todas as Uc\+Turmas às quais o \mbox{\hyperlink{class_est
 \doxysubsubsection{\texorpdfstring{getnome()}{getnome()}}
 {\footnotesize\ttfamily string Estudante\+::getnome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna o nome do \mbox{\hyperlink{class_estudante}{Estudante}} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_a77d60561b7711a33e69275ceb69d08f3}\label{class_estudante_a77d60561b7711a33e69275ceb69d08f3}} 
@@ -117,11 +117,11 @@ Retorna o nome do \mbox{\hyperlink{class_estudante}{Estudante}}
 {\footnotesize\ttfamily bool Estudante\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_estudante}{Estudante}}}]{student }\end{DoxyParamCaption}) const}
 
 Função Override do operador \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em student} & Objeto da classe \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna true se o número do primeiro estudante for menor que o número do segundo. Retorna false em qualquer outro caso 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_abca36ef9b07f7254adad21ada0279798}\label{class_estudante_abca36ef9b07f7254adad21ada0279798}} 
@@ -131,11 +131,11 @@ Retorna true se o número do primeiro estudante for menor que o número do segun
 {\footnotesize\ttfamily bool Estudante\+::ordem\+Alfabética (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_estudante}{Estudante}}}]{student }\end{DoxyParamCaption}) const}
 
 Função de compração de dois objetos da classe estudante por ordem alfabética dos seus nomes 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em student} & Objeto da classe \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna true se o nome do primeiro estudante vier em primeiro, por ordem alfabética. Retorna false, caso o segundo estudante vier primeiro. Nos casos em que o nome é igual, usa o número mecanográfico como critério de desempate 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_ad6849897ead591d6b8ae8a116beb0e99}\label{class_estudante_ad6849897ead591d6b8ae8a116beb0e99}} 
@@ -145,16 +145,16 @@ Retorna true se o nome do primeiro estudante vier em primeiro, por ordem alfabé
 {\footnotesize\ttfamily bool Estudante\+::ordem\+Numero\+Ucs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_estudante}{Estudante}}}]{student }\end{DoxyParamCaption}) const}
 
 Função de comparação de dois objetos da classe estudante, por número de UC a que estãos inscritos 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em student} & Objeto da classe \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
+\begin{DoxyReturn}{Retorna}
 Retorna true se o primeiro estudante tiver menos unidades curriculares do que o segundo e false caso tenha mais. Caso estejam inscritos ao mesmo número de Uc\textquotesingle{}s, usa-\/se o número mecanográfico como critério de desempate 
 \end{DoxyReturn}
 
 
-\doxysubsection{Member Data Documentation}
+\doxysubsection{Documentação dos dados membro}
 \mbox{\Hypertarget{class_estudante_a735af0d02144c4a93888ef0f8d5c8295}\label{class_estudante_a735af0d02144c4a93888ef0f8d5c8295}} 
 \index{Estudante@{Estudante}!codigo@{codigo}}
 \index{codigo@{codigo}!Estudante@{Estudante}}
@@ -175,7 +175,7 @@ Lista de \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} às quais o estudante se e
 
 Nome do \mbox{\hyperlink{class_estudante}{Estudante}} 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
 \item 
 Estudante.\+h\item 
 Estudante.\+cpp\end{DoxyCompactItemize}
