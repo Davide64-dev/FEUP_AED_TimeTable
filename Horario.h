@@ -10,11 +10,25 @@
 #include "UcTurma.h"
 
 using namespace std;
-
+/**
+ * Esta classe pretende armazenar todas os pares Uc/Turma existentes, com o respetivo horário
+ */
 class Horario {
+    /**
+     * Código da UC
+     */
     string codUC;
+    /**
+     * Código da Tumra
+     */
     string codTurma;
+    /**
+     * Lista de Slot com as aulas de cada par Uc/Turma
+     */
     list<Slot> aulas;
+    /**
+     * Número de estudantes inscritos no par Uc/Turma
+     */
     int numEstudantes = 0;
 public:
     int getNumEstudantes() const;

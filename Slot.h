@@ -8,11 +8,25 @@
 #include <string>
 
 using namespace std;
-
+/**
+ * Esta classe pretende modular uma aula de um dado para Uc/Turma
+ */
 class Slot {
+    /**
+     * Hora a que a aula começa
+     */
     float horaini;
+    /**
+     * Duração da aula
+     */
     float duracao;
+    /**
+     * Dia da semana em que acontece a aula
+     */
     string diaDaSemana;
+    /**
+     * Tipo de aula (T, TP, PL, ...)
+     */
     string tipo;
 public:
     Slot(float horaini, float duracao, const string &diaDaSemana, const string &tipo);

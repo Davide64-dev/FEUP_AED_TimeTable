@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nome_0',['nome',['../class_estudante.html#a88e9686c33acacc73c18979a8d434355',1,'Estudante']]]
+  ['estudantes_0',['estudantes',['../class_gestor.html#a3e9d3bf33c41a929e93bab795ef0950d',1,'Gestor']]]
 ];
