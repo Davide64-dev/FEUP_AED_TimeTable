@@ -6,6 +6,9 @@ void u(Gestor gestor);
 void o (Gestor gestor);
 void h(Gestor gestor);
 void p(Gestor gestor);
+void r(Gestor gestor);
+void ra(Gestor gestor);
+void rp(Gestor gestor);
 void printOcupacao(vector<Horario> temp, Gestor gestor);
 bool compBynumEstudantes(Horario horario1, Horario horario2);
 
@@ -34,6 +37,9 @@ int main() {
         cout << "o - Ocupação de Turmas/UC" << "\n";
 
         cout << "" << "\n";
+        cout << "r - Pedidos" << "\n";
+
+        cout << "" << "\n";
         cout << "q - Sair" << "\n";
 
         cout << "" << "\n";
@@ -58,6 +64,11 @@ int main() {
 
         if (op == 'u'){
             u(gestor);
+
+        }
+
+        if (op == 'r'){
+            r(gestor);
 
         }
 
@@ -193,6 +204,104 @@ void u(Gestor gestor){
             op1 = 'q';
         }
     }
+}
+
+void r(Gestor gestor) {
+    char op = ' ';
+
+    while(op != 'q'){
+        cout << "" << '\n';
+        cout << "a - Adicionar pedido" << "\n";
+
+        cout << "" << "\n";
+        cout << "p - Processar pedido" << "\n";
+
+        cout << "" << "\n";
+        cout << "q - Sair" << "\n";
+
+        cout << "" << "\n";
+        cout << "?";
+
+        cin >> op;
+        cout << "" << "\n";
+
+        if (op == 'a')
+            ra(gestor);
+
+        if(op == 'p')
+            rp(gestor);
+
+    }
+}
+
+void ra(Gestor gestor) {
+    char op = ' ';
+    while(op != 'q') {
+        cout << "" << '\n';
+        cout << "a - Adicionar turma" << "\n";
+
+        cout << "" << "\n";
+        cout << "r - Remover turma" << "\n";
+
+        cout << "" << "\n";
+        cout << "c - Alterar turmas" << "\n";
+
+        cout << "" << "\n";
+        cout << "?";
+
+        cin >> op;
+        cout << "" << "\n";
+
+        if (op == 'a')
+            gestor.addPedidoAdd();
+        if (op == 'r')
+            gestor.addPedidoRem();
+        if (op == 'c')
+            gestor.addPedidoAlt();
+    }
+}
+
+void rp(Gestor gestor) {
+    gestor.printPedido();
+    if(gestor.getPedidos().empty()) return;
+    char op = ' ';
+    while(op != 'q' && !gestor.getPedidos().empty()){
+        cout << "" << '\n';
+        cout << "a - Aceitar" << "\n";
+
+        cout << "" << "\n";
+        cout << "q - Sair" << "\n";
+
+        cout << "" << "\n";
+        cout << "?";
+
+        cin >> op;
+        cout << "" << "\n";
+
+        if (op == 'a'){
+            if(!gestor.verifyPedido()) {
+                do {
+                    cout << "Pedido não cumpre os requesitos. Pretende rejeitar pedido?";
+                    cout << "" << '\n';
+                    cout << "r - Rejeitar" << "\n";
+                    cout << "" << "\n";
+                    cout << "a - Aceitar" << "\n";
+                    cout << "" << "\n";
+                    cout << "?";
+                    cin >> op;
+                    cout << "" << "\n";
+                    if (op == 'r') {
+                        gestor.rejeitarPedido();
+                    } else {
+                        gestor.aceitarPedido();
+                    }
+                }while(op != 'a' && op != 'r');
+            } else{
+                gestor.aceitarPedido();
+            }
+        }
+    }
+
 }
 
 bool compBynumEstudantes(Horario horario1, Horario horario2){

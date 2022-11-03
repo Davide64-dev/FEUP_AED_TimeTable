@@ -497,6 +497,86 @@ set<Estudante>::iterator Gestor::searchStudent(int code) {
     return estudantes.find(ghost);
 }
 
+void Gestor::printPedido() {
+    cout << '\n';
+    cout << "Aluno: " << pedidos.front().getcodigo_estudante() << '\n';
+    cout << "Tipo: " << pedidos.front().getTipo() << '\n';
+    if(pedidos.front().getTipo() != "Alter") {
+        cout << "Turma: " << pedidos.front().getTurmaR().front() << '\n';
+        cout << "UC: " << pedidos.front().getUCs().front() << '\n';
+    } else {
+        for(int i = 0; i < pedidos.front().getUCs().size(); i++) {
+            cout << "Turma: " << pedidos.front().getTurmaR().front();
+            cout << " -> " << pedidos.front().getTurmaA().front() << '\n';
+            cout << "UC: " << pedidos.front().getUCs().front() << '\n';
+        }
+    }
+
+}
+
+bool Gestor::verifyPedido() {
+    if(pedidos.front().getTipo() == "Add")
+        return verifyAdd();
+    if(pedidos.front().getTipo() == "Remove")
+        return verifyAlter();
+    return true;
+}
+
+bool Gestor::verifyAdd() {
+    int studentCode = pedidos.front().getcodigo_estudante();
+    string uc = pedidos.front().getUCs().front();
+    string turma = pedidos.front().getTurmaA().front();
+    auto studentIt = searchStudent(studentCode);
+    Estudante student(*studentIt);
+    student.addUCTurma(UcTurma(uc, turma));
+    list<UcTurma> turmas = student.gethorario();
+    list<Horario> studentHor = getHorario(turmas);
+    return verifyOverlap(studentHor) && verifyCap();
+}
+
+bool Gestor::verifyAlter() {
+    int studentCode = pedidos.front().getcodigo_estudante();
+    vector<string> uCs = pedidos.front().getUCs();
+    vector<string> turmaR = pedidos.front().getTurmaR();
+    vector<string> turmaA = pedidos.front().getTurmaA();
+
+    auto studentIt = searchStudent(studentCode);
+    Estudante student(*studentIt);
+
+    for(int i = 0; i < uCs.size(); i++) {
+        string uc = uCs.at(i);
+        string turmaRem = turmaR.at(i);
+        string turmaAdd = turmaA.at(i);
+
+        student.addUCTurma(UcTurma(uc, turmaAdd));
+        student.delUCTurma(UcTurma(uc, turmaRem));
+    }
+
+    list<UcTurma> turmas = student.gethorario();
+    list<Horario> studentHor = getHorario(turmas);
+    return verifyOverlap(studentHor) && verifyCap();
+}
+
+void Gestor::rejeitarPedido() {
+    arquivar(false);
+    pedidos.pop();
+}
+
+void Gestor::aceitarPedido() {
+    arquivar(true);
+    if(pedidos.front().getTipo() == "Add"){
+        pedidoAdd();
+        return;
+    }
+    if(pedidos.front().getTipo() == "Remove") {
+        pedidoRemove();
+        return;
+    }
+    if(pedidos.front().getTipo() == "Alter") {
+        pedidoAlter();
+    }
+}
+
 /**
  * Processa os pedidos de adicionar um aluno a uma UC/Turma.
  * Verifica se o novo horario cumpre as condiçoes
@@ -510,13 +590,10 @@ void Gestor::pedidoAdd() {
     auto studentIt = searchStudent(studentCode);
     Estudante student(*studentIt);
     student.addUCTurma(UcTurma(uc, turma));
-    list<UcTurma> turmas = student.gethorario();
-    list<Horario> studentHor = getHorario(turmas);
-    if(verifyOverlap(studentHor) && verifyCap()){
-        estudantes.erase(studentIt);
-        estudantes.insert(student);
-    }
+    estudantes.erase(studentIt);
+    estudantes.insert(student);
 }
+
 /**
  * Processa os pedidos de remoção do aluno de uma UC/Turma
  */
@@ -530,7 +607,6 @@ void Gestor::pedidoRemove() {
     student.delUCTurma(UcTurma(uc, turma));
     estudantes.erase(studentIt);
     estudantes.insert(student);
-
 }
 
 /**
@@ -555,12 +631,8 @@ void Gestor::pedidoAlter() {
         student.delUCTurma(UcTurma(uc, turmaRem));
     }
 
-    list<UcTurma> turmas = student.gethorario();
-    list<Horario> studentHor = getHorario(turmas);
-    if(verifyOverlap(studentHor) && verifyCap()){
-        estudantes.erase(studentIt);
-        estudantes.insert(student);
-    }
+    estudantes.erase(studentIt);
+    estudantes.insert(student);
 }
 
 /**

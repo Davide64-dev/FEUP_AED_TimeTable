@@ -62,14 +62,21 @@ public:
     void pedidoAlter();
     set<Estudante>::iterator searchStudent(int code);
     list<Horario> getHorario(list<UcTurma> turmas);
-
     bool verifyOverlap(list<Horario> horario);
-
     void filterTP(list<Slot> &horario);
-
     list<Slot> getSlots(list<Horario> horario);
-
     bool verifyCap();
+    void printPedido();
+    bool verifyPedido();
+    bool verifyAdd();
+    bool verifyAlter();
+    void rejeitarPedido();
+    void aceitarPedido();
+    void arquivar(bool aceite);
+    void addPedidoAdd();
+    void addPedidoRem();
+    void addPedidoAlt();
+
 };
 
 
