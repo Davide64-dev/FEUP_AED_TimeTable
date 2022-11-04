@@ -223,7 +223,7 @@ void Gestor::fillNumEstudantes() {
  * @param codTurma Código da Turma
  * @return Número de estudantes que têm essa unidade curricular
  */
-int Gestor::countStudents(string codUC, string codTurma) {
+int Gestor::countStudents(const string& codUC, const string& codTurma) {
     int count = 0;
     for(const Estudante& student : estudantes) {
         if(studentInClass(student, codUC, codTurma)) {
@@ -240,7 +240,7 @@ int Gestor::countStudents(string codUC, string codTurma) {
  * @param codTurma Código da Turma
  * @return Retorna true se o estudante estiver inscrito na turma e false em qualquer outro caso
  */
-bool Gestor::studentInClass(Estudante student, string codUC, string codTurma) {
+bool Gestor::studentInClass(const Estudante& student, const string& codUC, string codTurma) {
     for(const UcTurma& ucTurma : student.gethorario()) {
         if(ucTurma.getcodUC() == codUC && ucTurma.getcodTurma() == codTurma) {
             return true;
@@ -362,8 +362,8 @@ void Gestor::HorariodoEstudante(int numero){
  * @param vetor Vetor de pair<Slot, Turma> (já ordenado)
  * @param cadeiras Mapa para fazer corresponder o código da UC ao seu nome
  */
-void Gestor::printHorario(vector<pair<Slot, UcTurma>> vetor, map<string, string> cadeiras){
-    for (pair<Slot, UcTurma> i : vetor){
+void Gestor::printHorario(const vector<pair<Slot, UcTurma>>& vetor, map<string, string> cadeiras){
+    for (const pair<Slot, UcTurma>& i : vetor){
         cout << i.first.gethoraini() << "-" << i.first.getduaracao() + i.first.gethoraini()
              << " -> " << i.first.gettipo() << " - " << cadeiras[i.second.getcodUC()] << "(" <<
              i.second.getcodUC() << ")" << " - "<<  i.second.getcodTurma() << "\n";
@@ -377,7 +377,7 @@ void Gestor::printHorario(vector<pair<Slot, UcTurma>> vetor, map<string, string>
  * @param turma Objeto da classe UcTurma
  * @return Objeto da classe Horario
  */
-Horario Gestor::getHorariobyUcTurma(UcTurma turma){
+Horario Gestor::getHorariobyUcTurma(const UcTurma& turma){
     list<Slot> lista;
     Horario temp = Horario(turma.getcodUC(), turma.getcodTurma(), lista);
     std::vector<int>::iterator it;
@@ -385,7 +385,7 @@ Horario Gestor::getHorariobyUcTurma(UcTurma turma){
     int high= horario.size()-1;
     int middle;
     while (low < high){
-        int middle = low + (high - low) / 2;
+        middle = low + (high - low) / 2;
         if (horario[middle] < temp) low = middle+1;
         else high = middle;
     }
@@ -722,9 +722,9 @@ void Gestor::pedidoAlter() {
  * @param turmas lista com todas as UcTurma
  * @return lista com todas os Horario homólogos à UcTurma
  */
-list<Horario> Gestor::getHorario(list<UcTurma> turmas) {
+list<Horario> Gestor::getHorario(const list<UcTurma>& turmas) {
     list<Horario> hor;
-    for(UcTurma ucTurma : turmas) {
+    for(const UcTurma& ucTurma : turmas) {
         hor.push_back(getHorariobyUcTurma(ucTurma));
     }
     return hor;
@@ -744,7 +744,7 @@ bool Gestor::verifyCap() {
  * @param horario A lista de Horario a verificar
  * @return Falso se houver sobreposição, verdadeiro em qualquer outro caso
  */
-bool Gestor::verifyOverlap(list<Horario> horario)  {
+bool Gestor::verifyOverlap(const list<Horario>& horario)  {
     list<Slot> slots = getSlots(horario);
     filterTP(slots);
     for(auto it1 = slots.begin(); it1 != slots.end(); it1++) {
@@ -767,7 +767,7 @@ bool Gestor::verifyOverlap(list<Horario> horario)  {
  * @param horario Lista de objetos Horario
  * @return Lista com todos os Slot contidos em cada objeto Horario na lista passada por parâmetro
  */
-list<Slot> Gestor::getSlots(list<Horario> horario) {
+list<Slot> Gestor::getSlots(const list<Horario>& horario) {
     list<Slot> slots;
     for(const Horario& hor : horario) {
         for(const Slot& slot : hor.getaulas()) {
@@ -781,7 +781,7 @@ list<Slot> Gestor::getSlots(list<Horario> horario) {
  * Retira slots que não correspondam a aulas TP
  * @param horario lista de Slot (associado a uma UC)
  */
-void Gestor::filterTP(list<Slot> &horario) {
+void Gestor::filterTP(list<Slot>& horario) {
     auto it = horario.begin();
     while(it != horario.end()) {
         if(it->gettipo() != "TP") {

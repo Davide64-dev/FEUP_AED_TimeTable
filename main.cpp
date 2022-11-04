@@ -9,8 +9,8 @@ void p(Gestor &gestor);
 void r(Gestor &gestor);
 void ra(Gestor &gestor);
 void rp(Gestor &gestor);
-void printOcupacao(vector<Horario> temp, Gestor gestor);
-bool compBynumEstudantes(Horario horario1, Horario horario2);
+void printOcupacao(const vector<Horario>& temp, Gestor gestor);
+bool compBynumEstudantes(const Horario& horario1, const Horario& horario2);
 
 int main() {
 
@@ -142,9 +142,9 @@ void o(Gestor &gestor){
     }
 }
 
-void printOcupacao(vector<Horario> temp, Gestor gestor){
+void printOcupacao(const vector<Horario>& temp, Gestor gestor){
     cout << "Codigo UC|Nome Uc|Código Turma|Número de Estudantes" << "\n";
-    for (Horario hor : temp){
+    for (const Horario& hor : temp){
         cout << hor.getcodUC() << "|" << gestor.cadeiras[hor.getcodUC()] << "|" <<
              hor.getcodTurma() << "|" << hor.getNumEstudantes() << "\n";
     }
@@ -323,7 +323,7 @@ void rp(Gestor &gestor) {
 
 }
 
-bool compBynumEstudantes(Horario horario1, Horario horario2){
+bool compBynumEstudantes(const Horario& horario1, const Horario& horario2){
 
     if (horario1.getNumEstudantes() == horario2.getNumEstudantes()){
         if (horario1.getcodUC() == horario2.getcodUC()){
