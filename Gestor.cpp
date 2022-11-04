@@ -506,9 +506,9 @@ void Gestor::printPedido() {
         cout << "UC: " << pedidos.front().getUCs().front() << '\n';
     } else {
         for(int i = 0; i < pedidos.front().getUCs().size(); i++) {
-            cout << "Turma: " << pedidos.front().getTurmaR().front();
-            cout << " -> " << pedidos.front().getTurmaA().front() << '\n';
-            cout << "UC: " << pedidos.front().getUCs().front() << '\n';
+            cout << "Turma: " << pedidos.front().getTurmaR().at(i);
+            cout << " -> " << pedidos.front().getTurmaA().at(i) << '\n';
+            cout << "UC: " << pedidos.front().getUCs().at(i) << '\n';
         }
     }
 
@@ -564,17 +564,85 @@ void Gestor::rejeitarPedido() {
 
 void Gestor::aceitarPedido() {
     arquivar(true);
-    if(pedidos.front().getTipo() == "Add"){
+    if(pedidos.front().getTipo() == "Add")
         pedidoAdd();
-        return;
-    }
-    if(pedidos.front().getTipo() == "Remove") {
+    if(pedidos.front().getTipo() == "Remove")
         pedidoRemove();
-        return;
-    }
-    if(pedidos.front().getTipo() == "Alter") {
+    if(pedidos.front().getTipo() == "Alter")
         pedidoAlter();
+    pedidos.pop();
+}
+
+void Gestor::addPedidoAdd() {
+    int codigo_estudante;
+    string turmaA;
+    string uC;
+    cout << '\n';
+    cout << "Codigo de estudante: ";
+    cin >> codigo_estudante;
+    cout << '\n';
+    cout << "UC: ";
+    cin >> uC;
+    cout << '\n';
+    cout << "Turma: ";
+    cin >> turmaA;
+    cout << '\n';
+    pedidos.push(Pedido("Add", codigo_estudante, turmaA, uC));
+}
+
+void Gestor::addPedidoRem() {
+    int codigo_estudante;
+    string turmaR;
+    string uC;
+    cout << '\n';
+    cout << "Codigo de estudante: ";
+    cin >> codigo_estudante;
+    cout << '\n';
+    cout << "UC: ";
+    cin >> uC;
+    cout << '\n';
+    cout << "Turma: ";
+    cin >> turmaR;
+    cout << '\n';
+    pedidos.push(Pedido("Remove", codigo_estudante, turmaR, uC));
+}
+
+void Gestor::addPedidoAlt() {
+    int codigo_estudante;
+    string turmaA;
+    string turmaR;
+    vector<string> turmasA;
+    vector<string> turmasR;
+    vector<string> uCs;
+    string uC;
+    char op = ' ';
+    cout << '\n';
+    cout << "Codigo de estudante: ";
+    cin >> codigo_estudante;
+    while(op != 'q') {
+        cout << '\n';
+        cout << "UC: ";
+        cin >> uC;
+        cout << '\n';
+        cout << "Turma anitga: ";
+        cin >> turmaA;
+        cout << '\n';
+        cout << "Turma nova: ";
+        cin >> turmaR;
+        cout << '\n';
+        turmasA.push_back(turmaA);
+        turmasR.push_back(turmaR);
+        uCs.push_back(uC);
+        cout << '\n' << "Digite 'q' se tiver concluido pedido, 's' se quiser continuar" << '\n';
+        cout << "?";
+        cin >> op;
+        cout << "\n";
     }
+    pedidos.push(Pedido("Alter", codigo_estudante, turmasR, turmasA, uCs));
+}
+
+void Gestor::arquivar(bool aceite) {
+    string estado = aceite ? "Aceite" : "Rejeitado";
 }
 
 /**
@@ -588,6 +656,7 @@ void Gestor::pedidoAdd() {
     string turma = pedidos.front().getTurmaA().front();
 
     auto studentIt = searchStudent(studentCode);
+    if(studentIt == estudantes.end()) return;
     Estudante student(*studentIt);
     student.addUCTurma(UcTurma(uc, turma));
     estudantes.erase(studentIt);
@@ -603,6 +672,7 @@ void Gestor::pedidoRemove() {
     string turma = pedidos.front().getTurmaR().front();
 
     auto studentIt = searchStudent(studentCode);
+    if(studentIt == estudantes.end()) return;
     Estudante student(*studentIt);
     student.delUCTurma(UcTurma(uc, turma));
     estudantes.erase(studentIt);
@@ -620,6 +690,7 @@ void Gestor::pedidoAlter() {
     vector<string> turmaA = pedidos.front().getTurmaA();
 
     auto studentIt = searchStudent(studentCode);
+    if(studentIt == estudantes.end()) return;
     Estudante student(*studentIt);
 
     for(int i = 0; i < uCs.size(); i++) {

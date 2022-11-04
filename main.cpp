@@ -2,13 +2,13 @@
 #include "UcTurma.h"
 #include "Gestor.h"
 #include <algorithm>
-void u(Gestor gestor);
-void o (Gestor gestor);
-void h(Gestor gestor);
-void p(Gestor gestor);
-void r(Gestor gestor);
-void ra(Gestor gestor);
-void rp(Gestor gestor);
+void u(Gestor &gestor);
+void o (Gestor &gestor);
+void h(Gestor &gestor);
+void p(Gestor &gestor);
+void r(Gestor &gestor);
+void ra(Gestor &gestor);
+void rp(Gestor &gestor);
 void printOcupacao(vector<Horario> temp, Gestor gestor);
 bool compBynumEstudantes(Horario horario1, Horario horario2);
 
@@ -76,7 +76,7 @@ int main() {
     return 0;
 }
 
-void p(Gestor gestor){
+void p(Gestor &gestor){
     int num;
     string temp = "=====================================";
     cout << "Inserir Número Mecanográfico: ";
@@ -86,7 +86,7 @@ void p(Gestor gestor){
     cout << temp << "\n";
 }
 
-void h(Gestor gestor){
+void h(Gestor &gestor){
     int num;
     string temp = "=====================================";
     cout << "Inserir Número Mecanográfico: ";
@@ -97,7 +97,7 @@ void h(Gestor gestor){
 }
 
 
-void o(Gestor gestor){
+void o(Gestor &gestor){
     char op1 = ' ';
     while(op1 != 'q') {
         cout << "   u - Ordenação por UC" << "\n";
@@ -150,7 +150,7 @@ void printOcupacao(vector<Horario> temp, Gestor gestor){
     }
 }
 
-void u(Gestor gestor){
+void u(Gestor &gestor){
     char op1 = ' ';
     while(op1 != 'q') {
         //cout << "" << '\n';
@@ -206,7 +206,7 @@ void u(Gestor gestor){
     }
 }
 
-void r(Gestor gestor) {
+void r(Gestor &gestor) {
     char op = ' ';
 
     while(op != 'q'){
@@ -234,7 +234,7 @@ void r(Gestor gestor) {
     }
 }
 
-void ra(Gestor gestor) {
+void ra(Gestor &gestor) {
     char op = ' ';
     while(op != 'q') {
         cout << "" << '\n';
@@ -245,6 +245,9 @@ void ra(Gestor gestor) {
 
         cout << "" << "\n";
         cout << "c - Alterar turmas" << "\n";
+
+        cout << "" << "\n";
+        cout << "q - Voltar" << "\n";
 
         cout << "" << "\n";
         cout << "?";
@@ -261,16 +264,24 @@ void ra(Gestor gestor) {
     }
 }
 
-void rp(Gestor gestor) {
-    gestor.printPedido();
-    if(gestor.getPedidos().empty()) return;
+void rp(Gestor &gestor) {
+    if(gestor.getPedidos().empty()) {
+        cout << "" << '\n';
+        cout << "Sem pedidos!" << '\n';
+        return;
+    }
     char op = ' ';
     while(op != 'q' && !gestor.getPedidos().empty()){
+        gestor.printPedido();
+
         cout << "" << '\n';
         cout << "a - Aceitar" << "\n";
 
+        cout << "" << '\n';
+        cout << "r - Rejeitar" << "\n";
+
         cout << "" << "\n";
-        cout << "q - Sair" << "\n";
+        cout << "q - Voltar" << "\n";
 
         cout << "" << "\n";
         cout << "?";
@@ -280,6 +291,7 @@ void rp(Gestor gestor) {
 
         if (op == 'a'){
             if(!gestor.verifyPedido()) {
+                char op1 = ' ';
                 do {
                     cout << "Pedido não cumpre os requesitos. Pretende rejeitar pedido?";
                     cout << "" << '\n';
@@ -287,19 +299,25 @@ void rp(Gestor gestor) {
                     cout << "" << "\n";
                     cout << "a - Aceitar" << "\n";
                     cout << "" << "\n";
-                    cout << "?";
-                    cin >> op;
+                    cout << "q - Abortar" << "\n";
                     cout << "" << "\n";
-                    if (op == 'r') {
+                    cout << "?";
+                    cin >> op1;
+                    cout << "" << "\n";
+                    if (op1 == 'r') {
                         gestor.rejeitarPedido();
-                    } else {
+                    if (op1 == 'a')
                         gestor.aceitarPedido();
                     }
-                }while(op != 'a' && op != 'r');
+                }while(op1 != 'a' && op1 != 'r' && op1 != 'q');
             } else{
                 gestor.aceitarPedido();
             }
         }
+        if (op == 'r')
+            gestor.rejeitarPedido();
+
+        // Caos em que fica vazio
     }
 
 }
