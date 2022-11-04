@@ -44,6 +44,7 @@ public:
     void readEstudantes();
     void readHorarios();
     void readAulas();
+    void readPedidos();
     void fillNumEstudantes();
     int countStudents(const string& codUC, const string& codTurma);
     bool studentInClass(const Estudante& student, const string& codUC, string codTurma);
@@ -79,6 +80,8 @@ public:
     void writeEstudantes();
     void writePedidosPendentes();
     static string VectorintoString(vector<string> vetor);
+    static vector<string> StringintoVectorClassCode(string conjunto);
+    static vector<string> StringintoVectorUcCode(string conjunto);
     bool verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<UcTurma> toRem);
     bool containsUC(const Horario& horario, vector<UcTurma>& ucTurmas);
 };

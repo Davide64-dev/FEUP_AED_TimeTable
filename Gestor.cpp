@@ -208,6 +208,74 @@ void Gestor::readAulas() {
     }
     in.close();
 }
+
+void Gestor::readPedidos(){
+    vector<string> lineV(4);
+    ifstream in("../schedule/pendentes.csv");
+    int codEstudante;
+    string tipo, turmaR, turmaA, Uc;
+
+    string line, word;
+
+    getline(in, line);
+    while(getline(in, line)){
+        lineV.clear();
+        istringstream iss(line);
+        while (getline(iss, word, ',')){
+            lineV.push_back(word);
+        }
+        tipo = lineV[0];
+        codEstudante = stoi(lineV[1]);
+        turmaR = lineV[2];
+        turmaA = lineV[3];
+        Uc = lineV[4];
+
+        if (!Uc.empty() && Uc[Uc.size() - 1] == '\r')
+            Uc.erase(Uc.size() - 1);
+
+        if (tipo == "Alter"){
+            vector<string> turmaRVetor = StringintoVectorClassCode(turmaR);
+            vector<string> turmaAVetor = StringintoVectorClassCode(turmaA);
+            vector<string> UcVetor = StringintoVectorUcCode(Uc);
+            Pedido pedido = Pedido(tipo, codEstudante, turmaRVetor, turmaAVetor, UcVetor);
+            pedidos.push(pedido);
+        }
+
+        else if (tipo == "Remove"){
+            Pedido pedido = Pedido(tipo, codEstudante, turmaR, Uc);
+            pedidos.push(pedido);
+        }
+
+        else{
+            Pedido pedido = Pedido(tipo, codEstudante, turmaA, Uc);
+            pedidos.push(pedido);
+        }
+
+
+    }
+
+}
+
+vector<string> Gestor::StringintoVectorClassCode(std::string conjunto) {
+    vector <string> retorno;
+    unsigned length = conjunto.size();
+    for(unsigned i = 0; i < length; i+=8){
+        string classcode = conjunto.substr(i, 7);
+        retorno.push_back(classcode);
+    }
+    return retorno;
+}
+
+vector<string> Gestor::StringintoVectorUcCode(std::string conjunto) {
+    vector <string> retorno;
+    unsigned length = conjunto.size();
+    for(unsigned i = 0; i < length; i+=9){
+        string classcode = conjunto.substr(i, 8);
+        retorno.push_back(classcode);
+    }
+    return retorno;
+}
+
 /**
  * Adiciona à classe Horario o atributo com o número de estudantes inscritos numa UcTurma
  */
@@ -783,13 +851,13 @@ void Gestor::writePedidosPendentes(){
 
 string Gestor::VectorintoString(vector<std::string> vetor) {
     int length = vetor.size();
-    string temp = "(";
+    string temp = "";
     for (unsigned i = 0; i < length-1; i++){
         temp = temp + vetor[i];
-        temp = temp + ",";
+        temp = temp + "/";
     }
     temp = temp + vetor[length-1];
-    temp = temp +  ")";
+    temp = temp +  "";
     return temp;
 }
 

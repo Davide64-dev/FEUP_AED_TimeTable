@@ -20,6 +20,7 @@ int main() {
     gestor.readEstudantes();
     gestor.fillNumEstudantes();
     gestor.setMap();
+    gestor.readPedidos();
 
     char op = ' ';
 
@@ -81,6 +82,7 @@ int main() {
         }
 
     }
+    //gestor.writeEstudantes();
     gestor.writePedidosPendentes();
 
     return 0;
