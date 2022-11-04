@@ -70,6 +70,13 @@ void Horario::setNumEstudantes(int numEstudantes) {
     Horario::numEstudantes = numEstudantes;
 }
 
+void Horario::incrementS() {
+    numEstudantes++;
+}
+
+void Horario::decrementS() {
+    numEstudantes--;
+}
 /**
  * Função Override do operador '<'
  * @param horario Objeto da classe Horario

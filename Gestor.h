@@ -77,6 +77,7 @@ public:
     void addPedidoRem();
     void addPedidoAlt();
     void writeEstudantes();
+    bool verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<UcTurma> toRem);
 
 };
 

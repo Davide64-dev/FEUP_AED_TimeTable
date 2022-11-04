@@ -519,12 +519,17 @@ bool Gestor::verifyAdd() {
     int studentCode = pedidos.front().getcodigo_estudante();
     string uc = pedidos.front().getUCs().front();
     string turma = pedidos.front().getTurmaR().front();
+    UcTurma ucTurma = UcTurma(uc, turma);
     auto studentIt = searchStudent(studentCode);
     Estudante student(*studentIt);
-    student.addUCTurma(UcTurma(uc, turma));
+    student.addUCTurma(ucTurma);
     list<UcTurma> turmas = student.gethorario();
     list<Horario> studentHor = getHorario(turmas);
-    return verifyOverlap(studentHor) && verifyCap();
+    vector<Horario> temp(horario);
+    vector<UcTurma> toAdd(1, ucTurma);
+    vector<UcTurma> toRem;
+
+    return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem);
 }
 
 bool Gestor::verifyAlter() {
@@ -536,18 +541,24 @@ bool Gestor::verifyAlter() {
     auto studentIt = searchStudent(studentCode);
     Estudante student(*studentIt);
 
+    vector<Horario> temp(horario);
+    vector<UcTurma> toAdd;
+    vector<UcTurma> toRem;
+
     for(int i = 0; i < uCs.size(); i++) {
         string uc = uCs.at(i);
         string turmaRem = turmaR.at(i);
         string turmaAdd = turmaA.at(i);
 
         student.addUCTurma(UcTurma(uc, turmaAdd));
+        toAdd.emplace_back(uc, turmaAdd);
         student.delUCTurma(UcTurma(uc, turmaRem));
+        toRem.emplace_back(uc, turmaAdd);
     }
 
     list<UcTurma> turmas = student.gethorario();
     list<Horario> studentHor = getHorario(turmas);
-    return verifyOverlap(studentHor) && verifyCap();
+    return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem);
 }
 
 void Gestor::rejeitarPedido() {
@@ -699,10 +710,16 @@ void Gestor::arquivar(bool aceite) {
 void Gestor::pedidoAdd() {
     int studentCode = pedidos.front().getcodigo_estudante();
     string uc = pedidos.front().getUCs().front();
-    string turma = pedidos.front().getTurmaA().front();
+    string turma = pedidos.front().getTurmaR().front();
 
     auto studentIt = searchStudent(studentCode);
     if(studentIt == estudantes.end()) return;
+    for(Horario& hor : horario) {
+        if(hor.getcodTurma() == turma && hor.getcodUC() == uc){
+            hor.incrementS();
+            break;
+        }
+    }
     Estudante student(*studentIt);
     student.addUCTurma(UcTurma(uc, turma));
     estudantes.erase(studentIt);
@@ -719,6 +736,12 @@ void Gestor::pedidoRemove() {
 
     auto studentIt = searchStudent(studentCode);
     if(studentIt == estudantes.end()) return;
+    for(Horario& hor : horario) {
+        if(hor.getcodTurma() == turma && hor.getcodUC() == uc){
+            hor.decrementS();
+            break;
+        }
+    }
     Estudante student(*studentIt);
     student.delUCTurma(UcTurma(uc, turma));
     estudantes.erase(studentIt);
@@ -743,6 +766,12 @@ void Gestor::pedidoAlter() {
         string uc = uCs.at(i);
         string turmaRem = turmaR.at(i);
         string turmaAdd = turmaA.at(i);
+        for(Horario& hor : horario) {
+            if(hor.getcodTurma() == turmaRem && hor.getcodUC() == uc)
+                hor.decrementS();
+            if(hor.getcodTurma() == turmaAdd && hor.getcodUC() == uc)
+                hor.incrementS();
+        }
 
         student.addUCTurma(UcTurma(uc, turmaAdd));
         student.delUCTurma(UcTurma(uc, turmaRem));
@@ -842,3 +871,10 @@ void Gestor::filterTP(list<Slot>& horario) {
         }
     }
 }
+
+bool Gestor::verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<UcTurma> toRem){
+    //for(Horario& hor : horario) {}
+    return true;
+}
+
+
