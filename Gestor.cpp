@@ -964,8 +964,27 @@ void Gestor::filterTP(list<Slot>& horario) {
 }
 
 bool Gestor::verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<UcTurma> toRem){
-    //for(Horario& hor : horario) {}
+    for(Horario& hor : horario) {
+        if(containsUC(hor, toAdd)) hor.incrementS();
+        if(containsUC(hor, toRem)) hor.decrementS();
+    }
+
+    //testar cap
+    //testar diferenca
+
     return true;
+}
+
+bool Gestor::containsUC(const Horario& horario, vector<UcTurma>& ucTurmas) {
+    auto it = ucTurmas.begin();
+    while (it != ucTurmas.end()) {
+        if(it->getcodUC() == horario.getcodUC() && it->getcodTurma() == horario.getcodTurma()) {
+            ucTurmas.erase(it);
+            return true;
+        }
+        it++;
+    }
+    return false;
 }
 
 

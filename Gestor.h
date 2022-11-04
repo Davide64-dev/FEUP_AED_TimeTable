@@ -80,6 +80,7 @@ public:
     void writePedidosPendentes();
     static string VectorintoString(vector<string> vetor);
     bool verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<UcTurma> toRem);
+    bool containsUC(const Horario& horario, vector<UcTurma>& ucTurmas);
 };
 
 
