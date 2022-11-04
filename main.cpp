@@ -317,7 +317,8 @@ void rp(Gestor &gestor) {
         if (op == 'r')
             gestor.rejeitarPedido();
 
-        // Caos em que fica vazio
+        if(gestor.getPedidos().empty())
+            cout << "Sem pedidos!";
     }
 
 }

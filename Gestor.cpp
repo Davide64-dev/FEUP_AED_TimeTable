@@ -468,13 +468,6 @@ void Gestor::maisNUcs(int n){
 }
 
 
- //* Processa os pedidos até a queue ficar vazia.
- //* TODO Criar caso em que os pedidos não são satisfeitos -> Meter no registo
- //* TODO pedidos retornarem V/F
-
-/**
- * Pocessa os pedidos até a fila ficar vazia
- */
 void Gestor::processPedidos() {
     while(!pedidos.empty()) {
         if(pedidos.front().getTipo() == "Add") pedidoAdd();
@@ -517,7 +510,7 @@ void Gestor::printPedido() {
 bool Gestor::verifyPedido() {
     if(pedidos.front().getTipo() == "Add")
         return verifyAdd();
-    if(pedidos.front().getTipo() == "Remove")
+    if(pedidos.front().getTipo() == "Alter")
         return verifyAlter();
     return true;
 }
@@ -525,7 +518,7 @@ bool Gestor::verifyPedido() {
 bool Gestor::verifyAdd() {
     int studentCode = pedidos.front().getcodigo_estudante();
     string uc = pedidos.front().getUCs().front();
-    string turma = pedidos.front().getTurmaA().front();
+    string turma = pedidos.front().getTurmaR().front();
     auto studentIt = searchStudent(studentCode);
     Estudante student(*studentIt);
     student.addUCTurma(UcTurma(uc, turma));
@@ -643,6 +636,23 @@ void Gestor::addPedidoAlt() {
 
 void Gestor::arquivar(bool aceite) {
     string estado = aceite ? "Aceite" : "Rejeitado";
+    string tipo = pedidos.front().getTipo();
+    int cod = pedidos.front().getcodigo_estudante();
+    vector<string> turmaR = pedidos.front().getTurmaR();
+    vector<string> turmaA = pedidos.front().getTurmaA();
+    vector<string> ucs = pedidos.front().getUCs();
+    ofstream file("../schedule/arquivo.csv");
+    if(tipo == "Add") {
+        file << estado << ',' << cod << ',' << "" << ',' << turmaR.front() << ',' << ucs.front() << endl;
+    }
+    if(tipo == "Remove") {
+        file << estado << ',' << cod << ',' << turmaR.front() << ',' << "" << ',' << ucs.front() << endl;
+    }
+    if(tipo == "Add") {
+        for(int i = 0; i < ucs.size(); i++) {
+            file << estado << ',' << cod << ',' << turmaR.at(i) << ',' << turmaR.at(i) << ',' << ucs.at(i) << endl;
+        }
+    }
 }
 
 /**
