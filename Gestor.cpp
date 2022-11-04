@@ -574,13 +574,24 @@ void Gestor::addPedidoAdd() {
     cout << "Codigo de estudante: ";
     cin >> codigo_estudante;
     cout << '\n';
-    cout << "UC: ";
-    cin >> uC;
-    cout << '\n';
-    cout << "Turma: ";
-    cin >> turmaA;
-    cout << '\n';
-    pedidos.push(Pedido("Add", codigo_estudante, turmaA, uC));
+    if (searchStudent(codigo_estudante) == estudantes.end()) {
+        cout << "Estudante não inscrito" << "\n";
+    } else {
+        cout << "UC: ";
+        cin >> uC;
+        cout << '\n';
+        cout << "Turma: ";
+        cin >> turmaA;
+        cout << '\n';
+        list<Slot> temp;
+        Horario teste = Horario(uC, turmaA, temp);
+        if(find(horario.begin(), horario.end(), teste) == horario.end()) {
+            cout << "Par UC/Turma não existente" << "\n";
+        }else{
+            pedidos.push(Pedido("Add", codigo_estudante, turmaA, uC));
+            cout << "Pedido adicionado com sucesso" << "\n";
+        }
+    }
 }
 
 void Gestor::addPedidoRem() {
@@ -591,13 +602,25 @@ void Gestor::addPedidoRem() {
     cout << "Codigo de estudante: ";
     cin >> codigo_estudante;
     cout << '\n';
-    cout << "UC: ";
-    cin >> uC;
-    cout << '\n';
-    cout << "Turma: ";
-    cin >> turmaR;
-    cout << '\n';
-    pedidos.push(Pedido("Remove", codigo_estudante, turmaR, uC));
+    if (searchStudent(codigo_estudante) == estudantes.end()){
+        cout << "Estudante não inscrito" << "\n";
+    }else {
+        cout << "UC: ";
+        cin >> uC;
+        cout << '\n';
+        cout << "Turma: ";
+        cin >> turmaR;
+        cout << '\n';
+        list<Slot> temp;
+        Horario teste = Horario(uC, turmaR, temp);
+        if (find(horario.begin(), horario.end(), teste) == horario.end()){
+            cout << "Par UC/Turma não existente" << "\n";
+        }else {
+            pedidos.push(Pedido("Remove", codigo_estudante, turmaR, uC));
+            cout << "Pedido adicionado com sucesso" << "\n";
+        }
+    }
+
 }
 
 void Gestor::addPedidoAlt() {
@@ -608,30 +631,43 @@ void Gestor::addPedidoAlt() {
     vector<string> turmasR;
     vector<string> uCs;
     string uC;
-    char op = ' ';
+    char op1 = ' ';
     cout << '\n';
     cout << "Codigo de estudante: ";
     cin >> codigo_estudante;
-    while(op != 'q') {
-        cout << '\n';
-        cout << "UC: ";
-        cin >> uC;
-        cout << '\n';
-        cout << "Turma anitga: ";
-        cin >> turmaA;
-        cout << '\n';
-        cout << "Turma nova: ";
-        cin >> turmaR;
-        cout << '\n';
-        turmasA.push_back(turmaA);
-        turmasR.push_back(turmaR);
-        uCs.push_back(uC);
-        cout << '\n' << "Digite 'q' se tiver concluido pedido, 's' se quiser continuar" << '\n';
-        cout << "?";
-        cin >> op;
-        cout << "\n";
+    cout << '\n';
+    if (searchStudent(codigo_estudante)!=estudantes.end()) {
+        while (op1 != 'q') {
+            cout << '\n';
+            cout << "UC: ";
+            cin >> uC;
+            cout << '\n';
+            cout << "Turma antiga: ";
+            cin >> turmaA;
+            cout << '\n';
+            cout << "Turma nova: ";
+            cin >> turmaR;
+            cout << '\n';
+            list<Slot> temp;
+            Horario teste1 = Horario(uC, turmaA, temp);
+            Horario teste2 = Horario(uC, turmaR, temp);
+            if ((find(horario.begin(), horario.end(), teste1) == horario.end()) && (find(horario.begin(), horario.end(), teste2) == horario.end())) {
+                 cout << "Par UC/Turma não existente" << "\n";
+            } else {
+                turmasA.push_back(turmaA);
+                turmasR.push_back(turmaR);
+                uCs.push_back(uC);
+            }
+            cout << '\n' << "Digite 'q' se tiver concluido pedido, 's' se quiser continuar" << '\n';
+            cout << "?";
+            cin >> op1;
+            cout << "\n";
+
+        }
+        pedidos.push(Pedido("Alter", codigo_estudante, turmasR, turmasA, uCs));
+    } else{
+        cout << "Estudante não inscrito" << "\n";
     }
-    pedidos.push(Pedido("Alter", codigo_estudante, turmasR, turmasA, uCs));
 }
 
 void Gestor::arquivar(bool aceite) {
