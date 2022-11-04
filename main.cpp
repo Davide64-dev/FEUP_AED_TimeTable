@@ -81,6 +81,8 @@ int main() {
         }
 
     }
+    gestor.writePedidosPendentes();
+
     return 0;
 }
 

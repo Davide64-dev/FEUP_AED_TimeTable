@@ -77,7 +77,8 @@ public:
     void addPedidoRem();
     void addPedidoAlt();
     void writeEstudantes();
-
+    void writePedidosPendentes();
+    static string VectorintoString(vector<string> vetor);
 };
 
 

@@ -738,6 +738,50 @@ void Gestor::arquivar(bool aceite) {
     }
 }
 
+void Gestor::writePedidosPendentes(){
+    ofstream file("../schedule/pendentes.csv");
+    string tipo;
+    int cod;
+    vector<string> turmaR;
+    vector<string> turmaA;
+    vector<string> ucs;
+
+    while(!pedidos.empty()) {
+        string tipo = pedidos.front().getTipo();
+        cod = pedidos.front().getcodigo_estudante();
+        turmaR = pedidos.front().getTurmaR();
+        turmaA = pedidos.front().getTurmaA();
+        ucs = pedidos.front().getUCs();
+
+        file << "Tipo,Número,Remover,Adicionar,UC" << endl;
+        if (tipo == "Add") {
+            file << tipo << ',' << cod << ',' << "" << ',' << turmaR.front() << ',' << ucs.front() << endl;
+        }
+        if (tipo == "Remove") {
+            file << tipo << ',' << cod << ',' << turmaR.front() << ',' << "" << ',' << ucs.front() << endl;
+        }
+        if (tipo == "Alter") {
+
+            file << tipo << ',' << cod << ',' << VectorintoString(turmaR) << ',' << VectorintoString(turmaA) << ','
+                 << VectorintoString(ucs) << endl;
+        }
+        pedidos.pop();
+    }
+    file.close();
+}
+
+string Gestor::VectorintoString(vector<std::string> vetor) {
+    int length = vetor.size();
+    string temp = "(";
+    for (unsigned i = 0; i < length-1; i++){
+        temp = temp + vetor[i];
+        temp = temp + ",";
+    }
+    temp = temp + vetor[length-1];
+    temp = temp +  ")";
+    return temp;
+}
+
 /**
  * Processa os pedidos de adicionar um aluno a uma UC/Turma.
  * Verifica se o novo horario cumpre as condiçoes
