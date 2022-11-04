@@ -42,6 +42,8 @@ public:
     string getcodTurma() const;
     list<Slot> getaulas() const;
     void addAula(Slot aula);
+    void decrementS();
+    void incrementS();
     bool operator<(Horario horario) const;
     bool operator==(Horario horario) const;
 };
