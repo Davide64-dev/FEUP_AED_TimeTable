@@ -648,7 +648,7 @@ void Gestor::arquivar(bool aceite) {
     if(tipo == "Remove") {
         file << estado << ',' << cod << ',' << turmaR.front() << ',' << "" << ',' << ucs.front() << endl;
     }
-    if(tipo == "Add") {
+    if(tipo == "Alter") {
         for(int i = 0; i < ucs.size(); i++) {
             file << estado << ',' << cod << ',' << turmaR.at(i) << ',' << turmaR.at(i) << ',' << ucs.at(i) << endl;
         }
@@ -714,6 +714,21 @@ void Gestor::pedidoAlter() {
 
     estudantes.erase(studentIt);
     estudantes.insert(student);
+}
+
+void Gestor::writeEstudantes() {
+    ofstream file("../schedule/new.csv");
+    file << "StudentCode,StudentName,UcCode,ClassCode" << endl;
+    for(Estudante estudante : estudantes) {
+        string nome = estudante.getnome();
+        int codigo = estudante.getcodigo();
+        list<UcTurma> turmas = estudante.gethorario();
+        for(const UcTurma& ucTurma : turmas) {
+            string codUC =  ucTurma.getcodUC();
+            string turma = ucTurma.getcodTurma();
+            file << codigo << ',' << nome << ',' << codUC << ',' << turma << endl;
+        }
+    }
 }
 
 /**

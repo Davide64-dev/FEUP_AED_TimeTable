@@ -40,6 +40,9 @@ int main() {
         cout << "r - Pedidos" << "\n";
 
         cout << "" << "\n";
+        cout << "g - Guardar dados para ficheiro" << "\n";
+
+        cout << "" << "\n";
         cout << "q - Sair" << "\n";
 
         cout << "" << "\n";
@@ -69,6 +72,11 @@ int main() {
 
         if (op == 'r'){
             r(gestor);
+
+        }
+
+        if (op == 'g'){
+            gestor.writeEstudantes();
 
         }
 

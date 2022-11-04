@@ -76,6 +76,7 @@ public:
     void addPedidoAdd();
     void addPedidoRem();
     void addPedidoAlt();
+    void writeEstudantes();
 
 };
 
