@@ -96,3 +96,15 @@ bool Estudante::delUCTurma(UcTurma turma){
         return false;
     return true;
 }
+
+int Estudante::naTurma(UcTurma turma) const{
+    for (UcTurma i : horario){
+        if (i.getcodUC() == turma.getcodUC()){
+            if(i.getcodTurma() == turma.getcodTurma()){
+                return 0;
+            }
+            else return 1;
+        }
+    }
+    return -1;
+}

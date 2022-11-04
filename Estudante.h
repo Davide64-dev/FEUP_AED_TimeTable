@@ -35,6 +35,7 @@ public:
     bool delUCTurma(UcTurma turma);
     bool ordemAlfabética(Estudante student) const;
     bool ordemNumeroUcs(Estudante student) const;
+    int naTurma(UcTurma turma) const;
 };
 
 
