@@ -6,7 +6,6 @@
 #define UNTITLED3_PEDIDO_H
 
 
-#include "PedidoIndividual.h"
 #include "Slot.h"
 #include <vector>
 
