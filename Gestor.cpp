@@ -599,8 +599,18 @@ void Gestor::addPedidoAdd() {
         if(find(horario.begin(), horario.end(), teste) == horario.end()) {
             cout << "Par UC/Turma não existente" << "\n";
         }else{
-            pedidos.push(Pedido("Add", codigo_estudante, turmaA, uC));
-            cout << "Pedido adicionado com sucesso" << "\n";
+            UcTurma temp2 = UcTurma(uC, turmaA);
+            int help = searchStudent(codigo_estudante)->naTurma(temp2);
+            if(help == -1) {
+                pedidos.push(Pedido("Add", codigo_estudante, turmaA, uC));
+                cout << "Pedido adicionado com sucesso" << "\n";
+            }
+            else if (help == 0){
+                cout << "Estudante já inscrito na turma" << "\n";
+            }
+            else {
+                cout << "Estudante inscrito na UC, noutra Turma (pedir alteração)" << "\n";
+            }
         }
     }
 }
@@ -626,9 +636,18 @@ void Gestor::addPedidoRem() {
         Horario teste = Horario(uC, turmaR, temp);
         if (find(horario.begin(), horario.end(), teste) == horario.end()){
             cout << "Par UC/Turma não existente" << "\n";
-        }else {
-            pedidos.push(Pedido("Remove", codigo_estudante, turmaR, uC));
-            cout << "Pedido adicionado com sucesso" << "\n";
+        }
+        else {
+            UcTurma temp2 = UcTurma(uC, turmaR);
+            int help = searchStudent(codigo_estudante)->naTurma(temp2);
+            if(help == 0) {
+                pedidos.push(Pedido("Remove", codigo_estudante, turmaR, uC));
+                cout << "Pedido adicionado com sucesso" << "\n";
+            }else if (help == 1){
+                cout << "Estudante está inscrito na UC, mas encontra-se noutra turma (consultar horário)" << "\n";
+            }else{
+                cout << "Estudante não inscrito na UC" << "\n";
+            }
         }
     }
 
@@ -665,9 +684,36 @@ void Gestor::addPedidoAlt() {
             if ((find(horario.begin(), horario.end(), teste1) == horario.end()) && (find(horario.begin(), horario.end(), teste2) == horario.end())) {
                  cout << "Par UC/Turma não existente" << "\n";
             } else {
-                turmasA.push_back(turmaA);
-                turmasR.push_back(turmaR);
-                uCs.push_back(uC);
+                UcTurma temp2 = UcTurma(uC, turmaA);
+                int help1 = searchStudent(codigo_estudante)->naTurma(temp2);
+
+                UcTurma temp3 = UcTurma(uC, turmaR);
+                int help2 = searchStudent(codigo_estudante)->naTurma(temp3);
+
+                if (help1 == -1){
+                    cout << "Estudante não inscrito na " << uC << "\n";
+                }
+
+                else{
+                    if (help1 == 0 && help2 == 1) {
+                        turmasA.push_back(turmaA);
+                        turmasR.push_back(turmaR);
+                        uCs.push_back(uC);
+                        cout << "Adicionado ao pedido" << "\n";
+                    }
+
+                    else if (help1 == 1 && help2==0){
+                        cout << "Estudante encontra-se inscrito na " << turmaA << " e não na " << turmaR << "\n" << "Não é necessário fazer nada" << "\n";
+                    }
+
+                    else if (help1 == 1 && help2 == 1){
+                        cout << "O estudante não se encontra inscrito na turma " << turmaR << "\n" << "Não ºé possível realizar a operação" << "\n";
+                    }
+
+                    else if (help2 == 0 && help2 == 0){
+                        cout << "!!Erro!!" << "\n" << "O estudante encontra-se em duas turmas diferentes, necessária remoção de uma delas" << "\n";
+                    }
+                }
             }
             cout << '\n' << "Digite 'q' se tiver concluido pedido, 's' se quiser continuar" << '\n';
             cout << "?";
@@ -682,13 +728,14 @@ void Gestor::addPedidoAlt() {
 }
 
 void Gestor::arquivar(bool aceite) {
+
     string estado = aceite ? "Aceite" : "Rejeitado";
     string tipo = pedidos.front().getTipo();
     int cod = pedidos.front().getcodigo_estudante();
     vector<string> turmaR = pedidos.front().getTurmaR();
     vector<string> turmaA = pedidos.front().getTurmaA();
     vector<string> ucs = pedidos.front().getUCs();
-    ofstream file("../schedule/arquivo.csv");
+    ofstream file("../schedule/arquivo.csv", ios::app);
     if(tipo == "Add") {
         file << estado << ',' << cod << ',' << "" << ',' << turmaR.front() << ',' << ucs.front() << endl;
     }
@@ -697,7 +744,7 @@ void Gestor::arquivar(bool aceite) {
     }
     if(tipo == "Alter") {
         for(int i = 0; i < ucs.size(); i++) {
-            file << estado << ',' << cod << ',' << turmaR.at(i) << ',' << turmaR.at(i) << ',' << ucs.at(i) << endl;
+            file << estado << ',' << cod << ',' << turmaR.at(i) << ',' << turmaA.at(i) << ',' << ucs.at(i) << endl;
         }
     }
 }
@@ -782,7 +829,7 @@ void Gestor::pedidoAlter() {
 }
 
 void Gestor::writeEstudantes() {
-    ofstream file("../schedule/new.csv");
+    ofstream file("../schedule/students_classes.csv");
     file << "StudentCode,StudentName,UcCode,ClassCode" << endl;
     for(Estudante estudante : estudantes) {
         string nome = estudante.getnome();

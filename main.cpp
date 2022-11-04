@@ -314,7 +314,8 @@ void rp(Gestor &gestor) {
                     cout << "" << "\n";
                     if (op1 == 'r') {
                         gestor.rejeitarPedido();
-                    if (op1 == 'a')
+                    }
+                    if (op1 == 'a'){
                         gestor.aceitarPedido();
                     }
                 }while(op1 != 'a' && op1 != 'r' && op1 != 'q');
