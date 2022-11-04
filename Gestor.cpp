@@ -684,17 +684,18 @@ void Gestor::addPedidoAlt() {
                 }
 
                 else{
-                    if (help1 == 0 && help1 == 1) {
+                    if (help1 == 0 && help2 == 1) {
                         turmasA.push_back(turmaA);
                         turmasR.push_back(turmaR);
                         uCs.push_back(uC);
+                        cout << "Adicionado ao pedido" << "\n";
                     }
 
                     else if (help1 == 1 && help2==0){
                         cout << "Estudante encontra-se inscrito na " << turmaA << " e não na " << turmaR << "\n" << "Não é necessário fazer nada" << "\n";
                     }
 
-                    else if (help1 == 1 && help1 == 1){
+                    else if (help1 == 1 && help2 == 1){
                         cout << "O estudante não se encontra inscrito na turma " << turmaR << "\n" << "Não ºé possível realizar a operação" << "\n";
                     }
 
@@ -716,13 +717,14 @@ void Gestor::addPedidoAlt() {
 }
 
 void Gestor::arquivar(bool aceite) {
+
     string estado = aceite ? "Aceite" : "Rejeitado";
     string tipo = pedidos.front().getTipo();
     int cod = pedidos.front().getcodigo_estudante();
     vector<string> turmaR = pedidos.front().getTurmaR();
     vector<string> turmaA = pedidos.front().getTurmaA();
     vector<string> ucs = pedidos.front().getUCs();
-    ofstream file("../schedule/arquivo.csv");
+    ofstream file("../schedule/arquivo.csv", ios::app);
     if(tipo == "Add") {
         file << estado << ',' << cod << ',' << "" << ',' << turmaR.front() << ',' << ucs.front() << endl;
     }
@@ -731,7 +733,7 @@ void Gestor::arquivar(bool aceite) {
     }
     if(tipo == "Alter") {
         for(int i = 0; i < ucs.size(); i++) {
-            file << estado << ',' << cod << ',' << turmaR.at(i) << ',' << turmaR.at(i) << ',' << ucs.at(i) << endl;
+            file << estado << ',' << cod << ',' << turmaR.at(i) << ',' << turmaA.at(i) << ',' << ucs.at(i) << endl;
         }
     }
 }
@@ -744,7 +746,7 @@ void Gestor::arquivar(bool aceite) {
 void Gestor::pedidoAdd() {
     int studentCode = pedidos.front().getcodigo_estudante();
     string uc = pedidos.front().getUCs().front();
-    string turma = pedidos.front().getTurmaA().front();
+    string turma = pedidos.front().getTurmaR().front();
 
     auto studentIt = searchStudent(studentCode);
     if(studentIt == estudantes.end()) return;
@@ -798,7 +800,7 @@ void Gestor::pedidoAlter() {
 }
 
 void Gestor::writeEstudantes() {
-    ofstream file("../schedule/new.csv");
+    ofstream file("../schedule/students_classes.csv");
     file << "StudentCode,StudentName,UcCode,ClassCode" << endl;
     for(Estudante estudante : estudantes) {
         string nome = estudante.getnome();
