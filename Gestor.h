@@ -66,7 +66,8 @@ public:
     bool verifyOverlap(const list<Horario>& horario);
     void filterTP(list<Slot>& horario);
     list<Slot> getSlots(const list<Horario>& horario);
-    bool verifyCap();
+    bool verifyCap(UcTurma turma);
+    bool verifyCap(vector<UcTurma> turmas);
     void printPedido();
     bool verifyPedido();
     bool verifyAdd();

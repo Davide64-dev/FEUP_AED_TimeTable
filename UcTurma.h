@@ -26,6 +26,7 @@ public:
     UcTurma(string i, string j);
     string getcodUC() const;
     string getcodTurma() const;
+    int getCap() const;
     bool operator== (const UcTurma &other) const;
     bool operator< (const UcTurma &other) const;
 };

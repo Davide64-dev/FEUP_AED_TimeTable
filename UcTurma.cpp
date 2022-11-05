@@ -29,6 +29,10 @@ string UcTurma::getcodTurma()const{
     return codTurma;
 }
 
+int UcTurma::getCap()const{
+    return Cap;
+}
+
 /**
  * Override do operador '=='
  * @param other Objeto da classe UcTurma

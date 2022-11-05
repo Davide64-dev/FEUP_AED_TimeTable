@@ -44,7 +44,7 @@ int main() {
         cout << "g - Guardar dados para ficheiro" << "\n";
 
         cout << "" << "\n";
-        cout << "q - Sair" << "\n";
+        cout << "q - Guardar e Sair" << "\n";
 
         cout << "" << "\n";
         cout << "?";
@@ -78,7 +78,7 @@ int main() {
 
         if (op == 'g'){
             gestor.writeEstudantes();
-
+            gestor.writePedidosPendentes();
         }
 
     }

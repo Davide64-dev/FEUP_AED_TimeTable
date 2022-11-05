@@ -597,7 +597,7 @@ bool Gestor::verifyAdd() {
     vector<UcTurma> toAdd(1, ucTurma);
     vector<UcTurma> toRem;
 
-    return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem);
+    return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem) && verifyCap(ucTurma);
 }
 
 bool Gestor::verifyAlter() {
@@ -621,12 +621,12 @@ bool Gestor::verifyAlter() {
         student.addUCTurma(UcTurma(uc, turmaAdd));
         toAdd.emplace_back(uc, turmaAdd);
         student.delUCTurma(UcTurma(uc, turmaRem));
-        toRem.emplace_back(uc, turmaAdd);
+        toRem.emplace_back(uc, turmaRem);
     }
 
     list<UcTurma> turmas = student.gethorario();
     list<Horario> studentHor = getHorario(turmas);
-    return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem);
+    return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem) && verifyCap(toAdd);
 }
 
 void Gestor::rejeitarPedido() {
@@ -789,6 +789,7 @@ void Gestor::addPedidoAlt() {
             cout << "\n";
 
         }
+        Pedido ajuda = Pedido("Alter", codigo_estudante, turmasR, turmasA, uCs);
         pedidos.push(Pedido("Alter", codigo_estudante, turmasR, turmasA, uCs));
     } else{
         cout << "Estudante não inscrito" << "\n";
@@ -943,9 +944,9 @@ void Gestor::pedidoAlter() {
         string turmaAdd = turmaA[i];
         for(Horario& hor : horario) {
             if(hor.getcodTurma() == turmaRem && hor.getcodUC() == uc)
-                hor.decrementS();
-            if(hor.getcodTurma() == turmaAdd && hor.getcodUC() == uc)
                 hor.incrementS();
+            if(hor.getcodTurma() == turmaAdd && hor.getcodUC() == uc)
+                hor.decrementS();
         }
 
         student.addUCTurma(UcTurma(uc, turmaRem));
@@ -989,7 +990,18 @@ list<Horario> Gestor::getHorario(const list<UcTurma>& turmas) {
  * nem que o numero de alunos não passou de CAP
  * @return true
  */
-bool Gestor::verifyCap() {
+bool Gestor::verifyCap(UcTurma turma) {
+    Horario horario = getHorariobyUcTurma(turma);
+    if (horario.getNumEstudantes()+1 > turma.getCap()) return false;
+    else return true;
+}
+
+bool Gestor::verifyCap(vector<UcTurma> turma){
+    for (UcTurma i : turma){
+        if (!Gestor::verifyCap(i)){
+            return false;
+        }
+    }
     return true;
 }
 
@@ -1052,7 +1064,7 @@ bool Gestor::verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<U
 
     for(Horario& hor : temp) {
         if(containsUC(hor, toAdd)) hor.incrementS();
-        if(containsUC(hor, toRem)) hor.decrementS();
+        else if(containsUC(hor, toRem)) hor.decrementS();
         if(find(ucs.begin(), ucs.end(), hor.getcodUC()) == ucs.end()){
             ucs.push_back(hor.getcodUC());
         }
