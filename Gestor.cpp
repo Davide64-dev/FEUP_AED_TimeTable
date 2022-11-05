@@ -567,8 +567,8 @@ void Gestor::printPedido() {
         cout << "UC: " << pedidos.front().getUCs().front() << '\n';
     } else {
         for(int i = 0; i < pedidos.front().getUCs().size(); i++) {
-            cout << "Turma: " << pedidos.front().getTurmaR().at(i);
-            cout << " -> " << pedidos.front().getTurmaA().at(i) << '\n';
+            cout << "Turma: " << pedidos.front().getTurmaA().at(i);
+            cout << " -> " << pedidos.front().getTurmaR().at(i) << '\n';
             cout << "UC: " << pedidos.front().getUCs().at(i) << '\n';
         }
     }
@@ -879,10 +879,14 @@ void Gestor::pedidoAdd() {
             break;
         }
     }
-    Estudante student(*studentIt);
-    student.addUCTurma(UcTurma(uc, turma));
-    estudantes.erase(studentIt);
-    estudantes.insert(student);
+    string istoeumnome = "nome";
+    list<UcTurma> istoeumhorario;
+    Estudante tmp = Estudante(studentCode, istoeumnome, istoeumhorario);
+    auto existing = estudantes.find(tmp);
+    Estudante tutu(*existing);
+    tutu.addUCTurma(UcTurma(uc, turma));
+    estudantes.erase(existing);
+    estudantes.insert(tutu);
 }
 
 /**
@@ -901,10 +905,17 @@ void Gestor::pedidoRemove() {
             break;
         }
     }
-    Estudante student(*studentIt);
-    student.delUCTurma(UcTurma(uc, turma));
-    estudantes.erase(studentIt);
-    estudantes.insert(student);
+
+    string istoeumnome = "nome";
+    list<UcTurma> istoeumhorario;
+    Estudante tmp = Estudante(studentCode, istoeumnome, istoeumhorario);
+
+    auto existing = estudantes.find(tmp);
+
+    Estudante tutu(*existing);
+    tutu.delUCTurma(UcTurma(uc, turma));
+    estudantes.erase(existing);
+    estudantes.insert(tutu);
 }
 
 /**
@@ -917,14 +928,19 @@ void Gestor::pedidoAlter() {
     vector<string> turmaR = pedidos.front().getTurmaR();
     vector<string> turmaA = pedidos.front().getTurmaA();
 
-    auto studentIt = searchStudent(studentCode);
+    string istoeumnome = "nome";
+    list<UcTurma> istoeumhorario;
+    Estudante tmp = Estudante(studentCode, istoeumnome, istoeumhorario);
+    auto studentIt = estudantes.find(tmp);
+
     if(studentIt == estudantes.end()) return;
     Estudante student(*studentIt);
 
+
     for(int i = 0; i < uCs.size(); i++) {
-        string uc = uCs.at(i);
-        string turmaRem = turmaR.at(i);
-        string turmaAdd = turmaA.at(i);
+        string uc = uCs[i];
+        string turmaRem = turmaR[i];
+        string turmaAdd = turmaA[i];
         for(Horario& hor : horario) {
             if(hor.getcodTurma() == turmaRem && hor.getcodUC() == uc)
                 hor.decrementS();
@@ -932,8 +948,8 @@ void Gestor::pedidoAlter() {
                 hor.incrementS();
         }
 
-        student.addUCTurma(UcTurma(uc, turmaAdd));
-        student.delUCTurma(UcTurma(uc, turmaRem));
+        student.addUCTurma(UcTurma(uc, turmaRem));
+        student.delUCTurma(UcTurma(uc, turmaAdd));
     }
 
     estudantes.erase(studentIt);
@@ -1055,7 +1071,7 @@ bool Gestor::testCap(const vector<Horario>& temp, const list<string>& ucs) {
         }
         if(numeroEstudantes.size() > 1) {
             sort(numeroEstudantes.begin(), numeroEstudantes.end());
-            if (numeroEstudantes.back() - numeroEstudantes.front() > 4)
+            if (numeroEstudantes.back() - numeroEstudantes.front() >= 4)
                 return false;
         }
     }
