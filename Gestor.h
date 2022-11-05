@@ -84,6 +84,7 @@ public:
     static vector<string> StringintoVectorUcCode(string conjunto);
     bool verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<UcTurma> toRem);
     bool containsUC(const Horario& horario, vector<UcTurma>& ucTurmas);
+    bool testCap(const vector<Horario>& temp, const list<string>& ucs);
 };
 
 

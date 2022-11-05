@@ -1032,15 +1032,33 @@ void Gestor::filterTP(list<Slot>& horario) {
 }
 
 bool Gestor::verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<UcTurma> toRem){
-    for(Horario& hor : horario) {
+    list<string> ucs;
+
+    for(Horario& hor : temp) {
         if(containsUC(hor, toAdd)) hor.incrementS();
         if(containsUC(hor, toRem)) hor.decrementS();
+        if(find(ucs.begin(), ucs.end(), hor.getcodUC()) == ucs.end()){
+            ucs.push_back(hor.getcodUC());
+        }
     }
 
-    //testar cap
-    //testar diferenca
+    return testCap(temp, ucs);
+}
 
-    return true;
+bool Gestor::testCap(const vector<Horario>& temp, const list<string>& ucs) {
+    vector<int> numeroEstudantes;
+    for(const string& uc : ucs) {
+        numeroEstudantes.clear();
+        for(const Horario& hor : temp) {
+            if(hor.getcodUC() == uc)
+                numeroEstudantes.push_back(hor.getNumEstudantes());
+        }
+        if(numeroEstudantes.size() > 1) {
+            sort(numeroEstudantes.begin(), numeroEstudantes.end());
+            if (numeroEstudantes.back() - numeroEstudantes.front() > 4)
+                return false;
+        }
+    }
 }
 
 bool Gestor::containsUC(const Horario& horario, vector<UcTurma>& ucTurmas) {
