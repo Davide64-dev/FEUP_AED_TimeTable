@@ -67,7 +67,7 @@ public:
     void filterTP(list<Slot>& horario);
     list<Slot> getSlots(const list<Horario>& horario);
     bool verifyCap(UcTurma turma);
-    bool verifyCap(vector<UcTurma> turmas);
+    bool verifyCapvector(vector<UcTurma> turmas);
     void printPedido();
     bool verifyPedido();
     bool verifyAdd();

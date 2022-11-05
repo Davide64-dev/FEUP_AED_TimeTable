@@ -626,7 +626,7 @@ bool Gestor::verifyAlter() {
 
     list<UcTurma> turmas = student.gethorario();
     list<Horario> studentHor = getHorario(turmas);
-    return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem) && verifyCap(toAdd);
+    return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem) && verifyCapvector(toAdd);
 }
 
 void Gestor::rejeitarPedido() {
@@ -996,7 +996,7 @@ bool Gestor::verifyCap(UcTurma turma) {
     else return true;
 }
 
-bool Gestor::verifyCap(vector<UcTurma> turma){
+bool Gestor::verifyCapvector(vector<UcTurma> turma){
     for (UcTurma i : turma){
         if (!Gestor::verifyCap(i)){
             return false;
@@ -1083,10 +1083,11 @@ bool Gestor::testCap(const vector<Horario>& temp, const list<string>& ucs) {
         }
         if(numeroEstudantes.size() > 1) {
             sort(numeroEstudantes.begin(), numeroEstudantes.end());
-            if (numeroEstudantes.back() - numeroEstudantes.front() >= 4)
+            if (abs(numeroEstudantes.back() - numeroEstudantes.front()) >= 4)
                 return false;
         }
     }
+    return true;
 }
 
 bool Gestor::containsUC(const Horario& horario, vector<UcTurma>& ucTurmas) {
