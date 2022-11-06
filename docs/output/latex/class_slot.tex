@@ -69,7 +69,8 @@ Esta classe pretende modular uma aula de um dado para Uc/\+Turma
 \doxysubsubsection{\texorpdfstring{correspondencia()}{correspondencia()}}
 {\footnotesize\ttfamily int Slot\+::correspondencia (\begin{DoxyParamCaption}\item[{string}]{dia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Função auxiliar que faz uma correspondência entre o dia da semana e um número de forma a poder comparar os dias da semana 
+Função auxiliar que faz uma correspondência entre o dia da semana e um número de forma a poder comparar os dias da semana~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em dia} & Dia da semana \\
 \hline
@@ -83,7 +84,8 @@ Retorna um número 0...6 correspondente (Monday...Sunday). Caso não seja dado n
 \doxysubsubsection{\texorpdfstring{diaMenor()}{diaMenor()}}
 {\footnotesize\ttfamily bool Slot\+::dia\+Menor (\begin{DoxyParamCaption}\item[{string}]{dia1,  }\item[{string}]{dia2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Função que retorna o menor de dois dias 
+Função que retorna o menor de dois dias~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em dia1} & Primeiro dia (da semana) \\
 \hline
@@ -99,7 +101,7 @@ Retorna true se o primeiro dia for menor. Retorna false em qualquer outro caso
 \doxysubsubsection{\texorpdfstring{getDiaDaSemana()}{getDiaDaSemana()}}
 {\footnotesize\ttfamily const string \& Slot\+::get\+Dia\+Da\+Semana (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna o Dia da Semana 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_a6216379f40626cd3c089d7cf8e25fffa}\label{class_slot_a6216379f40626cd3c089d7cf8e25fffa}} 
@@ -108,7 +110,7 @@ Retorna o Dia da Semana
 \doxysubsubsection{\texorpdfstring{getduaracao()}{getduaracao()}}
 {\footnotesize\ttfamily float Slot\+::getduaracao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna a duração da aula 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_af86baab105d2d88745f5b06b44b50902}\label{class_slot_af86baab105d2d88745f5b06b44b50902}} 
@@ -117,7 +119,7 @@ Retorna a duração da aula
 \doxysubsubsection{\texorpdfstring{gethoraini()}{gethoraini()}}
 {\footnotesize\ttfamily float Slot\+::gethoraini (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna a hora a que começa a aula 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_aabd4da68e16c3c37a7911c57b9c70bec}\label{class_slot_aabd4da68e16c3c37a7911c57b9c70bec}} 
@@ -126,7 +128,7 @@ Retorna a hora a que começa a aula
 \doxysubsubsection{\texorpdfstring{gettipo()}{gettipo()}}
 {\footnotesize\ttfamily string Slot\+::gettipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna o tipo da aula 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_slot_aa6db9708e1ac972bba66a4ad83c2e7a4}\label{class_slot_aa6db9708e1ac972bba66a4ad83c2e7a4}} 
@@ -135,7 +137,8 @@ Retorna o tipo da aula
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
 {\footnotesize\ttfamily bool Slot\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_slot}{Slot}}}]{slot }\end{DoxyParamCaption}) const}
 
-Override do operador \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} 
+Override do operador \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{}~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em slot} & Objeto da classe \mbox{\hyperlink{class_slot}{Slot}} \\
 \hline

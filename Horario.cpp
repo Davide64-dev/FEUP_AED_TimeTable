@@ -25,21 +25,21 @@ Horario::Horario(string codUC, string codTurma) {
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o código da UC
  */
 string Horario::getcodUC() const{
     return codUC;
 }
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o código da turma
  */
 string Horario::getcodTurma()const{
     return codTurma;
 }
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna a lista com as datas e horas das aulas
  */
 list<Slot> Horario::getaulas() const{
@@ -47,7 +47,8 @@ list<Slot> Horario::getaulas() const{
 }
 
 /**
- * Adiciona uma aula ao Horario
+ * Adiciona uma aula ao Horario\n
+ * Complexidade: O(1)
  * @param aula Objeto Slot com as informações relativas à aula
  */
 void Horario::addAula(Slot aula) {
@@ -55,7 +56,7 @@ void Horario::addAula(Slot aula) {
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o número de estudantes
  */
 int Horario::getNumEstudantes() const {
@@ -63,7 +64,8 @@ int Horario::getNumEstudantes() const {
 }
 
 /**
- * Método que define o número de estudantes
+ * Método que define o número de estudantes\n
+ * Complexidade: O(1)
  * @param numEstudantes Número de estudantes que vai substituir o atributo antigo
  */
 void Horario::setNumEstudantes(int numEstudantes) {
@@ -71,20 +73,23 @@ void Horario::setNumEstudantes(int numEstudantes) {
 }
 
 /**
- * Adiciona 1 ao númestudantes
+ * Adiciona 1 ao númestudantes\n
+ * Complexidade: O(1)
  */
 void Horario::incrementS() {
     numEstudantes++;
 }
 
 /**
- * Remove 1 ao numestudantes
+ * Remove 1 ao numestudantes\n
+ * Complexidade: O(1)
  */
 void Horario::decrementS() {
     numEstudantes--;
 }
 /**
- * Função Override do operador '<'
+ * Função Override do operador '<'\n
+ * Complexidade: O(1)
  * @param horario Objeto da classe Horario
  * @return Retorna true se o código da UC do primeiro Horário for menor do que o do segundo. Caso seja igual, o
  * critério de desempate é o código da Turma. Retorna false em qualquer outro caso
@@ -98,7 +103,8 @@ bool Horario::operator<(Horario horario) const{
 }
 
 /**
- * Função Override do operador '=='
+ * Função Override do operador '=='\n
+ * Complexidade: O(1)
  * @param horario Objeto da classe Horario
  * @return Retorna true se o código da UC e o código da Turma forem iguais. Retorna false em qualquer outro caso
  */

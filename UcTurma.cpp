@@ -14,7 +14,7 @@ using namespace std;
 UcTurma::UcTurma(string i, string j): codUC(i), codTurma(j), Cap(25){};
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o código da UC
  */
 string UcTurma::getcodUC() const{
@@ -22,7 +22,7 @@ string UcTurma::getcodUC() const{
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o código da Turma
  */
 string UcTurma::getcodTurma()const{
@@ -30,7 +30,7 @@ string UcTurma::getcodTurma()const{
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna Cap (Capacidade Máxima)
  */
 int UcTurma::getCap()const{
@@ -38,7 +38,8 @@ int UcTurma::getCap()const{
 }
 
 /**
- * Override do operador '=='
+ * Override do operador '=='\n
+ * Complexidade: O(1)
  * @param other Objeto da classe UcTurma
  * @return Retorna true se o código da UC e o código da Turma forem iguais. Retorna falso, em qualquer outro caso
  */
@@ -48,7 +49,8 @@ bool UcTurma::operator==(const UcTurma &other) const{
 }
 
 /**
- * Override do operador '<'
+ * Override do operador '<'\n
+ * Complexidade: O(n)
  * @param other Objeto da classe UcTurma
  * @return Retorna true se o código da UC do primeiro for menor do que o do segundo, utilizando o código da Turma como
  * critério de desempate. Retorna false em qualquer outro caso

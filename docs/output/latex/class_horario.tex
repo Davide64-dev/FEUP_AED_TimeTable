@@ -85,7 +85,8 @@ Esta classe pretende armazenar todas os pares Uc/\+Turma existentes, com o respe
 \doxysubsubsection{\texorpdfstring{addAula()}{addAula()}}
 {\footnotesize\ttfamily void Horario\+::add\+Aula (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_slot}{Slot}}}]{aula }\end{DoxyParamCaption})}
 
-Adiciona uma aula ao \mbox{\hyperlink{class_horario}{Horario}} 
+Adiciona uma aula ao \mbox{\hyperlink{class_horario}{Horario}}~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em aula} & Objeto \mbox{\hyperlink{class_slot}{Slot}} com as informações relativas à aula \\
 \hline
@@ -96,13 +97,14 @@ Adiciona uma aula ao \mbox{\hyperlink{class_horario}{Horario}}
 \doxysubsubsection{\texorpdfstring{decrementS()}{decrementS()}}
 {\footnotesize\ttfamily void Horario\+::decrementS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Remove 1 ao numestudantes \mbox{\Hypertarget{class_horario_a193b4f43eea4471a40fcd060a46e3942}\label{class_horario_a193b4f43eea4471a40fcd060a46e3942}} 
+Remove 1 ao numestudantes~\newline
+Complexidade\+: O(1) \mbox{\Hypertarget{class_horario_a193b4f43eea4471a40fcd060a46e3942}\label{class_horario_a193b4f43eea4471a40fcd060a46e3942}} 
 \index{Horario@{Horario}!getaulas@{getaulas}}
 \index{getaulas@{getaulas}!Horario@{Horario}}
 \doxysubsubsection{\texorpdfstring{getaulas()}{getaulas()}}
 {\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ Horario\+::getaulas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna a lista com as datas e horas das aulas 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_aa074f0fdd3f8f4de68848d51b230be4f}\label{class_horario_aa074f0fdd3f8f4de68848d51b230be4f}} 
@@ -111,7 +113,7 @@ Retorna a lista com as datas e horas das aulas
 \doxysubsubsection{\texorpdfstring{getcodTurma()}{getcodTurma()}}
 {\footnotesize\ttfamily string Horario\+::getcod\+Turma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna o código da turma 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_ae9c239d9f5f40fad2428d786a1aba0db}\label{class_horario_ae9c239d9f5f40fad2428d786a1aba0db}} 
@@ -120,7 +122,7 @@ Retorna o código da turma
 \doxysubsubsection{\texorpdfstring{getcodUC()}{getcodUC()}}
 {\footnotesize\ttfamily string Horario\+::getcod\+UC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna o código da UC 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_ad7e52996f4bb6282feba6d064c84b49c}\label{class_horario_ad7e52996f4bb6282feba6d064c84b49c}} 
@@ -129,7 +131,7 @@ Retorna o código da UC
 \doxysubsubsection{\texorpdfstring{getNumEstudantes()}{getNumEstudantes()}}
 {\footnotesize\ttfamily int Horario\+::get\+Num\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna o número de estudantes 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_horario_afdbb09def8201c29f50f71498363afc7}\label{class_horario_afdbb09def8201c29f50f71498363afc7}} 
@@ -138,13 +140,15 @@ Retorna o número de estudantes
 \doxysubsubsection{\texorpdfstring{incrementS()}{incrementS()}}
 {\footnotesize\ttfamily void Horario\+::incrementS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Adiciona 1 ao númestudantes \mbox{\Hypertarget{class_horario_a8ee4e91d85c755905e87ae8b7c140b72}\label{class_horario_a8ee4e91d85c755905e87ae8b7c140b72}} 
+Adiciona 1 ao númestudantes~\newline
+Complexidade\+: O(1) \mbox{\Hypertarget{class_horario_a8ee4e91d85c755905e87ae8b7c140b72}\label{class_horario_a8ee4e91d85c755905e87ae8b7c140b72}} 
 \index{Horario@{Horario}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Horario@{Horario}}
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
 {\footnotesize\ttfamily bool Horario\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horario}{Horario}}}]{horario }\end{DoxyParamCaption}) const}
 
-Função Override do operador \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} 
+Função Override do operador \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{}~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em horario} & Objeto da classe \mbox{\hyperlink{class_horario}{Horario}} \\
 \hline
@@ -158,7 +162,8 @@ Retorna true se o código da UC do primeiro Horário for menor do que o do segun
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
 {\footnotesize\ttfamily bool Horario\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_horario}{Horario}}}]{horario }\end{DoxyParamCaption}) const}
 
-Função Override do operador \textquotesingle{}==\textquotesingle{} 
+Função Override do operador \textquotesingle{}==\textquotesingle{}~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em horario} & Objeto da classe \mbox{\hyperlink{class_horario}{Horario}} \\
 \hline
@@ -172,7 +177,8 @@ Retorna true se o código da UC e o código da Turma forem iguais. Retorna false
 \doxysubsubsection{\texorpdfstring{setNumEstudantes()}{setNumEstudantes()}}
 {\footnotesize\ttfamily void Horario\+::set\+Num\+Estudantes (\begin{DoxyParamCaption}\item[{int}]{num\+Estudantes }\end{DoxyParamCaption})}
 
-Método que define o número de estudantes 
+Método que define o número de estudantes~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em num\+Estudantes} & Número de estudantes que vai substituir o atributo antigo \\
 \hline

@@ -7,6 +7,5 @@ var searchData=
   ['pedidos_4',['pedidos',['../class_gestor.html#a8cf7cbfaf7a00a71b56a26099185ce12',1,'Gestor']]],
   ['pesquisarestudante_5',['PesquisarEstudante',['../class_gestor.html#a03cbaa611dd77ce371324e6ec68ba54b',1,'Gestor']]],
   ['printhorario_6',['printHorario',['../class_gestor.html#ae3a49e5f6d5eec1a0170ad93838209ec',1,'Gestor']]],
-  ['printpedido_7',['printPedido',['../class_gestor.html#a53a733decb91ddbd8e61c7d3d18878d8',1,'Gestor']]],
-  ['processpedidos_8',['processPedidos',['../class_gestor.html#a7bce715ae0b40727343d8850c7dd850e',1,'Gestor']]]
+  ['printpedido_7',['printPedido',['../class_gestor.html#a53a733decb91ddbd8e61c7d3d18878d8',1,'Gestor']]]
 ];

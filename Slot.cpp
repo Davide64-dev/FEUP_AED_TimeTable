@@ -15,14 +15,14 @@ Slot::Slot(float horaini, float duracao, const string &diaDaSemana, const string
                                                                                           diaDaSemana(diaDaSemana),
                                                                                           tipo(tipo) {}
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna a hora a que começa a aula
  */
 float Slot::gethoraini() const{
     return horaini;
 }
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna a duração da aula
  */
 float Slot::getduaracao() const{
@@ -30,7 +30,7 @@ float Slot::getduaracao() const{
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o tipo da aula
  */
 string Slot::gettipo() const{
@@ -38,7 +38,7 @@ string Slot::gettipo() const{
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o Dia da Semana
  */
 const string &Slot::getDiaDaSemana() const {
@@ -47,7 +47,8 @@ const string &Slot::getDiaDaSemana() const {
 
 /**
  * Função auxiliar que faz uma correspondência entre o dia da semana e um número de forma a poder comparar os dias da
- * semana
+ * semana\n
+ * Complexidade: O(1)
  * @param dia Dia da semana
  * @return Retorna um número 0...6 correspondente (Monday...Sunday). Caso não seja dado nenhuma string correta, retorna
  *  -1
@@ -66,7 +67,8 @@ int Slot::correspondencia(string dia){
 }
 
 /**
- * Função que retorna o menor de dois dias
+ * Função que retorna o menor de dois dias\n
+ * Complexidade: O(1)
  * @param dia1 Primeiro dia (da semana)
  * @param dia2 Segundo dia (da semana)
  * @return Retorna true se o primeiro dia for menor. Retorna false em qualquer outro caso
@@ -77,7 +79,8 @@ bool Slot::diaMenor(string dia1, string dia2){
 }
 
 /**
- * Override do operador '<'
+ * Override do operador '<'\n
+ * Complexidade: O(1)
  * @param slot Objeto da classe Slot
  * @return Retorna true se o dia e hora do primeiro Slot forem menores que o dia e hora do segundo Slot
  */

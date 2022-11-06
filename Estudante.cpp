@@ -13,14 +13,14 @@ using namespace std;
 Estudante::Estudante(int i, string j, list<UcTurma> k): codigo(i), nome(j), horario(k){};
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o número mecanográfico do Estudante
  */
 int Estudante::getcodigo() const{
     return codigo;
 }
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o nome do Estudante
  */
 string Estudante::getnome()const{
@@ -28,14 +28,15 @@ string Estudante::getnome()const{
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna uma lista com todas as UcTurmas às quais o Estudante se encontra inscrito
  */
 list<UcTurma> Estudante::gethorario() const{
     return horario;
 }
 /**
- * Função Override do operador '<'
+ * Função Override do operador '<'\n
+ * Complexidade: O(1)
  * @param student Objeto da classe Estudante
  * @return Retorna true se o número do primeiro estudante for menor que o número do segundo. Retorna false
  * em qualquer outro caso
@@ -45,7 +46,8 @@ bool Estudante::operator<(Estudante student) const {
 }
 
 /**
- * Função de compração de dois objetos da classe estudante por ordem alfabética dos seus nomes
+ * Função de compração de dois objetos da classe estudante por ordem alfabética dos seus nomes\n
+ * Complexidade: O(1)
  * @param student Objeto da classe Estudante
  * @return Retorna true se o nome do primeiro estudante vier em primeiro, por ordem alfabética. Retorna false,
  * caso o segundo estudante vier primeiro. Nos casos em que o nome é igual, usa o número mecanográfico como
@@ -60,7 +62,8 @@ bool Estudante::ordemAlfabética(Estudante student) const {
 }
 
 /**
- * Função de comparação de dois objetos da classe estudante, por número de UC a que estãos inscritos
+ * Função de comparação de dois objetos da classe estudante, por número de UC a que estãos inscritos\n
+ * Complexidade: O(1)
  * @param student Objeto da classe Estudante
  * @return Retorna true se o primeiro estudante tiver menos unidades curriculares do que o segundo e false caso
  * tenha mais. Caso estejam inscritos ao mesmo número de Uc's, usa-se o número mecanográfico como critério de desempate
@@ -74,7 +77,8 @@ bool Estudante::ordemNumeroUcs(Estudante student) const {
 
 
 /**
- * Adiciona a um estudante uma UcTurma, sem qualquer restrição
+ * Adiciona a um estudante uma UcTurma, sem qualquer restrição\n
+ * Complexidade: O(1)
  * @param turma Objeto da classe UcTurma (Turma a adicionar o Estudante)
  */
 void Estudante::addUCTurma(UcTurma turma) {
@@ -82,7 +86,8 @@ void Estudante::addUCTurma(UcTurma turma) {
 }
 
 /**
- * Remove a um estudante uma UcTurma, apenas com a restrição de ter de estar inscrito a essa mesma turma
+ * Remove a um estudante uma UcTurma, apenas com a restrição de ter de estar inscrito a essa mesma turma\n
+ * Complexidade: O(n)
  * @param turma Objeto da classe UcTurma (Turma a remover o Estudante)
  * @return Retorna true, se for possível adicionar, retorna false em qualquer outro cado
  */
@@ -99,6 +104,7 @@ bool Estudante::delUCTurma(UcTurma turma){
 
 /**
  * Verifica se um estudante está inscrito numa dada UcTurma
+ * Complexidade: O(m) em que m é o número de horários
  * @param turma UcTurma a ser pesquisada
  * @return Retorna 0 se pertencer à Uc e à turma, 1 se pertencer apenas à UC e -1 se não pertencer a nenhum
  */

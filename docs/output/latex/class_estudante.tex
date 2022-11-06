@@ -66,7 +66,8 @@ Esta classe pretende representar todos os estudantes inscritos
 \doxysubsubsection{\texorpdfstring{addUCTurma()}{addUCTurma()}}
 {\footnotesize\ttfamily void Estudante\+::add\+UCTurma (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}}]{turma }\end{DoxyParamCaption})}
 
-Adiciona a um estudante uma \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, sem qualquer restrição 
+Adiciona a um estudante uma \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, sem qualquer restrição~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em turma} & Objeto da classe \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} (Turma a adicionar o \mbox{\hyperlink{class_estudante}{Estudante}}) \\
 \hline
@@ -77,7 +78,8 @@ Adiciona a um estudante uma \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, sem qu
 \doxysubsubsection{\texorpdfstring{delUCTurma()}{delUCTurma()}}
 {\footnotesize\ttfamily bool Estudante\+::del\+UCTurma (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}}]{turma }\end{DoxyParamCaption})}
 
-Remove a um estudante uma \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, apenas com a restrição de ter de estar inscrito a essa mesma turma 
+Remove a um estudante uma \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, apenas com a restrição de ter de estar inscrito a essa mesma turma~\newline
+Complexidade\+: O(n) 
 \begin{DoxyParams}{Parâmetros}
 {\em turma} & Objeto da classe \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} (Turma a remover o \mbox{\hyperlink{class_estudante}{Estudante}}) \\
 \hline
@@ -91,7 +93,7 @@ Retorna true, se for possível adicionar, retorna false em qualquer outro cado
 \doxysubsubsection{\texorpdfstring{getcodigo()}{getcodigo()}}
 {\footnotesize\ttfamily int Estudante\+::getcodigo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna o número mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_af349c038976b3c5b7b2040fd1afcb18d}\label{class_estudante_af349c038976b3c5b7b2040fd1afcb18d}} 
@@ -100,7 +102,7 @@ Retorna o número mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}
 \doxysubsubsection{\texorpdfstring{gethorario()}{gethorario()}}
 {\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ Estudante\+::gethorario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna uma lista com todas as Uc\+Turmas às quais o \mbox{\hyperlink{class_estudante}{Estudante}} se encontra inscrito 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_ac5d969ae19de150afc5877646e16944f}\label{class_estudante_ac5d969ae19de150afc5877646e16944f}} 
@@ -109,7 +111,7 @@ Retorna uma lista com todas as Uc\+Turmas às quais o \mbox{\hyperlink{class_est
 \doxysubsubsection{\texorpdfstring{getnome()}{getnome()}}
 {\footnotesize\ttfamily string Estudante\+::getnome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\begin{DoxyReturn}{Retorna}
+Complexidade\+: O(1) \begin{DoxyReturn}{Retorna}
 Retorna o nome do \mbox{\hyperlink{class_estudante}{Estudante}} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_aef9ae87fafcefc302d5bbd0e0a88b1e7}\label{class_estudante_aef9ae87fafcefc302d5bbd0e0a88b1e7}} 
@@ -118,7 +120,7 @@ Retorna o nome do \mbox{\hyperlink{class_estudante}{Estudante}}
 \doxysubsubsection{\texorpdfstring{naTurma()}{naTurma()}}
 {\footnotesize\ttfamily int Estudante\+::na\+Turma (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}}]{turma }\end{DoxyParamCaption}) const}
 
-Verifica se um estudante está inscrito numa dada \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} 
+Verifica se um estudante está inscrito numa dada \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} Complexidade\+: O(m) em que m é o número de horários 
 \begin{DoxyParams}{Parâmetros}
 {\em turma} & \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} a ser pesquisada \\
 \hline
@@ -132,7 +134,8 @@ Retorna 0 se pertencer à Uc e à turma, 1 se pertencer apenas à UC e -\/1 se n
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
 {\footnotesize\ttfamily bool Estudante\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_estudante}{Estudante}}}]{student }\end{DoxyParamCaption}) const}
 
-Função Override do operador \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{} 
+Função Override do operador \textquotesingle{}\texorpdfstring{$<$}{<}\textquotesingle{}~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em student} & Objeto da classe \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline
@@ -146,7 +149,8 @@ Retorna true se o número do primeiro estudante for menor que o número do segun
 \doxysubsubsection{\texorpdfstring{ordemAlfabética()}{ordemAlfabética()}}
 {\footnotesize\ttfamily bool Estudante\+::ordem\+Alfabética (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_estudante}{Estudante}}}]{student }\end{DoxyParamCaption}) const}
 
-Função de compração de dois objetos da classe estudante por ordem alfabética dos seus nomes 
+Função de compração de dois objetos da classe estudante por ordem alfabética dos seus nomes~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em student} & Objeto da classe \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline
@@ -160,7 +164,8 @@ Retorna true se o nome do primeiro estudante vier em primeiro, por ordem alfabé
 \doxysubsubsection{\texorpdfstring{ordemNumeroUcs()}{ordemNumeroUcs()}}
 {\footnotesize\ttfamily bool Estudante\+::ordem\+Numero\+Ucs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_estudante}{Estudante}}}]{student }\end{DoxyParamCaption}) const}
 
-Função de comparação de dois objetos da classe estudante, por número de UC a que estãos inscritos 
+Função de comparação de dois objetos da classe estudante, por número de UC a que estãos inscritos~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em student} & Objeto da classe \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline

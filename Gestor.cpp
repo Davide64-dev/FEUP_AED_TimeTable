@@ -20,7 +20,8 @@ using namespace std;
 Gestor::Gestor(set<Estudante> i , vector<Horario> j, queue<Pedido> k): estudantes(i), horario(j), pedidos(k) {}
 
 /**
- * Método que adidicona ao mapa todas as correspondências entre o código e o nome da UC
+ * Método que adidicona ao mapa todas as correspondências entre o código e o nome da UC\n
+ * Complexidade: O(1)
  */
 void Gestor::setMap(){
     cadeiras.insert(pair<string, string>("L.EIC001", "Álgebra Linear e Geometria Analítica"));
@@ -61,7 +62,8 @@ Gestor::Gestor() = default;
 
 /**
  *
- * @return Retorna a BST com os estudantes
+ * @return Retorna a BST com os estudantes\n
+ * Complexidade: O(1)
  */
 set<Estudante> Gestor::getEstudantes() const{
     return estudantes;
@@ -69,7 +71,8 @@ set<Estudante> Gestor::getEstudantes() const{
 
 /**
  *
- * @return Retorna o vetor com os horarios
+ * @return Retorna o vetor com os horarios\n
+ * Complexidade: O(1)
  */
 vector<Horario> Gestor::getHorario() const{
     return horario;
@@ -77,14 +80,16 @@ vector<Horario> Gestor::getHorario() const{
 
 /**
  *
- * @return Retorna a fila com os pedidos
+ * @return Retorna a fila com os pedidos\n
+ * Complexidade(1)
  */
 queue<Pedido> Gestor::getPedidos() const{
     return pedidos;
 }
 
 /**
- * Método que lê o ficheiro "student_classes.csv" e cria os objetos da classe Estudante
+ * Método que lê o ficheiro "student_classes.csv" e cria os objetos da classe Estudante\n
+ * Complexidade: O(nlog(n))
  */
 void Gestor::readEstudantes() {
     vector<string> lineV(4);
@@ -129,7 +134,8 @@ void Gestor::readEstudantes() {
 }
 
 /**
- * Método que lê o ficheiro classes.csv e cria os objetos da classe Slot e adiciona-os à classe Horario correspondente
+ * Método que lê o ficheiro classes.csv e cria os objetos da classe Slot e adiciona-os à classe Horario correspondente\n
+ * Complexidade: O(n^2)
  */
 void Gestor::readHorarios() {
     readAulas();
@@ -181,7 +187,8 @@ void Gestor::readHorarios() {
 }
 
 /**
- * Método que lê o ficheiro classes_per_uc.csv e cria os objetos da classe Horario
+ * Método que lê o ficheiro classes_per_uc.csv e cria os objetos da classe Horario\n
+ * Complexidade: O(n)
  */
 void Gestor::readAulas() {
     vector<string> lineV(2);
@@ -211,7 +218,8 @@ void Gestor::readAulas() {
 
 /**
  * Método que lê o ficheiro "pendentes.csv" e cria os objetos da classe Pedido. Correspondem a pedidos que ainda
- * não foram processados
+ * não foram processados\n
+ * O(n)
  */
 void Gestor::readPedidos(){
     vector<string> lineV(4);
@@ -262,7 +270,8 @@ void Gestor::readPedidos(){
 
 /**
  * Método auxiliar que transforma uma string do tipo "nLEICXYZ/nLEICXYZ..." em vários string "nLEICXYZ" (dá "split")
- * e retorna o vetor com todas essas strings em questão
+ * e retorna o vetor com todas essas strings em questão\n
+ * Complexidade: O(n) em que n corresponde ao tamanho da string
  * @param conjunto A string que vai ser dado "split"
  * @return Retorna o vetor com todas os códigos ClassCode
  */
@@ -278,7 +287,8 @@ vector<string> Gestor::StringintoVectorClassCode(std::string conjunto) {
 
 /**
  * Método auxiliar que transforma uma string do tipo "L.EICXYZ/L.EICXYZ..." em vários string "L.EICXYZ" (dá "split")
- * e retorna o vetor com todas essas strings em questão
+ * e retorna o vetor com todas essas strings em questão\n
+ * Complexidade: O(n) em que n corresponde ao tamanho da string
  * @param conjunto A string que vai ser dado "split"
  * @return Retorna o vetor com todos os codigos UcCode
  */
@@ -293,7 +303,8 @@ vector<string> Gestor::StringintoVectorUcCode(std::string conjunto) {
 }
 
 /**
- * Adiciona à classe Horario o atributo com o número de estudantes inscritos numa UcTurma
+ * Adiciona à classe Horario o atributo com o número de estudantes inscritos numa UcTurma\n
+ * Complexidade: O(n*m)
  */
 void Gestor::fillNumEstudantes() {
     for(Horario& hor : horario) {
@@ -302,7 +313,8 @@ void Gestor::fillNumEstudantes() {
 }
 
 /**
- * Método que conta o número de estudantes que estão inscritos numa dada UcTurma
+ * Método que conta o número de estudantes que estão inscritos numa dada UcTurma\n
+ * Complexidade: O(n)
  * @param codUC Código da UC
  * @param codTurma Código da Turma
  * @return Número de estudantes que têm essa unidade curricular
@@ -318,7 +330,8 @@ int Gestor::countStudents(const string& codUC, const string& codTurma) {
 }
 
 /**
- * Método que verifica se um estudante se encontra inscrito numa dada UcTurma
+ * Método que verifica se um estudante se encontra inscrito numa dada UcTurma\n
+ * Complexidade: O(n)
  * @param student Estudante a verificar
  * @param codUC Código da UC
  * @param codTurma Código da Turma
@@ -334,7 +347,8 @@ bool Gestor::studentInClass(const Estudante& student, const string& codUC, strin
 }
 
 /**
- * Método que procura um estudante na BST e imprime o seu número e nome
+ * Método que procura um estudante na BST e imprime o seu número e nome\n
+ * Complexidade: O(log(n))
  * @param numero Número Mecanográfico do Estudante
  * @return O objeto Estudante com o número dado. Caso não exista vai retornar um objeto error
  */
@@ -362,7 +376,8 @@ Estudante Gestor::PesquisarEstudante(int numero) {
 }
 
 /**
- * Método auxiliar para ordenar pares com Slot e Turma
+ * Método auxiliar para ordenar pares com Slot e Turma\n
+ * Complexidade: O(1)
  * @param a Primeiro par
  * @param b Segundo par
  * @return Retorna verdadeiro, se o primeiro Slot for menor do que o segundo Slot
@@ -374,7 +389,8 @@ bool Gestor::cmp(pair<Slot, UcTurma>& a, pair<Slot, UcTurma>& b){
 /**
  * Método que procura um estudante na BST e imprime o seu número, nome e horário\n
  * Utiliza a função Gestor::PesquisarEstudante para auxiliar na pesquisa e a função Gestor::printHorario
- * para imprimir o horário
+ * para imprimir o horário\n
+ * Complexidade: O(n*log(m))
  * @param numero Número Mecanográfico do Estudante
  */
 void Gestor::HorariodoEstudante(int numero){
@@ -442,7 +458,8 @@ void Gestor::HorariodoEstudante(int numero){
 }
 
 /**
- * Função auxiliar para imprimir um dado horário
+ * Função auxiliar para imprimir um dado horário\n
+ * Complexidade: O(n)
  * @param vetor Vetor de pair<Slot, Turma> (já ordenado)
  * @param cadeiras Mapa para fazer corresponder o código da UC ao seu nome
  */
@@ -480,7 +497,8 @@ Horario Gestor::getHorariobyUcTurma(const UcTurma& turma){
 }
 
 /**
- * Struct auxiliar para ordenar o set de estudantes por ordem alfabética
+ * Struct auxiliar para ordenar o set de estudantes por ordem alfabética\n
+ * Complexidade: O(1)
  */
 struct ordemAlfabeticaStruct {
 
@@ -494,7 +512,8 @@ struct ordemAlfabeticaStruct {
 };
 
 /**
- * Struct auxiliar para ordenar o set de estudantes por ordem de número de UC's
+ * Struct auxiliar para ordenar o set de estudantes por ordem de número de UC's\n
+ * Complexidade: O(1)
  */
 struct ordemNumUcStruct{
 
@@ -509,7 +528,8 @@ struct ordemNumUcStruct{
 };
 
 /**
- * Método que imprime todos os estudantes com mais de n UC's por ordem alfabética
+ * Método que imprime todos os estudantes com mais de n UC's por ordem alfabética\n
+ * Complexidade: O(nlog(n))
  * @param n
  */
 void Gestor::maisNUcsAlfabetico(int n) {
@@ -524,7 +544,8 @@ void Gestor::maisNUcsAlfabetico(int n) {
 }
 
 /**
- * Método que imprime todos os estudantes com mais de n UC's por ordem crescente do número de UC's
+ * Método que imprime todos os estudantes com mais de n UC's por ordem crescente do número de UC's\n
+ * Complexidade: O(nlog(n))
  * @param n
  */
 void Gestor::maisNUcsNumero(int n){
@@ -539,7 +560,8 @@ void Gestor::maisNUcsNumero(int n){
 }
 
 /**
- * Método que imprime todos os estudantes com mais de n UC's por ordem crescente de número mecanográfico
+ * Método que imprime todos os estudantes com mais de n UC's por ordem crescente de número mecanográfico\n
+ * Complexidade: O(n)
  * @param n
  */
 void Gestor::maisNUcs(int n){
@@ -553,19 +575,8 @@ void Gestor::maisNUcs(int n){
 }
 
 /**
- * Método que permite processar todos os pedidos de uma vez, até a fila se encontrar vazia
- */
-void Gestor::processPedidos() {
-    while(!pedidos.empty()) {
-        if(pedidos.front().getTipo() == "Add") pedidoAdd();
-        else if(pedidos.front().getTipo() == "Remove") pedidoRemove();
-        else if(pedidos.front().getTipo() == "Alter") pedidoAlter();
-        pedidos.pop();
-    }
-}
-
-/**
- * Procura um estudante por code. Retorna o const iterator.
+ * Procura um estudante por code. Retorna o const iterator.\n
+ * Complexidade: O(log(n))
  * @param code Número Mecanográfico do Estudante
  * @return Iterador do Estudante
  */
@@ -578,7 +589,8 @@ set<Estudante>::iterator Gestor::searchStudent(int code) {
 }
 
 /**
- * Método auxiliar que dado um objeto da classe Pedido, imprime as características importantes do mesmo
+ * Método auxiliar que dado um objeto da classe Pedido, imprime as características importantes do mesmo\n
+ * Complexidade: O(1)
  */
 void Gestor::printPedido() {
     cout << '\n';
@@ -598,7 +610,8 @@ void Gestor::printPedido() {
 }
 
 /**
- * Verifica o primeiro pedido da fila
+ * Verifica o primeiro pedido da fila\n
+ * Complexidade: O(n)
  * @return Retorna true nos casos em que o Pedido obedece às restrições
  */
 bool Gestor::verifyPedido() {
@@ -666,6 +679,7 @@ bool Gestor::verifyAlter() {
 /**
  * Rejeita um pedido, independentemente se passa, ou não, nas restriçoes.\n
  * Quando invocado, arquiva o Pedido e retira-o da fila
+ * Complexidade: O(1)
  */
 void Gestor::rejeitarPedido() {
     arquivar(false);
@@ -674,7 +688,8 @@ void Gestor::rejeitarPedido() {
 
 /**
  * Aceita um pedido, independentemente se passa, ou não, nas restriçoes.\n
- * Quando invocado, arquiva o Pedido, retira-o da fila e faz as alterações nos atributos para continuar coerente
+ * Quando invocado, arquiva o Pedido, retira-o da fila e faz as alterações nos atributos para continuar coerente\n
+ * Complexidade: O(n) em que n é o número de horários existentes (constante)
  */
 void Gestor::aceitarPedido() {
     arquivar(true);
@@ -689,7 +704,8 @@ void Gestor::aceitarPedido() {
 
 /**
  * Permite adicionar um Pedido do tipo "Add", sobre várias restriçoes(Estudante existir, UcTurma existir...).
- *  Esse Pedido é adicionado à fila pedidos
+ *  Esse Pedido é adicionado à fila pedidos\n
+ *  Complexidade: O(log(n)*m)
  */
 void Gestor::addPedidoAdd() {
     int codigo_estudante;
@@ -731,7 +747,8 @@ void Gestor::addPedidoAdd() {
 
 /**
  *  Permite adicionar um Pedido do tipo "Rem", sobre várias restriçoes(Estudante existir, UcTurma existir...).
- *  Esse Pedido é adicionado à fila pedidos
+ *  Esse Pedido é adicionado à fila pedidos\n
+ *  Complexidade: O(log(n)*m)
  */
 void Gestor::addPedidoRem() {
     int codigo_estudante;
@@ -773,7 +790,8 @@ void Gestor::addPedidoRem() {
 
 /**
  *  Permite adicionar um Pedido do tipo "Alter", sobre várias restriçoes(Estudante existir, UcTurma existir...).
- *  Esse Pedido é adicionado à fila pedidos
+ *  Esse Pedido é adicionado à fila pedidos\n
+ *  Complexidade: O(log(n)*m)
  */
 void Gestor::addPedidoAlt() {
     int codigo_estudante;
@@ -851,7 +869,8 @@ void Gestor::addPedidoAlt() {
 }
 
 /**
- * Este método arquiva o primerio pedido da fila, guardando-o no ficheiro "arquivo.csv"
+ * Este método arquiva o primerio pedido da fila, guardando-o no ficheiro "arquivo.csv"\n
+ * Complexidade: O(1)
  * @param aceite Valor booleano que se refere se o pedido foi(true), ou não(false) aceite
  */
 void Gestor::arquivar(bool aceite) {
@@ -878,7 +897,8 @@ void Gestor::arquivar(bool aceite) {
 
 /**
  * Este método escreve os pedidos que ainda não foram processados no ficheiro "pendentes.csv", para
- * poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada
+ * poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada\n
+ * Complexidade: O(n)
  */
 void Gestor::writePedidosPendentes(){
     ofstream file("../schedule/pendentes.csv");
@@ -913,7 +933,8 @@ void Gestor::writePedidosPendentes(){
 }
 
 /**
- * Método auxiliar, que transforma um vetor de strings numa string só, separada com "/";
+ * Método auxiliar, que transforma um vetor de strings numa string só, separada com "/"\n
+ * Complexidade: O(n)
  * @param vetor Vetor com a string
  * @return Retorna a string concatenada
  */
@@ -931,6 +952,7 @@ string Gestor::VectorintoString(vector<std::string> vetor) {
 
 /**
  * Processa os pedidos de adicionar um aluno a uma UC/Turma.\n
+ * Complexidade: O(nlog(n))
  * Verifica se o novo horario cumpre as condiçoes
  */
 void Gestor::pedidoAdd() {
@@ -939,7 +961,6 @@ void Gestor::pedidoAdd() {
     string turma = pedidos.front().getTurmaR().front();
 
     auto studentIt = searchStudent(studentCode);
-    if(studentIt == estudantes.end()) return;
     for(Horario& hor : horario) {
         if(hor.getcodTurma() == turma && hor.getcodUC() == uc){
             hor.incrementS();
@@ -957,7 +978,8 @@ void Gestor::pedidoAdd() {
 }
 
 /**
- * Processa os pedidos de remoção do aluno de uma UC/Turma
+ * Processa os pedidos de remoção do aluno de uma UC/Turma\n
+ * Complexidade: O(nlog(n))
  */
 void Gestor::pedidoRemove() {
     int studentCode = pedidos.front().getcodigo_estudante();
@@ -987,7 +1009,8 @@ void Gestor::pedidoRemove() {
 
 /**
  * Processa os pedidos de alterar a ucs de UCs.
- * Verifica se o novo horário cumpre as condições
+ * Verifica se o novo horário cumpre as condições\n
+ * Complexidade: O(nlog(n)*m)
  */
 void Gestor::pedidoAlter() {
     int studentCode = pedidos.front().getcodigo_estudante();
@@ -1025,7 +1048,8 @@ void Gestor::pedidoAlter() {
 
 /**
  * Este ficheiro limpa o ficheiro "student_classes.csv", para voltar a escrevê-lo com as alterações feitas, guardando assim,
- * as alterações quando o programa termina
+ * as alterações quando o programa termina\n
+ * Complexidade: O(n)
  */
 void Gestor::writeEstudantes() {
     ofstream file("../schedule/students_classes.csv");
@@ -1044,7 +1068,8 @@ void Gestor::writeEstudantes() {
 
 /**
  * Retorna uma lista de Horarios correspondentes as UcTurmas
- * passadas por parametro
+ * passadas por parametro\n
+ * Complexidade: O(nlog(m))
  * @param turmas lista com todas as UcTurma
  * @return lista com todas os Horario homólogos à UcTurma
  */
@@ -1058,7 +1083,8 @@ list<Horario> Gestor::getHorario(const list<UcTurma>& turmas) {
 /**
  * Verifica que o numero de alunos não passou de CAP
  * @param turma Objeto da classe UcTurma a ser verficado
- * @return Retorna true, se houver menos estudantes na turma, do que a capacidade máxima desta
+ * @return Retorna true, se houver menos estudantes na turma, do que a capacidade máxima desta\n
+ * Complexidade: O(log(m)) em que m é o número de Horários
  */
 bool Gestor::verifyCap(UcTurma turma) {
     Horario horario = getHorariobyUcTurma(turma);
@@ -1069,7 +1095,8 @@ bool Gestor::verifyCap(UcTurma turma) {
 /**
  * Verifica que o número de alunos não superou o CAP, num vetor de UcTurma
  * @param turma Vetor de UcTurma
- * @return Retorna true, todas as turmas não estiverem com mais alunos do que o seu Cap
+ * @return Retorna true, todas as turmas não estiverem com mais alunos do que o seu Cap\n
+ * Complexidade: O(nlog(m)) em que m é o número de horários
  */
 bool Gestor::verifyCapvector(vector<UcTurma> turma){
     for (UcTurma i : turma){
@@ -1082,7 +1109,8 @@ bool Gestor::verifyCapvector(vector<UcTurma> turma){
 
 
 /**
- * Verifca se a sobreposições de horarios
+ * Verifca se a sobreposições de horarios\n
+ * Complexidade: O(n^2)
  * @param horario A lista de Horario a verificar
  * @return Falso se houver sobreposição, verdadeiro em qualquer outro caso
  */
@@ -1105,7 +1133,8 @@ bool Gestor::verifyOverlap(const list<Horario>& horario)  {
 
 /**
  * Cria lista com todos os Slot de uma lista
- * de Horarios
+ * de Horarios\n
+ * Complexidade: O(n*m)
  * @param horario Lista de objetos Horario
  * @return Lista com todos os Slot contidos em cada objeto Horario na lista passada por parâmetro
  */
@@ -1121,6 +1150,7 @@ list<Slot> Gestor::getSlots(const list<Horario>& horario) {
 
 /**
  * Retira slots que não correspondam a aulas TP
+ * Complexidade: O(n)
  * @param horario lista de Slot (associado a uma UC)
  */
 void Gestor::filterTP(list<Slot>& horario) {
@@ -1135,7 +1165,8 @@ void Gestor::filterTP(list<Slot>& horario) {
 }
 
 /**
- * Verifica se não há desiquilibrio entre turmas
+ * Verifica se não há desiquilibrio entre turmas\n
+ * Complexidade: O(n)
  * @param temp Horario a ser verificado
  * @param toAdd Turmas que se pretendem adicionar ao horário
  * @param toRem Turmas que se pretendem remover ao horºario
@@ -1156,7 +1187,8 @@ bool Gestor::verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<U
 }
 
 /**
- * Verifica se não há desiquilibrio entre as turmas
+ * Verifica se não há desiquilibrio entre as turmas\n
+ * Complexidade: O(n*m)
  * @param temp Horário a ser verificado
  * @param ucs Unidades curriculares onde ocorreram as mudanças de turma
  * @return Retorna falso se pelo menos uma UC estiver em desiquilibrio, retorna verdadeiro em qualquer outro caso
@@ -1179,7 +1211,8 @@ bool Gestor::testCap(const vector<Horario>& temp, const list<string>& ucs) {
 }
 
 /**
- * Método que verifica se um objeto Horario está contido num vetor de UcTurma, usando o objeto UcTurma homólogo
+ * Método que verifica se um objeto Horario está contido num vetor de UcTurma, usando o objeto UcTurma homólogo\n
+ * Complexidade: O(n)
  * @param horario Objeto da classe Horário a ser verificado
  * @param ucTurmas Vetor de verificação
  * @return Retorna verdadeiro, se o horário pertencer ao vetor e falso caso contrário

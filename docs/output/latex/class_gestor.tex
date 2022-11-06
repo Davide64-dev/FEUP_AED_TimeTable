@@ -43,7 +43,8 @@ void \mbox{\hyperlink{class_gestor_a2102bf990245b6f9d0418e2821abbfc2}{mais\+NUcs
 \item 
 void \mbox{\hyperlink{class_gestor_a12b2ff53c546858442f6449e81391f5a}{set\+Map}} ()
 \item 
-void \mbox{\hyperlink{class_gestor_a7bce715ae0b40727343d8850c7dd850e}{process\+Pedidos}} ()
+\mbox{\Hypertarget{class_gestor_a7bce715ae0b40727343d8850c7dd850e}\label{class_gestor_a7bce715ae0b40727343d8850c7dd850e}} 
+void {\bfseries process\+Pedidos} ()
 \item 
 void \mbox{\hyperlink{class_gestor_aff41cf69a5a4a932f725d996378fe746}{pedido\+Add}} ()
 \item 
@@ -153,31 +154,36 @@ Esta classe representa a entidade com responsabilidade de consultar os \char`\"{
 {\footnotesize\ttfamily void Gestor\+::aceitar\+Pedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Aceita um pedido, independentemente se passa, ou não, nas restriçoes.~\newline
-Quando invocado, arquiva o \mbox{\hyperlink{class_pedido}{Pedido}}, retira-\/o da fila e faz as alterações nos atributos para continuar coerente \mbox{\Hypertarget{class_gestor_ac24e2387237086f0ea5f1ef60f385c2e}\label{class_gestor_ac24e2387237086f0ea5f1ef60f385c2e}} 
+Quando invocado, arquiva o \mbox{\hyperlink{class_pedido}{Pedido}}, retira-\/o da fila e faz as alterações nos atributos para continuar coerente~\newline
+Complexidade\+: O(n) em que n é o número de horários existentes (constante) \mbox{\Hypertarget{class_gestor_ac24e2387237086f0ea5f1ef60f385c2e}\label{class_gestor_ac24e2387237086f0ea5f1ef60f385c2e}} 
 \index{Gestor@{Gestor}!addPedidoAdd@{addPedidoAdd}}
 \index{addPedidoAdd@{addPedidoAdd}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{addPedidoAdd()}{addPedidoAdd()}}
 {\footnotesize\ttfamily void Gestor\+::add\+Pedido\+Add (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Permite adicionar um \mbox{\hyperlink{class_pedido}{Pedido}} do tipo \char`\"{}\+Add\char`\"{}, sobre várias restriçoes(\+Estudante existir, Uc\+Turma existir...). Esse \mbox{\hyperlink{class_pedido}{Pedido}} é adicionado à fila pedidos \mbox{\Hypertarget{class_gestor_a183f69ea48a55e853ec68d3a1c26c606}\label{class_gestor_a183f69ea48a55e853ec68d3a1c26c606}} 
+Permite adicionar um \mbox{\hyperlink{class_pedido}{Pedido}} do tipo \char`\"{}\+Add\char`\"{}, sobre várias restriçoes(\+Estudante existir, Uc\+Turma existir...). Esse \mbox{\hyperlink{class_pedido}{Pedido}} é adicionado à fila pedidos~\newline
+ Complexidade\+: O(log(n)$\ast$m) \mbox{\Hypertarget{class_gestor_a183f69ea48a55e853ec68d3a1c26c606}\label{class_gestor_a183f69ea48a55e853ec68d3a1c26c606}} 
 \index{Gestor@{Gestor}!addPedidoAlt@{addPedidoAlt}}
 \index{addPedidoAlt@{addPedidoAlt}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{addPedidoAlt()}{addPedidoAlt()}}
 {\footnotesize\ttfamily void Gestor\+::add\+Pedido\+Alt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Permite adicionar um \mbox{\hyperlink{class_pedido}{Pedido}} do tipo \char`\"{}\+Alter\char`\"{}, sobre várias restriçoes(\+Estudante existir, Uc\+Turma existir...). Esse \mbox{\hyperlink{class_pedido}{Pedido}} é adicionado à fila pedidos \mbox{\Hypertarget{class_gestor_a2f1c684ef87961987aea8832062d3c58}\label{class_gestor_a2f1c684ef87961987aea8832062d3c58}} 
+Permite adicionar um \mbox{\hyperlink{class_pedido}{Pedido}} do tipo \char`\"{}\+Alter\char`\"{}, sobre várias restriçoes(\+Estudante existir, Uc\+Turma existir...). Esse \mbox{\hyperlink{class_pedido}{Pedido}} é adicionado à fila pedidos~\newline
+Complexidade\+: O(log(n)$\ast$m) \mbox{\Hypertarget{class_gestor_a2f1c684ef87961987aea8832062d3c58}\label{class_gestor_a2f1c684ef87961987aea8832062d3c58}} 
 \index{Gestor@{Gestor}!addPedidoRem@{addPedidoRem}}
 \index{addPedidoRem@{addPedidoRem}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{addPedidoRem()}{addPedidoRem()}}
 {\footnotesize\ttfamily void Gestor\+::add\+Pedido\+Rem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Permite adicionar um \mbox{\hyperlink{class_pedido}{Pedido}} do tipo \char`\"{}\+Rem\char`\"{}, sobre várias restriçoes(\+Estudante existir, Uc\+Turma existir...). Esse \mbox{\hyperlink{class_pedido}{Pedido}} é adicionado à fila pedidos \mbox{\Hypertarget{class_gestor_aff6f9365e353b1a113ba9df2170d862a}\label{class_gestor_aff6f9365e353b1a113ba9df2170d862a}} 
+Permite adicionar um \mbox{\hyperlink{class_pedido}{Pedido}} do tipo \char`\"{}\+Rem\char`\"{}, sobre várias restriçoes(\+Estudante existir, Uc\+Turma existir...). Esse \mbox{\hyperlink{class_pedido}{Pedido}} é adicionado à fila pedidos~\newline
+Complexidade\+: O(log(n)$\ast$m) \mbox{\Hypertarget{class_gestor_aff6f9365e353b1a113ba9df2170d862a}\label{class_gestor_aff6f9365e353b1a113ba9df2170d862a}} 
 \index{Gestor@{Gestor}!arquivar@{arquivar}}
 \index{arquivar@{arquivar}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{arquivar()}{arquivar()}}
 {\footnotesize\ttfamily void Gestor\+::arquivar (\begin{DoxyParamCaption}\item[{bool}]{aceite }\end{DoxyParamCaption})}
 
-Este método arquiva o primerio pedido da fila, guardando-\/o no ficheiro \char`\"{}arquivo.\+csv\char`\"{} 
+Este método arquiva o primerio pedido da fila, guardando-\/o no ficheiro \char`\"{}arquivo.\+csv\char`\"{}~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em aceite} & Valor booleano que se refere se o pedido foi(true), ou não(false) aceite \\
 \hline
@@ -188,7 +194,8 @@ Este método arquiva o primerio pedido da fila, guardando-\/o no ficheiro \char`
 \doxysubsubsection{\texorpdfstring{cmp()}{cmp()}}
 {\footnotesize\ttfamily bool Gestor\+::cmp (\begin{DoxyParamCaption}\item[{pair$<$ \mbox{\hyperlink{class_slot}{Slot}}, \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ \&}]{a,  }\item[{pair$<$ \mbox{\hyperlink{class_slot}{Slot}}, \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Método auxiliar para ordenar pares com \mbox{\hyperlink{class_slot}{Slot}} e Turma 
+Método auxiliar para ordenar pares com \mbox{\hyperlink{class_slot}{Slot}} e Turma~\newline
+Complexidade\+: O(1) 
 \begin{DoxyParams}{Parâmetros}
 {\em a} & Primeiro par \\
 \hline
@@ -204,7 +211,8 @@ Retorna verdadeiro, se o primeiro \mbox{\hyperlink{class_slot}{Slot}} for menor 
 \doxysubsubsection{\texorpdfstring{containsUC()}{containsUC()}}
 {\footnotesize\ttfamily bool Gestor\+::contains\+UC (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_horario}{Horario}} \&}]{horario,  }\item[{vector$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ \&}]{uc\+Turmas }\end{DoxyParamCaption})}
 
-Método que verifica se um objeto \mbox{\hyperlink{class_horario}{Horario}} está contido num vetor de \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, usando o objeto \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} homólogo 
+Método que verifica se um objeto \mbox{\hyperlink{class_horario}{Horario}} está contido num vetor de \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, usando o objeto \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} homólogo~\newline
+Complexidade\+: O(n) 
 \begin{DoxyParams}{Parâmetros}
 {\em horario} & Objeto da classe Horário a ser verificado \\
 \hline
@@ -220,7 +228,8 @@ Retorna verdadeiro, se o horário pertencer ao vetor e falso caso contrário
 \doxysubsubsection{\texorpdfstring{countStudents()}{countStudents()}}
 {\footnotesize\ttfamily int Gestor\+::count\+Students (\begin{DoxyParamCaption}\item[{const string \&}]{cod\+UC,  }\item[{const string \&}]{cod\+Turma }\end{DoxyParamCaption})}
 
-Método que conta o número de estudantes que estão inscritos numa dada \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} 
+Método que conta o número de estudantes que estão inscritos numa dada \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}~\newline
+Complexidade\+: O(n) 
 \begin{DoxyParams}{Parâmetros}
 {\em cod\+UC} & Código da UC \\
 \hline
@@ -236,13 +245,14 @@ Número de estudantes que têm essa unidade curricular
 \doxysubsubsection{\texorpdfstring{fillNumEstudantes()}{fillNumEstudantes()}}
 {\footnotesize\ttfamily void Gestor\+::fill\+Num\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Adiciona à classe \mbox{\hyperlink{class_horario}{Horario}} o atributo com o número de estudantes inscritos numa \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} \mbox{\Hypertarget{class_gestor_a7f69e30e717406c61eb27b45ab2a761a}\label{class_gestor_a7f69e30e717406c61eb27b45ab2a761a}} 
+Adiciona à classe \mbox{\hyperlink{class_horario}{Horario}} o atributo com o número de estudantes inscritos numa \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}~\newline
+Complexidade\+: O(n$\ast$m) \mbox{\Hypertarget{class_gestor_a7f69e30e717406c61eb27b45ab2a761a}\label{class_gestor_a7f69e30e717406c61eb27b45ab2a761a}} 
 \index{Gestor@{Gestor}!filterTP@{filterTP}}
 \index{filterTP@{filterTP}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{filterTP()}{filterTP()}}
 {\footnotesize\ttfamily void Gestor\+::filter\+TP (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ \&}]{horario }\end{DoxyParamCaption})}
 
-Retira slots que não correspondam a aulas TP 
+Retira slots que não correspondam a aulas TP Complexidade\+: O(n) 
 \begin{DoxyParams}{Parâmetros}
 {\em horario} & lista de \mbox{\hyperlink{class_slot}{Slot}} (associado a uma UC) \\
 \hline
@@ -254,7 +264,8 @@ Retira slots que não correspondam a aulas TP
 {\footnotesize\ttfamily set$<$ \mbox{\hyperlink{class_estudante}{Estudante}} $>$ Gestor\+::get\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 \begin{DoxyReturn}{Retorna}
-Retorna a BST com os estudantes 
+Retorna a BST com os estudantes~\newline
+Complexidade\+: O(1) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_gestor_af7495b053cd4b20f7df7999343bf1388}\label{class_gestor_af7495b053cd4b20f7df7999343bf1388}} 
 \index{Gestor@{Gestor}!getHorario@{getHorario}}
@@ -263,7 +274,8 @@ Retorna a BST com os estudantes
 {\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ Gestor\+::get\+Horario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 \begin{DoxyReturn}{Retorna}
-Retorna o vetor com os horarios 
+Retorna o vetor com os horarios~\newline
+Complexidade\+: O(1) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_gestor_a0dfc64a60fac9155e87370ca6b6953c7}\label{class_gestor_a0dfc64a60fac9155e87370ca6b6953c7}} 
 \index{Gestor@{Gestor}!getHorario@{getHorario}}
@@ -271,7 +283,8 @@ Retorna o vetor com os horarios
 \doxysubsubsection{\texorpdfstring{getHorario()}{getHorario()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ Gestor\+::get\+Horario (\begin{DoxyParamCaption}\item[{const list$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ \&}]{turmas }\end{DoxyParamCaption})}
 
-Retorna uma lista de Horarios correspondentes as Uc\+Turmas passadas por parametro 
+Retorna uma lista de Horarios correspondentes as Uc\+Turmas passadas por parametro~\newline
+Complexidade\+: O(nlog(m)) 
 \begin{DoxyParams}{Parâmetros}
 {\em turmas} & lista com todas as \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} \\
 \hline
@@ -301,7 +314,8 @@ Objeto da classe \mbox{\hyperlink{class_horario}{Horario}}
 {\footnotesize\ttfamily queue$<$ \mbox{\hyperlink{class_pedido}{Pedido}} $>$ Gestor\+::get\+Pedidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 \begin{DoxyReturn}{Retorna}
-Retorna a fila com os pedidos 
+Retorna a fila com os pedidos~\newline
+Complexidade(1) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_gestor_a64f80480cc588cdf7bd66a9fd34d7d1c}\label{class_gestor_a64f80480cc588cdf7bd66a9fd34d7d1c}} 
 \index{Gestor@{Gestor}!getSlots@{getSlots}}
@@ -309,7 +323,8 @@ Retorna a fila com os pedidos
 \doxysubsubsection{\texorpdfstring{getSlots()}{getSlots()}}
 {\footnotesize\ttfamily list$<$ \mbox{\hyperlink{class_slot}{Slot}} $>$ Gestor\+::get\+Slots (\begin{DoxyParamCaption}\item[{const list$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ \&}]{horario }\end{DoxyParamCaption})}
 
-Cria lista com todos os \mbox{\hyperlink{class_slot}{Slot}} de uma lista de Horarios 
+Cria lista com todos os \mbox{\hyperlink{class_slot}{Slot}} de uma lista de Horarios~\newline
+Complexidade\+: O(n$\ast$m) 
 \begin{DoxyParams}{Parâmetros}
 {\em horario} & Lista de objetos \mbox{\hyperlink{class_horario}{Horario}} \\
 \hline
@@ -324,7 +339,8 @@ Lista com todos os \mbox{\hyperlink{class_slot}{Slot}} contidos em cada objeto \
 {\footnotesize\ttfamily void Gestor\+::\+Horariodo\+Estudante (\begin{DoxyParamCaption}\item[{int}]{numero }\end{DoxyParamCaption})}
 
 Método que procura um estudante na BST e imprime o seu número, nome e horário~\newline
-Utiliza a função \mbox{\hyperlink{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}{Gestor\+::\+Pesquisar\+Estudante}} para auxiliar na pesquisa e a função \mbox{\hyperlink{class_gestor_ae3a49e5f6d5eec1a0170ad93838209ec}{Gestor\+::print\+Horario}} para imprimir o horário 
+Utiliza a função \mbox{\hyperlink{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}{Gestor\+::\+Pesquisar\+Estudante}} para auxiliar na pesquisa e a função \mbox{\hyperlink{class_gestor_ae3a49e5f6d5eec1a0170ad93838209ec}{Gestor\+::print\+Horario}} para imprimir o horário~\newline
+Complexidade\+: O(n$\ast$log(m)) 
 \begin{DoxyParams}{Parâmetros}
 {\em numero} & Número Mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline
@@ -335,7 +351,8 @@ Utiliza a função \mbox{\hyperlink{class_gestor_a03cbaa611dd77ce371324e6ec68ba5
 \doxysubsubsection{\texorpdfstring{maisNUcs()}{maisNUcs()}}
 {\footnotesize\ttfamily void Gestor\+::mais\+NUcs (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
 
-Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por ordem crescente de número mecanográfico 
+Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por ordem crescente de número mecanográfico~\newline
+Complexidade\+: O(n) 
 \begin{DoxyParams}{Parâmetros}
 {\em n} & \\
 \hline
@@ -346,7 +363,8 @@ Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por 
 \doxysubsubsection{\texorpdfstring{maisNUcsAlfabetico()}{maisNUcsAlfabetico()}}
 {\footnotesize\ttfamily void Gestor\+::mais\+NUcs\+Alfabetico (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
 
-Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por ordem alfabética 
+Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por ordem alfabética~\newline
+Complexidade\+: O(nlog(n)) 
 \begin{DoxyParams}{Parâmetros}
 {\em n} & \\
 \hline
@@ -357,7 +375,8 @@ Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por 
 \doxysubsubsection{\texorpdfstring{maisNUcsNumero()}{maisNUcsNumero()}}
 {\footnotesize\ttfamily void Gestor\+::mais\+NUcs\+Numero (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
 
-Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por ordem crescente do número de UC\textquotesingle{}s 
+Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por ordem crescente do número de UC\textquotesingle{}s~\newline
+Complexidade\+: O(nlog(n)) 
 \begin{DoxyParams}{Parâmetros}
 {\em n} & \\
 \hline
@@ -369,25 +388,28 @@ Método que imprime todos os estudantes com mais de n UC\textquotesingle{}s por 
 {\footnotesize\ttfamily void Gestor\+::pedido\+Add (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Processa os pedidos de adicionar um aluno a uma UC/\+Turma.~\newline
-Verifica se o novo horario cumpre as condiçoes \mbox{\Hypertarget{class_gestor_a668b63dfcf09455a5edd824bc435f5c3}\label{class_gestor_a668b63dfcf09455a5edd824bc435f5c3}} 
+Complexidade\+: O(nlog(n)) Verifica se o novo horario cumpre as condiçoes \mbox{\Hypertarget{class_gestor_a668b63dfcf09455a5edd824bc435f5c3}\label{class_gestor_a668b63dfcf09455a5edd824bc435f5c3}} 
 \index{Gestor@{Gestor}!pedidoAlter@{pedidoAlter}}
 \index{pedidoAlter@{pedidoAlter}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{pedidoAlter()}{pedidoAlter()}}
 {\footnotesize\ttfamily void Gestor\+::pedido\+Alter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Processa os pedidos de alterar a ucs de UCs. Verifica se o novo horário cumpre as condições \mbox{\Hypertarget{class_gestor_a89559c053dd70d2c435ebc25608f2c7e}\label{class_gestor_a89559c053dd70d2c435ebc25608f2c7e}} 
+Processa os pedidos de alterar a ucs de UCs. Verifica se o novo horário cumpre as condições~\newline
+Complexidade\+: O(nlog(n)$\ast$m) \mbox{\Hypertarget{class_gestor_a89559c053dd70d2c435ebc25608f2c7e}\label{class_gestor_a89559c053dd70d2c435ebc25608f2c7e}} 
 \index{Gestor@{Gestor}!pedidoRemove@{pedidoRemove}}
 \index{pedidoRemove@{pedidoRemove}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{pedidoRemove()}{pedidoRemove()}}
 {\footnotesize\ttfamily void Gestor\+::pedido\+Remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Processa os pedidos de remoção do aluno de uma UC/\+Turma \mbox{\Hypertarget{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}\label{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}} 
+Processa os pedidos de remoção do aluno de uma UC/\+Turma~\newline
+Complexidade\+: O(nlog(n)) \mbox{\Hypertarget{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}\label{class_gestor_a03cbaa611dd77ce371324e6ec68ba54b}} 
 \index{Gestor@{Gestor}!PesquisarEstudante@{PesquisarEstudante}}
 \index{PesquisarEstudante@{PesquisarEstudante}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{PesquisarEstudante()}{PesquisarEstudante()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_estudante}{Estudante}} Gestor\+::\+Pesquisar\+Estudante (\begin{DoxyParamCaption}\item[{int}]{numero }\end{DoxyParamCaption})}
 
-Método que procura um estudante na BST e imprime o seu número e nome 
+Método que procura um estudante na BST e imprime o seu número e nome~\newline
+Complexidade\+: O(log(n)) 
 \begin{DoxyParams}{Parâmetros}
 {\em numero} & Número Mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline
@@ -401,7 +423,8 @@ O objeto \mbox{\hyperlink{class_estudante}{Estudante}} com o número dado. Caso 
 \doxysubsubsection{\texorpdfstring{printHorario()}{printHorario()}}
 {\footnotesize\ttfamily void Gestor\+::print\+Horario (\begin{DoxyParamCaption}\item[{const vector$<$ pair$<$ \mbox{\hyperlink{class_slot}{Slot}}, \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$ $>$ \&}]{vetor,  }\item[{map$<$ string, string $>$}]{cadeiras }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Função auxiliar para imprimir um dado horário 
+Função auxiliar para imprimir um dado horário~\newline
+Complexidade\+: O(n) 
 \begin{DoxyParams}{Parâmetros}
 {\em vetor} & Vetor de pair$<$\+Slot, Turma$>$ (já ordenado) \\
 \hline
@@ -414,50 +437,50 @@ Função auxiliar para imprimir um dado horário
 \doxysubsubsection{\texorpdfstring{printPedido()}{printPedido()}}
 {\footnotesize\ttfamily void Gestor\+::print\+Pedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Método auxiliar que dado um objeto da classe \mbox{\hyperlink{class_pedido}{Pedido}}, imprime as características importantes do mesmo \mbox{\Hypertarget{class_gestor_a7bce715ae0b40727343d8850c7dd850e}\label{class_gestor_a7bce715ae0b40727343d8850c7dd850e}} 
-\index{Gestor@{Gestor}!processPedidos@{processPedidos}}
-\index{processPedidos@{processPedidos}!Gestor@{Gestor}}
-\doxysubsubsection{\texorpdfstring{processPedidos()}{processPedidos()}}
-{\footnotesize\ttfamily void Gestor\+::process\+Pedidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-Método que permite processar todos os pedidos de uma vez, até a fila se encontrar vazia \mbox{\Hypertarget{class_gestor_a1d1927e0eaaa6bd8c2ebcbbce73e9f93}\label{class_gestor_a1d1927e0eaaa6bd8c2ebcbbce73e9f93}} 
+Método auxiliar que dado um objeto da classe \mbox{\hyperlink{class_pedido}{Pedido}}, imprime as características importantes do mesmo~\newline
+Complexidade\+: O(1) \mbox{\Hypertarget{class_gestor_a1d1927e0eaaa6bd8c2ebcbbce73e9f93}\label{class_gestor_a1d1927e0eaaa6bd8c2ebcbbce73e9f93}} 
 \index{Gestor@{Gestor}!readAulas@{readAulas}}
 \index{readAulas@{readAulas}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{readAulas()}{readAulas()}}
 {\footnotesize\ttfamily void Gestor\+::read\+Aulas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Método que lê o ficheiro classes\+\_\+per\+\_\+uc.\+csv e cria os objetos da classe \mbox{\hyperlink{class_horario}{Horario}} \mbox{\Hypertarget{class_gestor_a64ff74a8aad298d89c925bf339adaaef}\label{class_gestor_a64ff74a8aad298d89c925bf339adaaef}} 
+Método que lê o ficheiro classes\+\_\+per\+\_\+uc.\+csv e cria os objetos da classe \mbox{\hyperlink{class_horario}{Horario}}~\newline
+Complexidade\+: O(n) \mbox{\Hypertarget{class_gestor_a64ff74a8aad298d89c925bf339adaaef}\label{class_gestor_a64ff74a8aad298d89c925bf339adaaef}} 
 \index{Gestor@{Gestor}!readEstudantes@{readEstudantes}}
 \index{readEstudantes@{readEstudantes}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{readEstudantes()}{readEstudantes()}}
 {\footnotesize\ttfamily void Gestor\+::read\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Método que lê o ficheiro \char`\"{}student\+\_\+classes.\+csv\char`\"{} e cria os objetos da classe \mbox{\hyperlink{class_estudante}{Estudante}} \mbox{\Hypertarget{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}\label{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}} 
+Método que lê o ficheiro \char`\"{}student\+\_\+classes.\+csv\char`\"{} e cria os objetos da classe \mbox{\hyperlink{class_estudante}{Estudante}}~\newline
+Complexidade\+: O(nlog(n)) \mbox{\Hypertarget{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}\label{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}} 
 \index{Gestor@{Gestor}!readHorarios@{readHorarios}}
 \index{readHorarios@{readHorarios}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{readHorarios()}{readHorarios()}}
 {\footnotesize\ttfamily void Gestor\+::read\+Horarios (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Método que lê o ficheiro classes.\+csv e cria os objetos da classe \mbox{\hyperlink{class_slot}{Slot}} e adiciona-\/os à classe \mbox{\hyperlink{class_horario}{Horario}} correspondente \mbox{\Hypertarget{class_gestor_ac25cf54461642f9bb35cddb09f2a9c06}\label{class_gestor_ac25cf54461642f9bb35cddb09f2a9c06}} 
+Método que lê o ficheiro classes.\+csv e cria os objetos da classe \mbox{\hyperlink{class_slot}{Slot}} e adiciona-\/os à classe \mbox{\hyperlink{class_horario}{Horario}} correspondente~\newline
+Complexidade\+: O(n$^\wedge$2) \mbox{\Hypertarget{class_gestor_ac25cf54461642f9bb35cddb09f2a9c06}\label{class_gestor_ac25cf54461642f9bb35cddb09f2a9c06}} 
 \index{Gestor@{Gestor}!readPedidos@{readPedidos}}
 \index{readPedidos@{readPedidos}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{readPedidos()}{readPedidos()}}
 {\footnotesize\ttfamily void Gestor\+::read\+Pedidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Método que lê o ficheiro \char`\"{}pendentes.\+csv\char`\"{} e cria os objetos da classe \mbox{\hyperlink{class_pedido}{Pedido}}. Correspondem a pedidos que ainda não foram processados \mbox{\Hypertarget{class_gestor_ae0d8263ae30cf1793276b014caa54659}\label{class_gestor_ae0d8263ae30cf1793276b014caa54659}} 
+Método que lê o ficheiro \char`\"{}pendentes.\+csv\char`\"{} e cria os objetos da classe \mbox{\hyperlink{class_pedido}{Pedido}}. Correspondem a pedidos que ainda não foram processados~\newline
+O(n) \mbox{\Hypertarget{class_gestor_ae0d8263ae30cf1793276b014caa54659}\label{class_gestor_ae0d8263ae30cf1793276b014caa54659}} 
 \index{Gestor@{Gestor}!rejeitarPedido@{rejeitarPedido}}
 \index{rejeitarPedido@{rejeitarPedido}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{rejeitarPedido()}{rejeitarPedido()}}
 {\footnotesize\ttfamily void Gestor\+::rejeitar\+Pedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Rejeita um pedido, independentemente se passa, ou não, nas restriçoes.~\newline
-Quando invocado, arquiva o \mbox{\hyperlink{class_pedido}{Pedido}} e retira-\/o da fila \mbox{\Hypertarget{class_gestor_af28ed64b4bf27cbd8fc0d4d465e99ea3}\label{class_gestor_af28ed64b4bf27cbd8fc0d4d465e99ea3}} 
+Quando invocado, arquiva o \mbox{\hyperlink{class_pedido}{Pedido}} e retira-\/o da fila Complexidade\+: O(1) \mbox{\Hypertarget{class_gestor_af28ed64b4bf27cbd8fc0d4d465e99ea3}\label{class_gestor_af28ed64b4bf27cbd8fc0d4d465e99ea3}} 
 \index{Gestor@{Gestor}!searchStudent@{searchStudent}}
 \index{searchStudent@{searchStudent}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{searchStudent()}{searchStudent()}}
 {\footnotesize\ttfamily set$<$ \mbox{\hyperlink{class_estudante}{Estudante}} $>$\+::iterator Gestor\+::search\+Student (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})}
 
-Procura um estudante por code. Retorna o const iterator. 
+Procura um estudante por code. Retorna o const iterator.~\newline
+Complexidade\+: O(log(n)) 
 \begin{DoxyParams}{Parâmetros}
 {\em code} & Número Mecanográfico do \mbox{\hyperlink{class_estudante}{Estudante}} \\
 \hline
@@ -471,13 +494,15 @@ Iterador do \mbox{\hyperlink{class_estudante}{Estudante}}
 \doxysubsubsection{\texorpdfstring{setMap()}{setMap()}}
 {\footnotesize\ttfamily void Gestor\+::set\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Método que adidicona ao mapa todas as correspondências entre o código e o nome da UC \mbox{\Hypertarget{class_gestor_a16da0abeb6fabf7aa2b05a1555bd218c}\label{class_gestor_a16da0abeb6fabf7aa2b05a1555bd218c}} 
+Método que adidicona ao mapa todas as correspondências entre o código e o nome da UC~\newline
+Complexidade\+: O(1) \mbox{\Hypertarget{class_gestor_a16da0abeb6fabf7aa2b05a1555bd218c}\label{class_gestor_a16da0abeb6fabf7aa2b05a1555bd218c}} 
 \index{Gestor@{Gestor}!StringintoVectorClassCode@{StringintoVectorClassCode}}
 \index{StringintoVectorClassCode@{StringintoVectorClassCode}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{StringintoVectorClassCode()}{StringintoVectorClassCode()}}
 {\footnotesize\ttfamily vector$<$ string $>$ Gestor\+::\+Stringinto\+Vector\+Class\+Code (\begin{DoxyParamCaption}\item[{string}]{conjunto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Método auxiliar que transforma uma string do tipo \char`\"{}n\+LEICXYZ/n\+LEICXYZ...\char`\"{} em vários string \char`\"{}n\+LEICXYZ\char`\"{} (dá \char`\"{}split\char`\"{}) e retorna o vetor com todas essas strings em questão 
+Método auxiliar que transforma uma string do tipo \char`\"{}n\+LEICXYZ/n\+LEICXYZ...\char`\"{} em vários string \char`\"{}n\+LEICXYZ\char`\"{} (dá \char`\"{}split\char`\"{}) e retorna o vetor com todas essas strings em questão~\newline
+Complexidade\+: O(n) em que n corresponde ao tamanho da string 
 \begin{DoxyParams}{Parâmetros}
 {\em conjunto} & A string que vai ser dado \char`\"{}split\char`\"{} \\
 \hline
@@ -491,7 +516,8 @@ Retorna o vetor com todas os códigos Class\+Code
 \doxysubsubsection{\texorpdfstring{StringintoVectorUcCode()}{StringintoVectorUcCode()}}
 {\footnotesize\ttfamily vector$<$ string $>$ Gestor\+::\+Stringinto\+Vector\+Uc\+Code (\begin{DoxyParamCaption}\item[{string}]{conjunto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Método auxiliar que transforma uma string do tipo \char`\"{}\+L.\+EICXYZ/\+L.\+EICXYZ...\char`\"{} em vários string \char`\"{}\+L.\+EICXYZ\char`\"{} (dá \char`\"{}split\char`\"{}) e retorna o vetor com todas essas strings em questão 
+Método auxiliar que transforma uma string do tipo \char`\"{}\+L.\+EICXYZ/\+L.\+EICXYZ...\char`\"{} em vários string \char`\"{}\+L.\+EICXYZ\char`\"{} (dá \char`\"{}split\char`\"{}) e retorna o vetor com todas essas strings em questão~\newline
+Complexidade\+: O(n) em que n corresponde ao tamanho da string 
 \begin{DoxyParams}{Parâmetros}
 {\em conjunto} & A string que vai ser dado \char`\"{}split\char`\"{} \\
 \hline
@@ -505,7 +531,8 @@ Retorna o vetor com todos os codigos Uc\+Code
 \doxysubsubsection{\texorpdfstring{studentInClass()}{studentInClass()}}
 {\footnotesize\ttfamily bool Gestor\+::student\+In\+Class (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_estudante}{Estudante}} \&}]{student,  }\item[{const string \&}]{cod\+UC,  }\item[{string}]{cod\+Turma }\end{DoxyParamCaption})}
 
-Método que verifica se um estudante se encontra inscrito numa dada \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} 
+Método que verifica se um estudante se encontra inscrito numa dada \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}~\newline
+Complexidade\+: O(n) 
 \begin{DoxyParams}{Parâmetros}
 {\em student} & \mbox{\hyperlink{class_estudante}{Estudante}} a verificar \\
 \hline
@@ -523,7 +550,8 @@ Retorna true se o estudante estiver inscrito na turma e false em qualquer outro 
 \doxysubsubsection{\texorpdfstring{testCap()}{testCap()}}
 {\footnotesize\ttfamily bool Gestor\+::test\+Cap (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ \&}]{temp,  }\item[{const list$<$ string $>$ \&}]{ucs }\end{DoxyParamCaption})}
 
-Verifica se não há desiquilibrio entre as turmas 
+Verifica se não há desiquilibrio entre as turmas~\newline
+Complexidade\+: O(n$\ast$m) 
 \begin{DoxyParams}{Parâmetros}
 {\em temp} & Horário a ser verificado \\
 \hline
@@ -539,7 +567,8 @@ Retorna falso se pelo menos uma UC estiver em desiquilibrio, retorna verdadeiro 
 \doxysubsubsection{\texorpdfstring{VectorintoString()}{VectorintoString()}}
 {\footnotesize\ttfamily string Gestor\+::\+Vectorinto\+String (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{vetor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Método auxiliar, que transforma um vetor de strings numa string só, separada com \char`\"{}/\char`\"{}; 
+Método auxiliar, que transforma um vetor de strings numa string só, separada com \char`\"{}/\char`\"{}~\newline
+Complexidade\+: O(n) 
 \begin{DoxyParams}{Parâmetros}
 {\em vetor} & Vetor com a string \\
 \hline
@@ -577,7 +606,8 @@ Verifica que o numero de alunos não passou de CAP
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-Retorna true, se houver menos estudantes na turma, do que a capacidade máxima desta 
+Retorna true, se houver menos estudantes na turma, do que a capacidade máxima desta~\newline
+Complexidade\+: O(log(m)) em que m é o número de Horários 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_gestor_a479dcde389cd9b34a8cfed131818fbc9}\label{class_gestor_a479dcde389cd9b34a8cfed131818fbc9}} 
 \index{Gestor@{Gestor}!verifyCapvector@{verifyCapvector}}
@@ -591,7 +621,8 @@ Verifica que o número de alunos não superou o CAP, num vetor de \mbox{\hyperli
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-Retorna true, todas as turmas não estiverem com mais alunos do que o seu Cap 
+Retorna true, todas as turmas não estiverem com mais alunos do que o seu Cap~\newline
+Complexidade\+: O(nlog(m)) em que m é o número de horários 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_gestor_ad3d237affb600627b3618bece9f8e181}\label{class_gestor_ad3d237affb600627b3618bece9f8e181}} 
 \index{Gestor@{Gestor}!verifyClasses@{verifyClasses}}
@@ -599,7 +630,8 @@ Retorna true, todas as turmas não estiverem com mais alunos do que o seu Cap
 \doxysubsubsection{\texorpdfstring{verifyClasses()}{verifyClasses()}}
 {\footnotesize\ttfamily bool Gestor\+::verify\+Classes (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$}]{temp,  }\item[{vector$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$}]{to\+Add,  }\item[{vector$<$ \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} $>$}]{to\+Rem }\end{DoxyParamCaption})}
 
-Verifica se não há desiquilibrio entre turmas 
+Verifica se não há desiquilibrio entre turmas~\newline
+Complexidade\+: O(n) 
 \begin{DoxyParams}{Parâmetros}
 {\em temp} & \mbox{\hyperlink{class_horario}{Horario}} a ser verificado \\
 \hline
@@ -617,7 +649,8 @@ Retorna true se não houver desiquilibrio entre turmas
 \doxysubsubsection{\texorpdfstring{verifyOverlap()}{verifyOverlap()}}
 {\footnotesize\ttfamily bool Gestor\+::verify\+Overlap (\begin{DoxyParamCaption}\item[{const list$<$ \mbox{\hyperlink{class_horario}{Horario}} $>$ \&}]{horario }\end{DoxyParamCaption})}
 
-Verifca se a sobreposições de horarios 
+Verifca se a sobreposições de horarios~\newline
+Complexidade\+: O(n$^\wedge$2) 
 \begin{DoxyParams}{Parâmetros}
 {\em horario} & A lista de \mbox{\hyperlink{class_horario}{Horario}} a verificar \\
 \hline
@@ -631,7 +664,8 @@ Falso se houver sobreposição, verdadeiro em qualquer outro caso
 \doxysubsubsection{\texorpdfstring{verifyPedido()}{verifyPedido()}}
 {\footnotesize\ttfamily bool Gestor\+::verify\+Pedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Verifica o primeiro pedido da fila \begin{DoxyReturn}{Retorna}
+Verifica o primeiro pedido da fila~\newline
+Complexidade\+: O(n) \begin{DoxyReturn}{Retorna}
 Retorna true nos casos em que o \mbox{\hyperlink{class_pedido}{Pedido}} obedece às restrições 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_gestor_ab4105dd42fae280af03b2461d731548e}\label{class_gestor_ab4105dd42fae280af03b2461d731548e}} 
@@ -640,13 +674,15 @@ Retorna true nos casos em que o \mbox{\hyperlink{class_pedido}{Pedido}} obedece 
 \doxysubsubsection{\texorpdfstring{writeEstudantes()}{writeEstudantes()}}
 {\footnotesize\ttfamily void Gestor\+::write\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Este ficheiro limpa o ficheiro \char`\"{}student\+\_\+classes.\+csv\char`\"{}, para voltar a escrevê-\/lo com as alterações feitas, guardando assim, as alterações quando o programa termina \mbox{\Hypertarget{class_gestor_ac9a4fc17beed602d57346b8eeeb038c9}\label{class_gestor_ac9a4fc17beed602d57346b8eeeb038c9}} 
+Este ficheiro limpa o ficheiro \char`\"{}student\+\_\+classes.\+csv\char`\"{}, para voltar a escrevê-\/lo com as alterações feitas, guardando assim, as alterações quando o programa termina~\newline
+Complexidade\+: O(n) \mbox{\Hypertarget{class_gestor_ac9a4fc17beed602d57346b8eeeb038c9}\label{class_gestor_ac9a4fc17beed602d57346b8eeeb038c9}} 
 \index{Gestor@{Gestor}!writePedidosPendentes@{writePedidosPendentes}}
 \index{writePedidosPendentes@{writePedidosPendentes}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{writePedidosPendentes()}{writePedidosPendentes()}}
 {\footnotesize\ttfamily void Gestor\+::write\+Pedidos\+Pendentes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Este método escreve os pedidos que ainda não foram processados no ficheiro \char`\"{}pendentes.\+csv\char`\"{}, para poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada 
+Este método escreve os pedidos que ainda não foram processados no ficheiro \char`\"{}pendentes.\+csv\char`\"{}, para poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada~\newline
+Complexidade\+: O(n) 
 
 \doxysubsection{Documentação dos dados membro}
 \mbox{\Hypertarget{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}\label{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}} 

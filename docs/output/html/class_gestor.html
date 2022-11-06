@@ -121,7 +121,8 @@ Membros públicos</h2></td></tr>
 <tr class="separator:a2102bf990245b6f9d0418e2821abbfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12b2ff53c546858442f6449e81391f5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestor.html#a12b2ff53c546858442f6449e81391f5a">setMap</a> ()</td></tr>
 <tr class="separator:a12b2ff53c546858442f6449e81391f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bce715ae0b40727343d8850c7dd850e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestor.html#a7bce715ae0b40727343d8850c7dd850e">processPedidos</a> ()</td></tr>
+<tr class="memitem:a7bce715ae0b40727343d8850c7dd850e"><td class="memItemLeft" align="right" valign="top"><a id="a7bce715ae0b40727343d8850c7dd850e" name="a7bce715ae0b40727343d8850c7dd850e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>processPedidos</b> ()</td></tr>
 <tr class="separator:a7bce715ae0b40727343d8850c7dd850e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff41cf69a5a4a932f725d996378fe746"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gestor.html#aff41cf69a5a4a932f725d996378fe746">pedidoAdd</a> ()</td></tr>
 <tr class="separator:aff41cf69a5a4a932f725d996378fe746"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,7 +263,8 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Aceita um pedido, independentemente se passa, ou não, nas restriçoes.<br  />
-Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, retira-o da fila e faz as alterações nos atributos para continuar coerente </p>
+Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, retira-o da fila e faz as alterações nos atributos para continuar coerente<br  />
+Complexidade: O(n) em que n é o número de horários existentes (constante) </p>
 
 </div>
 </div>
@@ -280,7 +282,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Permite adicionar um <a class="el" href="class_pedido.html">Pedido</a> do tipo "Add", sobre várias restriçoes(Estudante existir, UcTurma existir...). Esse <a class="el" href="class_pedido.html">Pedido</a> é adicionado à fila pedidos </p>
+<p >Permite adicionar um <a class="el" href="class_pedido.html">Pedido</a> do tipo "Add", sobre várias restriçoes(Estudante existir, UcTurma existir...). Esse <a class="el" href="class_pedido.html">Pedido</a> é adicionado à fila pedidos<br  />
+ Complexidade: O(log(n)*m) </p>
 
 </div>
 </div>
@@ -298,7 +301,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Permite adicionar um <a class="el" href="class_pedido.html">Pedido</a> do tipo "Alter", sobre várias restriçoes(Estudante existir, UcTurma existir...). Esse <a class="el" href="class_pedido.html">Pedido</a> é adicionado à fila pedidos </p>
+<p >Permite adicionar um <a class="el" href="class_pedido.html">Pedido</a> do tipo "Alter", sobre várias restriçoes(Estudante existir, UcTurma existir...). Esse <a class="el" href="class_pedido.html">Pedido</a> é adicionado à fila pedidos<br  />
+Complexidade: O(log(n)*m) </p>
 
 </div>
 </div>
@@ -316,7 +320,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Permite adicionar um <a class="el" href="class_pedido.html">Pedido</a> do tipo "Rem", sobre várias restriçoes(Estudante existir, UcTurma existir...). Esse <a class="el" href="class_pedido.html">Pedido</a> é adicionado à fila pedidos </p>
+<p >Permite adicionar um <a class="el" href="class_pedido.html">Pedido</a> do tipo "Rem", sobre várias restriçoes(Estudante existir, UcTurma existir...). Esse <a class="el" href="class_pedido.html">Pedido</a> é adicionado à fila pedidos<br  />
+Complexidade: O(log(n)*m) </p>
 
 </div>
 </div>
@@ -335,7 +340,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Este método arquiva o primerio pedido da fila, guardando-o no ficheiro "arquivo.csv" </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Este método arquiva o primerio pedido da fila, guardando-o no ficheiro "arquivo.csv"<br  />
+Complexidade: O(1) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">aceite</td><td>Valor booleano que se refere se o pedido foi(true), ou não(false) aceite </td></tr>
   </table>
@@ -377,7 +383,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Método auxiliar para ordenar pares com <a class="el" href="class_slot.html">Slot</a> e Turma </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método auxiliar para ordenar pares com <a class="el" href="class_slot.html">Slot</a> e Turma<br  />
+Complexidade: O(1) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">a</td><td>Primeiro par </td></tr>
     <tr><td class="paramname">b</td><td>Segundo par </td></tr>
@@ -413,7 +420,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que verifica se um objeto <a class="el" href="class_horario.html">Horario</a> está contido num vetor de <a class="el" href="class_uc_turma.html">UcTurma</a>, usando o objeto <a class="el" href="class_uc_turma.html">UcTurma</a> homólogo </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método que verifica se um objeto <a class="el" href="class_horario.html">Horario</a> está contido num vetor de <a class="el" href="class_uc_turma.html">UcTurma</a>, usando o objeto <a class="el" href="class_uc_turma.html">UcTurma</a> homólogo<br  />
+Complexidade: O(n) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">horario</td><td>Objeto da classe Horário a ser verificado </td></tr>
     <tr><td class="paramname">ucTurmas</td><td>Vetor de verificação </td></tr>
@@ -449,7 +457,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que conta o número de estudantes que estão inscritos numa dada <a class="el" href="class_uc_turma.html">UcTurma</a> </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método que conta o número de estudantes que estão inscritos numa dada <a class="el" href="class_uc_turma.html">UcTurma</a><br  />
+Complexidade: O(n) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">codUC</td><td>Código da UC </td></tr>
     <tr><td class="paramname">codTurma</td><td>Código da Turma </td></tr>
@@ -474,7 +483,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Adiciona à classe <a class="el" href="class_horario.html">Horario</a> o atributo com o número de estudantes inscritos numa <a class="el" href="class_uc_turma.html">UcTurma</a> </p>
+<p >Adiciona à classe <a class="el" href="class_horario.html">Horario</a> o atributo com o número de estudantes inscritos numa <a class="el" href="class_uc_turma.html">UcTurma</a><br  />
+Complexidade: O(n*m) </p>
 
 </div>
 </div>
@@ -493,7 +503,7 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Retira slots que não correspondam a aulas TP </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Retira slots que não correspondam a aulas TP Complexidade: O(n) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">horario</td><td>lista de <a class="el" href="class_slot.html">Slot</a> (associado a uma UC) </td></tr>
   </table>
@@ -516,7 +526,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Retorna</dt><dd>Retorna a BST com os estudantes </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna a BST com os estudantes<br  />
+Complexidade: O(1) </dd></dl>
 
 </div>
 </div>
@@ -534,7 +545,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Retorna</dt><dd>Retorna o vetor com os horarios </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna o vetor com os horarios<br  />
+Complexidade: O(1) </dd></dl>
 
 </div>
 </div>
@@ -553,7 +565,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Retorna uma lista de Horarios correspondentes as UcTurmas passadas por parametro </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Retorna uma lista de Horarios correspondentes as UcTurmas passadas por parametro<br  />
+Complexidade: O(nlog(m)) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">turmas</td><td>lista com todas as <a class="el" href="class_uc_turma.html">UcTurma</a> </td></tr>
   </table>
@@ -603,7 +616,8 @@ Complexidade: O(log(n)) </p><dl class="params"><dt>Parâmetros</dt><dd>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Retorna</dt><dd>Retorna a fila com os pedidos </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna a fila com os pedidos<br  />
+Complexidade(1) </dd></dl>
 
 </div>
 </div>
@@ -622,7 +636,8 @@ Complexidade: O(log(n)) </p><dl class="params"><dt>Parâmetros</dt><dd>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Cria lista com todos os <a class="el" href="class_slot.html">Slot</a> de uma lista de Horarios </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Cria lista com todos os <a class="el" href="class_slot.html">Slot</a> de uma lista de Horarios<br  />
+Complexidade: O(n*m) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">horario</td><td>Lista de objetos <a class="el" href="class_horario.html">Horario</a> </td></tr>
   </table>
@@ -648,7 +663,8 @@ Complexidade: O(log(n)) </p><dl class="params"><dt>Parâmetros</dt><dd>
       </table>
 </div><div class="memdoc">
 <p >Método que procura um estudante na BST e imprime o seu número, nome e horário<br  />
-Utiliza a função <a class="el" href="class_gestor.html#a03cbaa611dd77ce371324e6ec68ba54b">Gestor::PesquisarEstudante</a> para auxiliar na pesquisa e a função <a class="el" href="class_gestor.html#ae3a49e5f6d5eec1a0170ad93838209ec">Gestor::printHorario</a> para imprimir o horário </p><dl class="params"><dt>Parâmetros</dt><dd>
+Utiliza a função <a class="el" href="class_gestor.html#a03cbaa611dd77ce371324e6ec68ba54b">Gestor::PesquisarEstudante</a> para auxiliar na pesquisa e a função <a class="el" href="class_gestor.html#ae3a49e5f6d5eec1a0170ad93838209ec">Gestor::printHorario</a> para imprimir o horário<br  />
+Complexidade: O(n*log(m)) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">numero</td><td>Número Mecanográfico do <a class="el" href="class_estudante.html">Estudante</a> </td></tr>
   </table>
@@ -672,7 +688,8 @@ Utiliza a função <a class="el" href="class_gestor.html#a03cbaa611dd77ce371324e
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que imprime todos os estudantes com mais de n UC's por ordem crescente de número mecanográfico </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método que imprime todos os estudantes com mais de n UC's por ordem crescente de número mecanográfico<br  />
+Complexidade: O(n) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td></td></tr>
   </table>
@@ -696,7 +713,8 @@ Utiliza a função <a class="el" href="class_gestor.html#a03cbaa611dd77ce371324e
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que imprime todos os estudantes com mais de n UC's por ordem alfabética </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método que imprime todos os estudantes com mais de n UC's por ordem alfabética<br  />
+Complexidade: O(nlog(n)) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td></td></tr>
   </table>
@@ -720,7 +738,8 @@ Utiliza a função <a class="el" href="class_gestor.html#a03cbaa611dd77ce371324e
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que imprime todos os estudantes com mais de n UC's por ordem crescente do número de UC's </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método que imprime todos os estudantes com mais de n UC's por ordem crescente do número de UC's<br  />
+Complexidade: O(nlog(n)) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td></td></tr>
   </table>
@@ -744,7 +763,7 @@ Utiliza a função <a class="el" href="class_gestor.html#a03cbaa611dd77ce371324e
       </table>
 </div><div class="memdoc">
 <p >Processa os pedidos de adicionar um aluno a uma UC/Turma.<br  />
-Verifica se o novo horario cumpre as condiçoes </p>
+Complexidade: O(nlog(n)) Verifica se o novo horario cumpre as condiçoes </p>
 
 </div>
 </div>
@@ -762,7 +781,8 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Processa os pedidos de alterar a ucs de UCs. Verifica se o novo horário cumpre as condições </p>
+<p >Processa os pedidos de alterar a ucs de UCs. Verifica se o novo horário cumpre as condições<br  />
+Complexidade: O(nlog(n)*m) </p>
 
 </div>
 </div>
@@ -780,7 +800,8 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Processa os pedidos de remoção do aluno de uma UC/Turma </p>
+<p >Processa os pedidos de remoção do aluno de uma UC/Turma<br  />
+Complexidade: O(nlog(n)) </p>
 
 </div>
 </div>
@@ -799,7 +820,8 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que procura um estudante na BST e imprime o seu número e nome </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método que procura um estudante na BST e imprime o seu número e nome<br  />
+Complexidade: O(log(n)) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">numero</td><td>Número Mecanográfico do <a class="el" href="class_estudante.html">Estudante</a> </td></tr>
   </table>
@@ -842,7 +864,8 @@ Verifica se o novo horario cumpre as condiçoes </p>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Função auxiliar para imprimir um dado horário </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Função auxiliar para imprimir um dado horário<br  />
+Complexidade: O(n) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">vetor</td><td>Vetor de pair&lt;Slot, Turma&gt; (já ordenado) </td></tr>
     <tr><td class="paramname">cadeiras</td><td>Mapa para fazer corresponder o código da UC ao seu nome </td></tr>
@@ -866,25 +889,8 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método auxiliar que dado um objeto da classe <a class="el" href="class_pedido.html">Pedido</a>, imprime as características importantes do mesmo </p>
-
-</div>
-</div>
-<a id="a7bce715ae0b40727343d8850c7dd850e" name="a7bce715ae0b40727343d8850c7dd850e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bce715ae0b40727343d8850c7dd850e">&#9670;&#160;</a></span>processPedidos()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Gestor::processPedidos </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >Método que permite processar todos os pedidos de uma vez, até a fila se encontrar vazia </p>
+<p >Método auxiliar que dado um objeto da classe <a class="el" href="class_pedido.html">Pedido</a>, imprime as características importantes do mesmo<br  />
+Complexidade: O(1) </p>
 
 </div>
 </div>
@@ -902,7 +908,8 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que lê o ficheiro classes_per_uc.csv e cria os objetos da classe <a class="el" href="class_horario.html">Horario</a> </p>
+<p >Método que lê o ficheiro classes_per_uc.csv e cria os objetos da classe <a class="el" href="class_horario.html">Horario</a><br  />
+Complexidade: O(n) </p>
 
 </div>
 </div>
@@ -920,7 +927,8 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que lê o ficheiro "student_classes.csv" e cria os objetos da classe <a class="el" href="class_estudante.html">Estudante</a> </p>
+<p >Método que lê o ficheiro "student_classes.csv" e cria os objetos da classe <a class="el" href="class_estudante.html">Estudante</a><br  />
+Complexidade: O(nlog(n)) </p>
 
 </div>
 </div>
@@ -938,7 +946,8 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que lê o ficheiro classes.csv e cria os objetos da classe <a class="el" href="class_slot.html">Slot</a> e adiciona-os à classe <a class="el" href="class_horario.html">Horario</a> correspondente </p>
+<p >Método que lê o ficheiro classes.csv e cria os objetos da classe <a class="el" href="class_slot.html">Slot</a> e adiciona-os à classe <a class="el" href="class_horario.html">Horario</a> correspondente<br  />
+Complexidade: O(n^2) </p>
 
 </div>
 </div>
@@ -956,7 +965,8 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que lê o ficheiro "pendentes.csv" e cria os objetos da classe <a class="el" href="class_pedido.html">Pedido</a>. Correspondem a pedidos que ainda não foram processados </p>
+<p >Método que lê o ficheiro "pendentes.csv" e cria os objetos da classe <a class="el" href="class_pedido.html">Pedido</a>. Correspondem a pedidos que ainda não foram processados<br  />
+O(n) </p>
 
 </div>
 </div>
@@ -975,7 +985,7 @@ Verifica se o novo horario cumpre as condiçoes </p>
       </table>
 </div><div class="memdoc">
 <p >Rejeita um pedido, independentemente se passa, ou não, nas restriçoes.<br  />
-Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e retira-o da fila </p>
+Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e retira-o da fila Complexidade: O(1) </p>
 
 </div>
 </div>
@@ -994,7 +1004,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Procura um estudante por code. Retorna o const iterator. </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Procura um estudante por code. Retorna o const iterator.<br  />
+Complexidade: O(log(n)) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">code</td><td>Número Mecanográfico do <a class="el" href="class_estudante.html">Estudante</a> </td></tr>
   </table>
@@ -1018,7 +1029,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que adidicona ao mapa todas as correspondências entre o código e o nome da UC </p>
+<p >Método que adidicona ao mapa todas as correspondências entre o código e o nome da UC<br  />
+Complexidade: O(1) </p>
 
 </div>
 </div>
@@ -1045,7 +1057,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Método auxiliar que transforma uma string do tipo "nLEICXYZ/nLEICXYZ..." em vários string "nLEICXYZ" (dá "split") e retorna o vetor com todas essas strings em questão </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método auxiliar que transforma uma string do tipo "nLEICXYZ/nLEICXYZ..." em vários string "nLEICXYZ" (dá "split") e retorna o vetor com todas essas strings em questão<br  />
+Complexidade: O(n) em que n corresponde ao tamanho da string </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">conjunto</td><td>A string que vai ser dado "split" </td></tr>
   </table>
@@ -1078,7 +1091,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Método auxiliar que transforma uma string do tipo "L.EICXYZ/L.EICXYZ..." em vários string "L.EICXYZ" (dá "split") e retorna o vetor com todas essas strings em questão </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método auxiliar que transforma uma string do tipo "L.EICXYZ/L.EICXYZ..." em vários string "L.EICXYZ" (dá "split") e retorna o vetor com todas essas strings em questão<br  />
+Complexidade: O(n) em que n corresponde ao tamanho da string </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">conjunto</td><td>A string que vai ser dado "split" </td></tr>
   </table>
@@ -1119,7 +1133,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que verifica se um estudante se encontra inscrito numa dada <a class="el" href="class_uc_turma.html">UcTurma</a> </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método que verifica se um estudante se encontra inscrito numa dada <a class="el" href="class_uc_turma.html">UcTurma</a><br  />
+Complexidade: O(n) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">student</td><td><a class="el" href="class_estudante.html">Estudante</a> a verificar </td></tr>
     <tr><td class="paramname">codUC</td><td>Código da UC </td></tr>
@@ -1156,7 +1171,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Verifica se não há desiquilibrio entre as turmas </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Verifica se não há desiquilibrio entre as turmas<br  />
+Complexidade: O(n*m) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">temp</td><td>Horário a ser verificado </td></tr>
     <tr><td class="paramname">ucs</td><td>Unidades curriculares onde ocorreram as mudanças de turma </td></tr>
@@ -1190,7 +1206,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Método auxiliar, que transforma um vetor de strings numa string só, separada com "/"; </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método auxiliar, que transforma um vetor de strings numa string só, separada com "/"<br  />
+Complexidade: O(n) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">vetor</td><td>Vetor com a string </td></tr>
   </table>
@@ -1257,7 +1274,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>Retorna true, se houver menos estudantes na turma, do que a capacidade máxima desta </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna true, se houver menos estudantes na turma, do que a capacidade máxima desta<br  />
+Complexidade: O(log(m)) em que m é o número de Horários </dd></dl>
 
 </div>
 </div>
@@ -1282,7 +1300,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd>Retorna true, todas as turmas não estiverem com mais alunos do que o seu Cap </dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna true, todas as turmas não estiverem com mais alunos do que o seu Cap<br  />
+Complexidade: O(nlog(m)) em que m é o número de horários </dd></dl>
 
 </div>
 </div>
@@ -1317,7 +1336,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Verifica se não há desiquilibrio entre turmas </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Verifica se não há desiquilibrio entre turmas<br  />
+Complexidade: O(n) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">temp</td><td><a class="el" href="class_horario.html">Horario</a> a ser verificado </td></tr>
     <tr><td class="paramname">toAdd</td><td>Turmas que se pretendem adicionar ao horário </td></tr>
@@ -1344,7 +1364,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Verifca se a sobreposições de horarios </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Verifca se a sobreposições de horarios<br  />
+Complexidade: O(n^2) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">horario</td><td>A lista de <a class="el" href="class_horario.html">Horario</a> a verificar </td></tr>
   </table>
@@ -1368,7 +1389,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Verifica o primeiro pedido da fila </p><dl class="section return"><dt>Retorna</dt><dd>Retorna true nos casos em que o <a class="el" href="class_pedido.html">Pedido</a> obedece às restrições </dd></dl>
+<p >Verifica o primeiro pedido da fila<br  />
+Complexidade: O(n) </p><dl class="section return"><dt>Retorna</dt><dd>Retorna true nos casos em que o <a class="el" href="class_pedido.html">Pedido</a> obedece às restrições </dd></dl>
 
 </div>
 </div>
@@ -1386,7 +1408,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Este ficheiro limpa o ficheiro "student_classes.csv", para voltar a escrevê-lo com as alterações feitas, guardando assim, as alterações quando o programa termina </p>
+<p >Este ficheiro limpa o ficheiro "student_classes.csv", para voltar a escrevê-lo com as alterações feitas, guardando assim, as alterações quando o programa termina<br  />
+Complexidade: O(n) </p>
 
 </div>
 </div>
@@ -1404,7 +1427,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Este método escreve os pedidos que ainda não foram processados no ficheiro "pendentes.csv", para poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada </p>
+<p >Este método escreve os pedidos que ainda não foram processados no ficheiro "pendentes.csv", para poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada<br  />
+Complexidade: O(n) </p>
 
 </div>
 </div>

@@ -9,7 +9,7 @@
 using namespace std;
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o código do Estudante
  */
 int Pedido::getcodigo_estudante() const {
@@ -17,7 +17,7 @@ int Pedido::getcodigo_estudante() const {
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna o Tipo do Pedido
  */
 const string &Pedido::getTipo() const {
@@ -25,7 +25,6 @@ const string &Pedido::getTipo() const {
 }
 
 /**
- *
  * @param tipo Tipo do Pedido ("Add" ou "Rem")
  * @param codigoEstudante Código do Estudante
  * @param turmaR Turma a ser adicionado ou removido
@@ -38,7 +37,6 @@ Pedido::Pedido(const string &tipo, int codigoEstudante, const string &turmaR, co
 }
 
 /**
- *
  * @param tipo Tipo de Pedido ("Alter")
  * @param codigoEstudante Código do Estudante
  * @param turmaR Turma(s) a ser removido
@@ -49,7 +47,7 @@ Pedido::Pedido(const string &tipo, int codigoEstudante, const vector<string> &tu
                const vector<string> &ucs) : tipo(tipo), codigo_estudante(codigoEstudante), turmaR(turmaR),
                turmaA(turmaA), ucs(ucs) {};
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna TurmaR
  */
 const vector<string> &Pedido::getTurmaR() const {
@@ -57,7 +55,7 @@ const vector<string> &Pedido::getTurmaR() const {
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna TurmaA
  */
 const vector<string> &Pedido::getTurmaA() const {
@@ -65,7 +63,7 @@ const vector<string> &Pedido::getTurmaA() const {
 }
 
 /**
- *
+ * Complexidade: O(1)
  * @return Retorna UCs
  */
 const vector<string> &Pedido::getUCs() const {
