@@ -82,7 +82,7 @@ int main() {
         }
 
     }
-    //gestor.writeEstudantes();
+    gestor.writeEstudantes();
     gestor.writePedidosPendentes();
 
     return 0;

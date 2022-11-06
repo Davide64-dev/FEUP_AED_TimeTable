@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['searchstudent_0',['searchStudent',['../class_gestor.html#af28ed64b4bf27cbd8fc0d4d465e99ea3',1,'Gestor']]],
-  ['setmap_1',['setMap',['../class_gestor.html#a12b2ff53c546858442f6449e81391f5a',1,'Gestor']]],
-  ['setnumestudantes_2',['setNumEstudantes',['../class_horario.html#ac8fcf386fbdca6ad10368e9790f587a4',1,'Horario']]],
-  ['slot_3',['Slot',['../class_slot.html#ac9975ec4a8a34f0aad3d98f3b0efb009',1,'Slot']]],
-  ['studentinclass_4',['studentInClass',['../class_gestor.html#a23bf645805fd5a086ad6f2f294a25c10',1,'Gestor']]]
+  ['pedido_0',['Pedido',['../class_pedido.html#a32e8628c807c560bd7fe304d3f444e33',1,'Pedido::Pedido(const string &amp;tipo, int codigoEstudante, const string &amp;turmaR, const string &amp;uc)'],['../class_pedido.html#a0f94799715be784f8df604d4fefc4430',1,'Pedido::Pedido(const string &amp;tipo, int codigoEstudante, const vector&lt; string &gt; &amp;turmaR, const vector&lt; string &gt; &amp;turmaA, const vector&lt; string &gt; &amp;ucs)']]],
+  ['pedidoadd_1',['pedidoAdd',['../class_gestor.html#aff41cf69a5a4a932f725d996378fe746',1,'Gestor']]],
+  ['pedidoalter_2',['pedidoAlter',['../class_gestor.html#a668b63dfcf09455a5edd824bc435f5c3',1,'Gestor']]],
+  ['pedidoremove_3',['pedidoRemove',['../class_gestor.html#a89559c053dd70d2c435ebc25608f2c7e',1,'Gestor']]],
+  ['pesquisarestudante_4',['PesquisarEstudante',['../class_gestor.html#a03cbaa611dd77ce371324e6ec68ba54b',1,'Gestor']]],
+  ['printhorario_5',['printHorario',['../class_gestor.html#ae3a49e5f6d5eec1a0170ad93838209ec',1,'Gestor']]],
+  ['printpedido_6',['printPedido',['../class_gestor.html#a53a733decb91ddbd8e61c7d3d18878d8',1,'Gestor']]],
+  ['processpedidos_7',['processPedidos',['../class_gestor.html#a7bce715ae0b40727343d8850c7dd850e',1,'Gestor']]]
 ];

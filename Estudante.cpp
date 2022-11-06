@@ -97,6 +97,11 @@ bool Estudante::delUCTurma(UcTurma turma){
     return true;
 }
 
+/**
+ * Verifica se um estudante está inscrito numa dada UcTurma
+ * @param turma UcTurma a ser pesquisada
+ * @return Retorna 0 se pertencer à Uc e à turma, 1 se pertencer apenas à UC e -1 se não pertencer a nenhum
+ */
 int Estudante::naTurma(UcTurma turma) const{
     for (UcTurma i : horario){
         if (i.getcodUC() == turma.getcodUC()){

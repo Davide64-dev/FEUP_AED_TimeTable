@@ -209,6 +209,10 @@ void Gestor::readAulas() {
     in.close();
 }
 
+/**
+ * Método que lê o ficheiro pendentes.csv e cria os objetos da classe Pedido. Correspondem a pedidos que ainda
+ * não foram processados
+ */
 void Gestor::readPedidos(){
     vector<string> lineV(4);
     ifstream in("../schedule/pendentes.csv");
@@ -256,6 +260,12 @@ void Gestor::readPedidos(){
 
 }
 
+/**
+ * Método auxiliar que transforma uma string do tipo "nLEICXYZ/nLEICXYZ..." em vários string "nLEICXYZ" (dá "split")
+ * e retorna o vetor com todas essas strings em questão
+ * @param conjunto A string que vai ser dado "split"
+ * @return Retorna o vetor com todas os códigos ClassCode
+ */
 vector<string> Gestor::StringintoVectorClassCode(std::string conjunto) {
     vector <string> retorno;
     unsigned length = conjunto.size();
@@ -266,6 +276,12 @@ vector<string> Gestor::StringintoVectorClassCode(std::string conjunto) {
     return retorno;
 }
 
+/**
+ * Método auxiliar que transforma uma string do tipo "L.EICXYZ/L.EICXYZ..." em vários string "L.EICXYZ" (dá "split")
+ * e retorna o vetor com todas essas trings em questão
+ * @param conjunto A string que vai ser dado "split"
+ * @return Retorna o vetor com todos os codigos UcCode
+ */
 vector<string> Gestor::StringintoVectorUcCode(std::string conjunto) {
     vector <string> retorno;
     unsigned length = conjunto.size();
@@ -535,7 +551,9 @@ void Gestor::maisNUcs(int n){
    }
 }
 
-
+/**
+ * Método que permite processar todos os pedidos de uma vez, até a fila se encontrar vazia
+ */
 void Gestor::processPedidos() {
     while(!pedidos.empty()) {
         if(pedidos.front().getTipo() == "Add") pedidoAdd();
@@ -558,6 +576,9 @@ set<Estudante>::iterator Gestor::searchStudent(int code) {
     return estudantes.find(ghost);
 }
 
+/**
+ * Método auxiliar que dado um objeto da classe Pedido, imprime as características importantes do mesmo
+ */
 void Gestor::printPedido() {
     cout << '\n';
     cout << "Aluno: " << pedidos.front().getcodigo_estudante() << '\n';
@@ -575,6 +596,10 @@ void Gestor::printPedido() {
 
 }
 
+/**
+ * Verifica o primeiro pedido da fila
+ * @return Retorna true nos casos em que o Pedido obedece às restrições
+ */
 bool Gestor::verifyPedido() {
     if(pedidos.front().getTipo() == "Add")
         return verifyAdd();
@@ -583,6 +608,10 @@ bool Gestor::verifyPedido() {
     return true;
 }
 
+/**
+ * Verifica o primeiro pedido da fila, se o mesmo for um pedido do tipo "Add"
+ * @return Retorna true nos casos em que o Pedido obedece às restrições
+ */
 bool Gestor::verifyAdd() {
     int studentCode = pedidos.front().getcodigo_estudante();
     string uc = pedidos.front().getUCs().front();
@@ -600,6 +629,10 @@ bool Gestor::verifyAdd() {
     return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem) && verifyCap(ucTurma);
 }
 
+/**
+ * Verifica o primeiro pedido da fila, se o mesmo for um pedido do tipo "Alter"
+ * @return Retorna true nos casos em que o Pedido obedece às restrições
+ */
 bool Gestor::verifyAlter() {
     int studentCode = pedidos.front().getcodigo_estudante();
     vector<string> uCs = pedidos.front().getUCs();
@@ -629,11 +662,19 @@ bool Gestor::verifyAlter() {
     return verifyOverlap(studentHor) && verifyClasses(temp, toAdd, toRem) && verifyCapvector(toAdd);
 }
 
+/**
+ * Rejeita um pedido, independentemente se passa, ou não, nas restriçoes.\n
+ * Quando invocado, arquiva o Pedido e retira-o da fila
+ */
 void Gestor::rejeitarPedido() {
     arquivar(false);
     pedidos.pop();
 }
 
+/**
+ * Aceita um peido, independentemente se passa, ou não, nas restriçoes.\n
+ * Quando invocado, arquiva o Pedido, retira-o da fila e faz as alterações nos atributos para continuar coerente
+ */
 void Gestor::aceitarPedido() {
     arquivar(true);
     if(pedidos.front().getTipo() == "Add")
@@ -645,6 +686,10 @@ void Gestor::aceitarPedido() {
     pedidos.pop();
 }
 
+/**
+ * Permite adicionar um Pedido do tipo "Add", sobre várias restriçoes(Estudante existir, UcTurma existir...).
+ *  Esse Pedido é adicionado à fila pedidos
+ */
 void Gestor::addPedidoAdd() {
     int codigo_estudante;
     string turmaA;
@@ -683,6 +728,10 @@ void Gestor::addPedidoAdd() {
     }
 }
 
+/**
+ *  Permite adicionar um Pedido do tipo "Rem", sobre várias restriçoes(Estudante existir, UcTurma existir...).
+ *  Esse Pedido é adicionado à fila pedidos
+ */
 void Gestor::addPedidoRem() {
     int codigo_estudante;
     string turmaR;
@@ -721,6 +770,10 @@ void Gestor::addPedidoRem() {
 
 }
 
+/**
+ *  Permite adicionar um Pedido do tipo "Alter", sobre várias restriçoes(Estudante existir, UcTurma existir...).
+ *  Esse Pedido é adicionado à fila pedidos
+ */
 void Gestor::addPedidoAlt() {
     int codigo_estudante;
     string turmaA;
@@ -796,6 +849,10 @@ void Gestor::addPedidoAlt() {
     }
 }
 
+/**
+ * Este método arquiva o primerio pedido da fila, guardando-o no ficheiro arquivo.csv
+ * @param aceite Valor booleano que se refere se o peido foi(true), ou não(false) aceite
+ */
 void Gestor::arquivar(bool aceite) {
 
     string estado = aceite ? "Aceite" : "Rejeitado";
@@ -818,6 +875,10 @@ void Gestor::arquivar(bool aceite) {
     }
 }
 
+/**
+ * Este método escreve os pedidos que ainda não foram processados no ficheiro pendentes.csv, para
+ * poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada
+ */
 void Gestor::writePedidosPendentes(){
     ofstream file("../schedule/pendentes.csv");
     string tipo;
@@ -850,6 +911,11 @@ void Gestor::writePedidosPendentes(){
     file.close();
 }
 
+/**
+ * Método auxiliar, que transforma um vetor de strings numa string só, separada com "/";
+ * @param vetor Vetor com a string
+ * @return Retorna a string concatenada
+ */
 string Gestor::VectorintoString(vector<std::string> vetor) {
     int length = vetor.size();
     string temp = "";
@@ -863,9 +929,8 @@ string Gestor::VectorintoString(vector<std::string> vetor) {
 }
 
 /**
- * Processa os pedidos de adicionar um aluno a uma UC/Turma.
+ * Processa os pedidos de adicionar um aluno a uma UC/Turma.\n
  * Verifica se o novo horario cumpre as condiçoes
- * TODO verificar CAP
  */
 void Gestor::pedidoAdd() {
     int studentCode = pedidos.front().getcodigo_estudante();
@@ -921,7 +986,7 @@ void Gestor::pedidoRemove() {
 
 /**
  * Processa os pedidos de alterar a ucs de UCs.
- * Faz as verificações
+ * Verifica se o novo horário cumpre as condições
  */
 void Gestor::pedidoAlter() {
     int studentCode = pedidos.front().getcodigo_estudante();
@@ -957,6 +1022,10 @@ void Gestor::pedidoAlter() {
     estudantes.insert(student);
 }
 
+/**
+ * Este ficheiro limpa o ficheiro student_classes.csv, para voltar a escrevê-lo com as alterações feitas, guardando assim,
+ * as alterações quando o programa termina
+ */
 void Gestor::writeEstudantes() {
     ofstream file("../schedule/students_classes.csv");
     file << "StudentCode,StudentName,UcCode,ClassCode" << endl;
@@ -986,9 +1055,9 @@ list<Horario> Gestor::getHorario(const list<UcTurma>& turmas) {
     return hor;
 }
 /**
- * Verifica se não há desiquilibrio nas turmas
- * nem que o numero de alunos não passou de CAP
- * @return true
+ * Verifica que o numero de alunos não passou de CAP
+ * @param turma Objeto da classe UcTurma a ser verficado
+ * @return Retorna true, se houver menos estudantes na turma, do que a capacidade máxima desta
  */
 bool Gestor::verifyCap(UcTurma turma) {
     Horario horario = getHorariobyUcTurma(turma);
@@ -996,6 +1065,11 @@ bool Gestor::verifyCap(UcTurma turma) {
     else return true;
 }
 
+/**
+ * Verifica que o número de alunos não superou o CAP, num vetor de UcTurma
+ * @param turma Vetor de UcTurma
+ * @return Retorna true, todas as turmas não estiverem com mais alunos do que o seu Cap
+ */
 bool Gestor::verifyCapvector(vector<UcTurma> turma){
     for (UcTurma i : turma){
         if (!Gestor::verifyCap(i)){
@@ -1059,6 +1133,13 @@ void Gestor::filterTP(list<Slot>& horario) {
     }
 }
 
+/**
+ * Verifica se não há desiquilibrio entre turmas
+ * @param temp Horario a ser verificado
+ * @param toAdd Turmas que se pretendem adicionar ao horário
+ * @param toRem Turmas que se pretendem remover ao horºario
+ * @return
+ */
 bool Gestor::verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<UcTurma> toRem){
     list<string> ucs;
 
@@ -1073,6 +1154,12 @@ bool Gestor::verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<U
     return testCap(temp, ucs);
 }
 
+/**
+ * Verifica se não há desiquilibrio entre as turmas
+ * @param temp Horário a ser verificado
+ * @param ucs Unidades curriculares onde ocorreram as mudamças de turma
+ * @return Retorna falso se pelo menos uma UC estiver em desiquilibrio, retorna verdadeiro em qualquer outro caso
+ */
 bool Gestor::testCap(const vector<Horario>& temp, const list<string>& ucs) {
     vector<int> numeroEstudantes;
     for(const string& uc : ucs) {
@@ -1090,6 +1177,12 @@ bool Gestor::testCap(const vector<Horario>& temp, const list<string>& ucs) {
     return true;
 }
 
+/**
+ * Método que verifica se um objeto Horario está contido num vetor de UcTurma, usando o objeto UcTurma homólogo
+ * @param horario Objeto da classe Horário a ser verificado
+ * @param ucTurmas Vetor de verificação
+ * @return Retorna verdadeiro, se o horário pertencer ao vetor e falso caso contrário
+ */
 bool Gestor::containsUC(const Horario& horario, vector<UcTurma>& ucTurmas) {
     auto it = ucTurmas.begin();
     while (it != ucTurmas.end()) {

@@ -70,10 +70,16 @@ void Horario::setNumEstudantes(int numEstudantes) {
     Horario::numEstudantes = numEstudantes;
 }
 
+/**
+ * Adiciona 1 ao númestudantes
+ */
 void Horario::incrementS() {
     numEstudantes++;
 }
 
+/**
+ * Remove 1 ao numestudantes
+ */
 void Horario::decrementS() {
     numEstudantes--;
 }

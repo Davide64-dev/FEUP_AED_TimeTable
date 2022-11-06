@@ -82,40 +82,48 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define UNTITLED3_PEDIDO_H</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;PedidoIndividual.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Slot.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_pedido.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_pedido.html">Pedido</a> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">string</span> tipo;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> codigo_estudante;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    vector&lt;string&gt; turmaR;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    vector&lt;string&gt; turmaA;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    vector&lt;string&gt; ucs;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> CAP = 30;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="class_pedido.html">Pedido</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;tipo, <span class="keywordtype">int</span> codigoEstudante, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;turmaR, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;uc);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_class" href="class_pedido.html">Pedido</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;tipo, <span class="keywordtype">int</span> codigoEstudante, <span class="keyword">const</span> vector&lt;string&gt; &amp;turmaR, <span class="keyword">const</span> vector&lt;string&gt; &amp;turmaA,</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>           <span class="keyword">const</span> vector&lt;string&gt; &amp;ucs);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">int</span> getcodigo_estudante() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">const</span> vector&lt;string&gt; &amp;getTurmaR() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">const</span> vector&lt;string&gt; &amp;getTurmaA() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> vector&lt;string&gt; &amp;getUCs() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;getTipo() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Slot.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_pedido.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_pedido.html">Pedido</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_pedido.html#a822be30dd1443c16ae2ac9abc881169d">   21</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="class_pedido.html#a822be30dd1443c16ae2ac9abc881169d">tipo</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_pedido.html#a71be40db968deabe4bef6b97ddd4f529">   25</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_pedido.html#a71be40db968deabe4bef6b97ddd4f529">codigo_estudante</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_pedido.html#a67dc9e4c4133f046ce61c0d64ac8116b">   29</a></span>    vector&lt;string&gt; <a class="code hl_variable" href="class_pedido.html#a67dc9e4c4133f046ce61c0d64ac8116b">turmaR</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_pedido.html#ae98cbb7e1e4af9b3cc41c61549c1f719">   33</a></span>    vector&lt;string&gt; <a class="code hl_variable" href="class_pedido.html#ae98cbb7e1e4af9b3cc41c61549c1f719">turmaA</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_pedido.html#ace4a77cebfbe24de9bb7c7a9d8acc983">   37</a></span>    vector&lt;string&gt; <a class="code hl_variable" href="class_pedido.html#ace4a77cebfbe24de9bb7c7a9d8acc983">ucs</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="class_pedido.html">Pedido</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;<a class="code hl_variable" href="class_pedido.html#a822be30dd1443c16ae2ac9abc881169d">tipo</a>, <span class="keywordtype">int</span> codigoEstudante, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;<a class="code hl_variable" href="class_pedido.html#a67dc9e4c4133f046ce61c0d64ac8116b">turmaR</a>, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;uc);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif </span><span class="comment">//UNTITLED3_PEDIDO_H</span></div>
-<div class="ttc" id="aclass_pedido_html"><div class="ttname"><a href="class_pedido.html">Pedido</a></div><div class="ttdef"><b>Definition:</b> Pedido.h:15</div></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="class_pedido.html">Pedido</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;<a class="code hl_variable" href="class_pedido.html#a822be30dd1443c16ae2ac9abc881169d">tipo</a>, <span class="keywordtype">int</span> codigoEstudante, <span class="keyword">const</span> vector&lt;string&gt; &amp;<a class="code hl_variable" href="class_pedido.html#a67dc9e4c4133f046ce61c0d64ac8116b">turmaR</a>, <span class="keyword">const</span> vector&lt;string&gt; &amp;<a class="code hl_variable" href="class_pedido.html#ae98cbb7e1e4af9b3cc41c61549c1f719">turmaA</a>,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>           <span class="keyword">const</span> vector&lt;string&gt; &amp;<a class="code hl_variable" href="class_pedido.html#ace4a77cebfbe24de9bb7c7a9d8acc983">ucs</a>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_pedido.html#a397e71204f3b5fc1659ba843e6172c8f">getcodigo_estudante</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> vector&lt;string&gt; &amp;<a class="code hl_function" href="class_pedido.html#a2774ca3d4ae0999a99488692cef4112a">getTurmaR</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">const</span> vector&lt;string&gt; &amp;<a class="code hl_function" href="class_pedido.html#ad9e77bbc6749b44a7fec6e75cc8aa10b">getTurmaA</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">const</span> vector&lt;string&gt; &amp;<a class="code hl_function" href="class_pedido.html#a24e5f83cdbc062a2aee85d5c9083e166">getUCs</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;<a class="code hl_function" href="class_pedido.html#a1c1c7c696bad41ad0e27ec254a3df49c">getTipo</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif </span><span class="comment">//UNTITLED3_PEDIDO_H</span></div>
+<div class="ttc" id="aclass_pedido_html"><div class="ttname"><a href="class_pedido.html">Pedido</a></div><div class="ttdef"><b>Definition:</b> Pedido.h:17</div></div>
+<div class="ttc" id="aclass_pedido_html_a1c1c7c696bad41ad0e27ec254a3df49c"><div class="ttname"><a href="class_pedido.html#a1c1c7c696bad41ad0e27ec254a3df49c">Pedido::getTipo</a></div><div class="ttdeci">const string &amp; getTipo() const</div><div class="ttdef"><b>Definition:</b> Pedido.cpp:23</div></div>
+<div class="ttc" id="aclass_pedido_html_a24e5f83cdbc062a2aee85d5c9083e166"><div class="ttname"><a href="class_pedido.html#a24e5f83cdbc062a2aee85d5c9083e166">Pedido::getUCs</a></div><div class="ttdeci">const vector&lt; string &gt; &amp; getUCs() const</div><div class="ttdef"><b>Definition:</b> Pedido.cpp:71</div></div>
+<div class="ttc" id="aclass_pedido_html_a2774ca3d4ae0999a99488692cef4112a"><div class="ttname"><a href="class_pedido.html#a2774ca3d4ae0999a99488692cef4112a">Pedido::getTurmaR</a></div><div class="ttdeci">const vector&lt; string &gt; &amp; getTurmaR() const</div><div class="ttdef"><b>Definition:</b> Pedido.cpp:55</div></div>
+<div class="ttc" id="aclass_pedido_html_a397e71204f3b5fc1659ba843e6172c8f"><div class="ttname"><a href="class_pedido.html#a397e71204f3b5fc1659ba843e6172c8f">Pedido::getcodigo_estudante</a></div><div class="ttdeci">int getcodigo_estudante() const</div><div class="ttdef"><b>Definition:</b> Pedido.cpp:15</div></div>
+<div class="ttc" id="aclass_pedido_html_a67dc9e4c4133f046ce61c0d64ac8116b"><div class="ttname"><a href="class_pedido.html#a67dc9e4c4133f046ce61c0d64ac8116b">Pedido::turmaR</a></div><div class="ttdeci">vector&lt; string &gt; turmaR</div><div class="ttdef"><b>Definition:</b> Pedido.h:29</div></div>
+<div class="ttc" id="aclass_pedido_html_a71be40db968deabe4bef6b97ddd4f529"><div class="ttname"><a href="class_pedido.html#a71be40db968deabe4bef6b97ddd4f529">Pedido::codigo_estudante</a></div><div class="ttdeci">int codigo_estudante</div><div class="ttdef"><b>Definition:</b> Pedido.h:25</div></div>
+<div class="ttc" id="aclass_pedido_html_a822be30dd1443c16ae2ac9abc881169d"><div class="ttname"><a href="class_pedido.html#a822be30dd1443c16ae2ac9abc881169d">Pedido::tipo</a></div><div class="ttdeci">string tipo</div><div class="ttdef"><b>Definition:</b> Pedido.h:21</div></div>
+<div class="ttc" id="aclass_pedido_html_ace4a77cebfbe24de9bb7c7a9d8acc983"><div class="ttname"><a href="class_pedido.html#ace4a77cebfbe24de9bb7c7a9d8acc983">Pedido::ucs</a></div><div class="ttdeci">vector&lt; string &gt; ucs</div><div class="ttdef"><b>Definition:</b> Pedido.h:37</div></div>
+<div class="ttc" id="aclass_pedido_html_ad9e77bbc6749b44a7fec6e75cc8aa10b"><div class="ttname"><a href="class_pedido.html#ad9e77bbc6749b44a7fec6e75cc8aa10b">Pedido::getTurmaA</a></div><div class="ttdeci">const vector&lt; string &gt; &amp; getTurmaA() const</div><div class="ttdef"><b>Definition:</b> Pedido.cpp:63</div></div>
+<div class="ttc" id="aclass_pedido_html_ae98cbb7e1e4af9b3cc41c61549c1f719"><div class="ttname"><a href="class_pedido.html#ae98cbb7e1e4af9b3cc41c61549c1f719">Pedido::turmaA</a></div><div class="ttdeci">vector&lt; string &gt; turmaA</div><div class="ttdef"><b>Definition:</b> Pedido.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

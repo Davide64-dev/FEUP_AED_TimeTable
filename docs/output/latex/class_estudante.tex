@@ -24,6 +24,8 @@ bool \mbox{\hyperlink{class_estudante_abd7310eb782d5395727be73e92e1b43f}{del\+UC
 bool \mbox{\hyperlink{class_estudante_abca36ef9b07f7254adad21ada0279798}{ordem\+Alfabética}} (\mbox{\hyperlink{class_estudante}{Estudante}} student) const
 \item 
 bool \mbox{\hyperlink{class_estudante_ad6849897ead591d6b8ae8a116beb0e99}{ordem\+Numero\+Ucs}} (\mbox{\hyperlink{class_estudante}{Estudante}} student) const
+\item 
+int \mbox{\hyperlink{class_estudante_aef9ae87fafcefc302d5bbd0e0a88b1e7}{na\+Turma}} (\mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} turma) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Atributos Privados}
 \begin{DoxyCompactItemize}
@@ -109,6 +111,20 @@ Retorna uma lista com todas as Uc\+Turmas às quais o \mbox{\hyperlink{class_est
 
 \begin{DoxyReturn}{Retorna}
 Retorna o nome do \mbox{\hyperlink{class_estudante}{Estudante}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_estudante_aef9ae87fafcefc302d5bbd0e0a88b1e7}\label{class_estudante_aef9ae87fafcefc302d5bbd0e0a88b1e7}} 
+\index{Estudante@{Estudante}!naTurma@{naTurma}}
+\index{naTurma@{naTurma}!Estudante@{Estudante}}
+\doxysubsubsection{\texorpdfstring{naTurma()}{naTurma()}}
+{\footnotesize\ttfamily int Estudante\+::na\+Turma (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}}]{turma }\end{DoxyParamCaption}) const}
+
+Verifica se um estudante está inscrito numa dada \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} 
+\begin{DoxyParams}{Parâmetros}
+{\em turma} & \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} a ser pesquisada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Retorna 0 se pertencer à Uc e à turma, 1 se pertencer apenas à UC e -\/1 se não pertencer a nenhum 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_estudante_a77d60561b7711a33e69275ceb69d08f3}\label{class_estudante_a77d60561b7711a33e69275ceb69d08f3}} 
 \index{Estudante@{Estudante}!operator$<$@{operator$<$}}

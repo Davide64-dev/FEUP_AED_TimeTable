@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['nome_0',['nome',['../class_estudante.html#a88e9686c33acacc73c18979a8d434355',1,'Estudante']]],
-  ['numestudantes_1',['numEstudantes',['../class_horario.html#adff6f7afe1c67c8f2dc0660a58eee56a',1,'Horario']]]
+  ['maisnucs_0',['maisNUcs',['../class_gestor.html#a2102bf990245b6f9d0418e2821abbfc2',1,'Gestor']]],
+  ['maisnucsalfabetico_1',['maisNUcsAlfabetico',['../class_gestor.html#a22a0a516650619365f14d5edb67a52cd',1,'Gestor']]],
+  ['maisnucsnumero_2',['maisNUcsNumero',['../class_gestor.html#aa2aeb38f4532974227191ea76c9b40e7',1,'Gestor']]]
 ];

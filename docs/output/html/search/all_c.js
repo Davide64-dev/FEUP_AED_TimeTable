@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['searchstudent_0',['searchStudent',['../class_gestor.html#af28ed64b4bf27cbd8fc0d4d465e99ea3',1,'Gestor']]],
-  ['setmap_1',['setMap',['../class_gestor.html#a12b2ff53c546858442f6449e81391f5a',1,'Gestor']]],
-  ['setnumestudantes_2',['setNumEstudantes',['../class_horario.html#ac8fcf386fbdca6ad10368e9790f587a4',1,'Horario']]],
-  ['slot_3',['Slot',['../class_slot.html',1,'Slot'],['../class_slot.html#ac9975ec4a8a34f0aad3d98f3b0efb009',1,'Slot::Slot()']]],
-  ['studentinclass_4',['studentInClass',['../class_gestor.html#a23bf645805fd5a086ad6f2f294a25c10',1,'Gestor']]]
+  ['readaulas_0',['readAulas',['../class_gestor.html#a1d1927e0eaaa6bd8c2ebcbbce73e9f93',1,'Gestor']]],
+  ['readestudantes_1',['readEstudantes',['../class_gestor.html#a64ff74a8aad298d89c925bf339adaaef',1,'Gestor']]],
+  ['readhorarios_2',['readHorarios',['../class_gestor.html#a81dfb25725931d4b010f0e44b3a21af2',1,'Gestor']]],
+  ['readpedidos_3',['readPedidos',['../class_gestor.html#ac25cf54461642f9bb35cddb09f2a9c06',1,'Gestor']]],
+  ['rejeitarpedido_4',['rejeitarPedido',['../class_gestor.html#ae0d8263ae30cf1793276b014caa54659',1,'Gestor']]]
 ];

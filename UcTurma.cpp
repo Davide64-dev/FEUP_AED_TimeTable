@@ -11,7 +11,7 @@ using namespace std;
  * @param i Código da Uc
  * @param j Código da Turma
  */
-UcTurma::UcTurma(string i, string j): codUC(i), codTurma(j), Cap(100){};
+UcTurma::UcTurma(string i, string j): codUC(i), codTurma(j), Cap(30){};
 
 /**
  *
@@ -29,6 +29,10 @@ string UcTurma::getcodTurma()const{
     return codTurma;
 }
 
+/**
+ *
+ * @return Retorna Cap (Capacidade Máxima)
+ */
 int UcTurma::getCap()const{
     return Cap;
 }
