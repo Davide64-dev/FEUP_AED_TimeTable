@@ -585,12 +585,12 @@ void Gestor::printPedido() {
     cout << "Tipo: " << pedidos.front().getTipo() << '\n';
     if(pedidos.front().getTipo() != "Alter") {
         cout << "Turma: " << pedidos.front().getTurmaR().front() << '\n';
-        cout << "UC: " << pedidos.front().getUCs().front() << '\n';
+        cout << "UC: " << pedidos.front().getUCs().front() << " (" << cadeiras[pedidos.front().getUCs().front()] << ")" << '\n';
     } else {
         for(int i = 0; i < pedidos.front().getUCs().size(); i++) {
             cout << "Turma: " << pedidos.front().getTurmaA().at(i);
             cout << " -> " << pedidos.front().getTurmaR().at(i) << '\n';
-            cout << "UC: " << pedidos.front().getUCs().at(i) << '\n';
+            cout << "UC: " << pedidos.front().getUCs().at(i) << " ("<<cadeiras[pedidos.front().getUCs().at(i)] << ")" << '\n';
         }
     }
 
@@ -672,7 +672,7 @@ void Gestor::rejeitarPedido() {
 }
 
 /**
- * Aceita um peido, independentemente se passa, ou não, nas restriçoes.\n
+ * Aceita um pedido, independentemente se passa, ou não, nas restriçoes.\n
  * Quando invocado, arquiva o Pedido, retira-o da fila e faz as alterações nos atributos para continuar coerente
  */
 void Gestor::aceitarPedido() {
@@ -851,7 +851,7 @@ void Gestor::addPedidoAlt() {
 
 /**
  * Este método arquiva o primerio pedido da fila, guardando-o no ficheiro arquivo.csv
- * @param aceite Valor booleano que se refere se o peido foi(true), ou não(false) aceite
+ * @param aceite Valor booleano que se refere se o pedido foi(true), ou não(false) aceite
  */
 void Gestor::arquivar(bool aceite) {
 
@@ -1090,7 +1090,7 @@ bool Gestor::verifyOverlap(const list<Horario>& horario)  {
     filterTP(slots);
     for(auto it1 = slots.begin(); it1 != slots.end(); it1++) {
         auto it2 = it1;
-        for(++it2; it2 != slots.end(); it2++) {
+        for(auto it2=it1; it2 != slots.end(); it2++) {
             if(it1->getDiaDaSemana() == it2->getDiaDaSemana()) {
                 float start1 = it1->gethoraini(), start2 = it2->gethoraini();
                 float end1 = start1 + it1->getduaracao(), end2 = start2 + it2->getduaracao();

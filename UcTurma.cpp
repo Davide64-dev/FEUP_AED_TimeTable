@@ -11,7 +11,7 @@ using namespace std;
  * @param i Código da Uc
  * @param j Código da Turma
  */
-UcTurma::UcTurma(string i, string j): codUC(i), codTurma(j), Cap(30){};
+UcTurma::UcTurma(string i, string j): codUC(i), codTurma(j), Cap(25){};
 
 /**
  *
