@@ -261,7 +261,7 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Aceita um peido, independentemente se passa, ou não, nas restriçoes.<br  />
+<p >Aceita um pedido, independentemente se passa, ou não, nas restriçoes.<br  />
 Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, retira-o da fila e faz as alterações nos atributos para continuar coerente </p>
 
 </div>
@@ -335,9 +335,9 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Este método arquiva o primerio pedido da fila, guardando-o no ficheiro arquivo.csv </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Este método arquiva o primerio pedido da fila, guardando-o no ficheiro "arquivo.csv" </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">aceite</td><td>Valor booleano que se refere se o peido foi(true), ou não(false) aceite </td></tr>
+    <tr><td class="paramname">aceite</td><td>Valor booleano que se refere se o pedido foi(true), ou não(false) aceite </td></tr>
   </table>
   </dd>
 </dl>
@@ -578,7 +578,8 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a>, re
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Função que dado um objeto <a class="el" href="class_uc_turma.html">UcTurma</a>, retorna o objeto <a class="el" href="class_horario.html">Horario</a> homólogo </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Função que dado um objeto <a class="el" href="class_uc_turma.html">UcTurma</a>, retorna o objeto <a class="el" href="class_horario.html">Horario</a> homólogo, usando pesquisa binária<br  />
+Complexidade: O(log(n)) </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">turma</td><td>Objeto da classe <a class="el" href="class_uc_turma.html">UcTurma</a> </td></tr>
   </table>
@@ -919,7 +920,7 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que lê o ficheiro student_classes.csv e cria os objetos da classe <a class="el" href="class_estudante.html">Estudante</a> </p>
+<p >Método que lê o ficheiro "student_classes.csv" e cria os objetos da classe <a class="el" href="class_estudante.html">Estudante</a> </p>
 
 </div>
 </div>
@@ -955,7 +956,7 @@ Verifica se o novo horario cumpre as condiçoes </p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que lê o ficheiro pendentes.csv e cria os objetos da classe <a class="el" href="class_pedido.html">Pedido</a>. Correspondem a pedidos que ainda não foram processados </p>
+<p >Método que lê o ficheiro "pendentes.csv" e cria os objetos da classe <a class="el" href="class_pedido.html">Pedido</a>. Correspondem a pedidos que ainda não foram processados </p>
 
 </div>
 </div>
@@ -1077,7 +1078,7 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Método auxiliar que transforma uma string do tipo "L.EICXYZ/L.EICXYZ..." em vários string "L.EICXYZ" (dá "split") e retorna o vetor com todas essas trings em questão </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método auxiliar que transforma uma string do tipo "L.EICXYZ/L.EICXYZ..." em vários string "L.EICXYZ" (dá "split") e retorna o vetor com todas essas strings em questão </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">conjunto</td><td>A string que vai ser dado "split" </td></tr>
   </table>
@@ -1118,7 +1119,7 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Método que verifica se um estudante se encontra inscrito numa dade <a class="el" href="class_uc_turma.html">UcTurma</a> </p><dl class="params"><dt>Parâmetros</dt><dd>
+<p >Método que verifica se um estudante se encontra inscrito numa dada <a class="el" href="class_uc_turma.html">UcTurma</a> </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">student</td><td><a class="el" href="class_estudante.html">Estudante</a> a verificar </td></tr>
     <tr><td class="paramname">codUC</td><td>Código da UC </td></tr>
@@ -1158,7 +1159,7 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
 <p >Verifica se não há desiquilibrio entre as turmas </p><dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">temp</td><td>Horário a ser verificado </td></tr>
-    <tr><td class="paramname">ucs</td><td>Unidades curriculares onde ocorreram as mudamças de turma </td></tr>
+    <tr><td class="paramname">ucs</td><td>Unidades curriculares onde ocorreram as mudanças de turma </td></tr>
   </table>
   </dd>
 </dl>
@@ -1324,7 +1325,7 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Retorna</dt><dd></dd></dl>
+<dl class="section return"><dt>Retorna</dt><dd>Retorna true se não houver desiquilibrio entre turmas </dd></dl>
 
 </div>
 </div>
@@ -1385,7 +1386,7 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Este ficheiro limpa o ficheiro student_classes.csv, para voltar a escrevê-lo com as alterações feitas, guardando assim, as alterações quando o programa termina </p>
+<p >Este ficheiro limpa o ficheiro "student_classes.csv", para voltar a escrevê-lo com as alterações feitas, guardando assim, as alterações quando o programa termina </p>
 
 </div>
 </div>
@@ -1403,7 +1404,7 @@ Quando invocado, arquiva o <a class="el" href="class_pedido.html">Pedido</a> e r
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Este método escreve os pedidos que ainda não foram processados no ficheiro pendentes.csv, para poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada </p>
+<p >Este método escreve os pedidos que ainda não foram processados no ficheiro "pendentes.csv", para poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada </p>
 
 </div>
 </div>

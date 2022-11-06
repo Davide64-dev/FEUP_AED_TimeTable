@@ -79,7 +79,7 @@ bool Slot::diaMenor(string dia1, string dia2){
 /**
  * Override do operador '<'
  * @param slot Objeto da classe Slot
- * @return Retorna true se o dia e hora do primeiro Sdlot forem menores que o dia e hora do segundo Slot
+ * @return Retorna true se o dia e hora do primeiro Slot forem menores que o dia e hora do segundo Slot
  */
 bool Slot::operator<(Slot slot) const {
     if (diaDaSemana == slot.getDiaDaSemana()){

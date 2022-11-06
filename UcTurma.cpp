@@ -50,7 +50,7 @@ bool UcTurma::operator==(const UcTurma &other) const{
 /**
  * Override do operador '<'
  * @param other Objeto da classe UcTurma
- * @return Retorna true se o código da UC do primeiro for menor do que o do segundo, utilizando o código da UC como
+ * @return Retorna true se o código da UC do primeiro for menor do que o do segundo, utilizando o código da Turma como
  * critério de desempate. Retorna false em qualquer outro caso
  */
 bool UcTurma::operator< (const UcTurma &other) const{

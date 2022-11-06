@@ -75,7 +75,7 @@ bool Estudante::ordemNumeroUcs(Estudante student) const {
 
 /**
  * Adiciona a um estudante uma UcTurma, sem qualquer restrição
- * @param turma Objeto da classe UcTurma (Turma a remover o Estudante)
+ * @param turma Objeto da classe UcTurma (Turma a adicionar o Estudante)
  */
 void Estudante::addUCTurma(UcTurma turma) {
     horario.push_back(turma);
@@ -83,7 +83,7 @@ void Estudante::addUCTurma(UcTurma turma) {
 
 /**
  * Remove a um estudante uma UcTurma, apenas com a restrição de ter de estar inscrito a essa mesma turma
- * @param turma Objeto da classe UcTurma (Turma a adicionar o Estudante)
+ * @param turma Objeto da classe UcTurma (Turma a remover o Estudante)
  * @return Retorna true, se for possível adicionar, retorna false em qualquer outro cado
  */
 bool Estudante::delUCTurma(UcTurma turma){

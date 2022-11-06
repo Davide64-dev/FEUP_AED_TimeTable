@@ -152,7 +152,7 @@ Esta classe representa a entidade com responsabilidade de consultar os \char`\"{
 \doxysubsubsection{\texorpdfstring{aceitarPedido()}{aceitarPedido()}}
 {\footnotesize\ttfamily void Gestor\+::aceitar\+Pedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Aceita um peido, independentemente se passa, ou não, nas restriçoes.~\newline
+Aceita um pedido, independentemente se passa, ou não, nas restriçoes.~\newline
 Quando invocado, arquiva o \mbox{\hyperlink{class_pedido}{Pedido}}, retira-\/o da fila e faz as alterações nos atributos para continuar coerente \mbox{\Hypertarget{class_gestor_ac24e2387237086f0ea5f1ef60f385c2e}\label{class_gestor_ac24e2387237086f0ea5f1ef60f385c2e}} 
 \index{Gestor@{Gestor}!addPedidoAdd@{addPedidoAdd}}
 \index{addPedidoAdd@{addPedidoAdd}!Gestor@{Gestor}}
@@ -177,9 +177,9 @@ Permite adicionar um \mbox{\hyperlink{class_pedido}{Pedido}} do tipo \char`\"{}\
 \doxysubsubsection{\texorpdfstring{arquivar()}{arquivar()}}
 {\footnotesize\ttfamily void Gestor\+::arquivar (\begin{DoxyParamCaption}\item[{bool}]{aceite }\end{DoxyParamCaption})}
 
-Este método arquiva o primerio pedido da fila, guardando-\/o no ficheiro arquivo.\+csv 
+Este método arquiva o primerio pedido da fila, guardando-\/o no ficheiro \char`\"{}arquivo.\+csv\char`\"{} 
 \begin{DoxyParams}{Parâmetros}
-{\em aceite} & Valor booleano que se refere se o peido foi(true), ou não(false) aceite \\
+{\em aceite} & Valor booleano que se refere se o pedido foi(true), ou não(false) aceite \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_gestor_aaa33f3969c952b2010fc9c2607299b2d}\label{class_gestor_aaa33f3969c952b2010fc9c2607299b2d}} 
@@ -285,7 +285,8 @@ lista com todas os \mbox{\hyperlink{class_horario}{Horario}} homólogos à \mbox
 \doxysubsubsection{\texorpdfstring{getHorariobyUcTurma()}{getHorariobyUcTurma()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_horario}{Horario}} Gestor\+::get\+Horarioby\+Uc\+Turma (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} \&}]{turma }\end{DoxyParamCaption})}
 
-Função que dado um objeto \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, retorna o objeto \mbox{\hyperlink{class_horario}{Horario}} homólogo 
+Função que dado um objeto \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}}, retorna o objeto \mbox{\hyperlink{class_horario}{Horario}} homólogo, usando pesquisa binária~\newline
+Complexidade\+: O(log(n)) 
 \begin{DoxyParams}{Parâmetros}
 {\em turma} & Objeto da classe \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} \\
 \hline
@@ -431,7 +432,7 @@ Método que lê o ficheiro classes\+\_\+per\+\_\+uc.\+csv e cria os objetos da c
 \doxysubsubsection{\texorpdfstring{readEstudantes()}{readEstudantes()}}
 {\footnotesize\ttfamily void Gestor\+::read\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Método que lê o ficheiro student\+\_\+classes.\+csv e cria os objetos da classe \mbox{\hyperlink{class_estudante}{Estudante}} \mbox{\Hypertarget{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}\label{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}} 
+Método que lê o ficheiro \char`\"{}student\+\_\+classes.\+csv\char`\"{} e cria os objetos da classe \mbox{\hyperlink{class_estudante}{Estudante}} \mbox{\Hypertarget{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}\label{class_gestor_a81dfb25725931d4b010f0e44b3a21af2}} 
 \index{Gestor@{Gestor}!readHorarios@{readHorarios}}
 \index{readHorarios@{readHorarios}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{readHorarios()}{readHorarios()}}
@@ -443,7 +444,7 @@ Método que lê o ficheiro classes.\+csv e cria os objetos da classe \mbox{\hype
 \doxysubsubsection{\texorpdfstring{readPedidos()}{readPedidos()}}
 {\footnotesize\ttfamily void Gestor\+::read\+Pedidos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Método que lê o ficheiro pendentes.\+csv e cria os objetos da classe \mbox{\hyperlink{class_pedido}{Pedido}}. Correspondem a pedidos que ainda não foram processados \mbox{\Hypertarget{class_gestor_ae0d8263ae30cf1793276b014caa54659}\label{class_gestor_ae0d8263ae30cf1793276b014caa54659}} 
+Método que lê o ficheiro \char`\"{}pendentes.\+csv\char`\"{} e cria os objetos da classe \mbox{\hyperlink{class_pedido}{Pedido}}. Correspondem a pedidos que ainda não foram processados \mbox{\Hypertarget{class_gestor_ae0d8263ae30cf1793276b014caa54659}\label{class_gestor_ae0d8263ae30cf1793276b014caa54659}} 
 \index{Gestor@{Gestor}!rejeitarPedido@{rejeitarPedido}}
 \index{rejeitarPedido@{rejeitarPedido}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{rejeitarPedido()}{rejeitarPedido()}}
@@ -490,7 +491,7 @@ Retorna o vetor com todas os códigos Class\+Code
 \doxysubsubsection{\texorpdfstring{StringintoVectorUcCode()}{StringintoVectorUcCode()}}
 {\footnotesize\ttfamily vector$<$ string $>$ Gestor\+::\+Stringinto\+Vector\+Uc\+Code (\begin{DoxyParamCaption}\item[{string}]{conjunto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Método auxiliar que transforma uma string do tipo \char`\"{}\+L.\+EICXYZ/\+L.\+EICXYZ...\char`\"{} em vários string \char`\"{}\+L.\+EICXYZ\char`\"{} (dá \char`\"{}split\char`\"{}) e retorna o vetor com todas essas trings em questão 
+Método auxiliar que transforma uma string do tipo \char`\"{}\+L.\+EICXYZ/\+L.\+EICXYZ...\char`\"{} em vários string \char`\"{}\+L.\+EICXYZ\char`\"{} (dá \char`\"{}split\char`\"{}) e retorna o vetor com todas essas strings em questão 
 \begin{DoxyParams}{Parâmetros}
 {\em conjunto} & A string que vai ser dado \char`\"{}split\char`\"{} \\
 \hline
@@ -504,7 +505,7 @@ Retorna o vetor com todos os codigos Uc\+Code
 \doxysubsubsection{\texorpdfstring{studentInClass()}{studentInClass()}}
 {\footnotesize\ttfamily bool Gestor\+::student\+In\+Class (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_estudante}{Estudante}} \&}]{student,  }\item[{const string \&}]{cod\+UC,  }\item[{string}]{cod\+Turma }\end{DoxyParamCaption})}
 
-Método que verifica se um estudante se encontra inscrito numa dade \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} 
+Método que verifica se um estudante se encontra inscrito numa dada \mbox{\hyperlink{class_uc_turma}{Uc\+Turma}} 
 \begin{DoxyParams}{Parâmetros}
 {\em student} & \mbox{\hyperlink{class_estudante}{Estudante}} a verificar \\
 \hline
@@ -526,7 +527,7 @@ Verifica se não há desiquilibrio entre as turmas
 \begin{DoxyParams}{Parâmetros}
 {\em temp} & Horário a ser verificado \\
 \hline
-{\em ucs} & Unidades curriculares onde ocorreram as mudamças de turma \\
+{\em ucs} & Unidades curriculares onde ocorreram as mudanças de turma \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
@@ -608,7 +609,7 @@ Verifica se não há desiquilibrio entre turmas
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Retorna}
-
+Retorna true se não houver desiquilibrio entre turmas 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_gestor_a28dd6b28d73ada702a157a7d67645732}\label{class_gestor_a28dd6b28d73ada702a157a7d67645732}} 
 \index{Gestor@{Gestor}!verifyOverlap@{verifyOverlap}}
@@ -639,13 +640,13 @@ Retorna true nos casos em que o \mbox{\hyperlink{class_pedido}{Pedido}} obedece 
 \doxysubsubsection{\texorpdfstring{writeEstudantes()}{writeEstudantes()}}
 {\footnotesize\ttfamily void Gestor\+::write\+Estudantes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Este ficheiro limpa o ficheiro student\+\_\+classes.\+csv, para voltar a escrevê-\/lo com as alterações feitas, guardando assim, as alterações quando o programa termina \mbox{\Hypertarget{class_gestor_ac9a4fc17beed602d57346b8eeeb038c9}\label{class_gestor_ac9a4fc17beed602d57346b8eeeb038c9}} 
+Este ficheiro limpa o ficheiro \char`\"{}student\+\_\+classes.\+csv\char`\"{}, para voltar a escrevê-\/lo com as alterações feitas, guardando assim, as alterações quando o programa termina \mbox{\Hypertarget{class_gestor_ac9a4fc17beed602d57346b8eeeb038c9}\label{class_gestor_ac9a4fc17beed602d57346b8eeeb038c9}} 
 \index{Gestor@{Gestor}!writePedidosPendentes@{writePedidosPendentes}}
 \index{writePedidosPendentes@{writePedidosPendentes}!Gestor@{Gestor}}
 \doxysubsubsection{\texorpdfstring{writePedidosPendentes()}{writePedidosPendentes()}}
 {\footnotesize\ttfamily void Gestor\+::write\+Pedidos\+Pendentes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Este método escreve os pedidos que ainda não foram processados no ficheiro pendentes.\+csv, para poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada 
+Este método escreve os pedidos que ainda não foram processados no ficheiro \char`\"{}pendentes.\+csv\char`\"{}, para poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada 
 
 \doxysubsection{Documentação dos dados membro}
 \mbox{\Hypertarget{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}\label{class_gestor_aa7ceb932c8b4ebc25c319d4146c561bd}} 

@@ -84,7 +84,7 @@ queue<Pedido> Gestor::getPedidos() const{
 }
 
 /**
- * Método que lê o ficheiro student_classes.csv e cria os objetos da classe Estudante
+ * Método que lê o ficheiro "student_classes.csv" e cria os objetos da classe Estudante
  */
 void Gestor::readEstudantes() {
     vector<string> lineV(4);
@@ -210,7 +210,7 @@ void Gestor::readAulas() {
 }
 
 /**
- * Método que lê o ficheiro pendentes.csv e cria os objetos da classe Pedido. Correspondem a pedidos que ainda
+ * Método que lê o ficheiro "pendentes.csv" e cria os objetos da classe Pedido. Correspondem a pedidos que ainda
  * não foram processados
  */
 void Gestor::readPedidos(){
@@ -278,7 +278,7 @@ vector<string> Gestor::StringintoVectorClassCode(std::string conjunto) {
 
 /**
  * Método auxiliar que transforma uma string do tipo "L.EICXYZ/L.EICXYZ..." em vários string "L.EICXYZ" (dá "split")
- * e retorna o vetor com todas essas trings em questão
+ * e retorna o vetor com todas essas strings em questão
  * @param conjunto A string que vai ser dado "split"
  * @return Retorna o vetor com todos os codigos UcCode
  */
@@ -318,7 +318,7 @@ int Gestor::countStudents(const string& codUC, const string& codTurma) {
 }
 
 /**
- * Método que verifica se um estudante se encontra inscrito numa dade UcTurma
+ * Método que verifica se um estudante se encontra inscrito numa dada UcTurma
  * @param student Estudante a verificar
  * @param codUC Código da UC
  * @param codTurma Código da Turma
@@ -457,7 +457,8 @@ void Gestor::printHorario(const vector<pair<Slot, UcTurma>>& vetor, map<string, 
 }
 
 /**
- * Função que dado um objeto UcTurma, retorna o objeto Horario homólogo
+ * Função que dado um objeto UcTurma, retorna o objeto Horario homólogo, usando pesquisa binária\n
+ * Complexidade: O(log(n))
  * @param turma Objeto da classe UcTurma
  * @return Objeto da classe Horario
  */
@@ -850,7 +851,7 @@ void Gestor::addPedidoAlt() {
 }
 
 /**
- * Este método arquiva o primerio pedido da fila, guardando-o no ficheiro arquivo.csv
+ * Este método arquiva o primerio pedido da fila, guardando-o no ficheiro "arquivo.csv"
  * @param aceite Valor booleano que se refere se o pedido foi(true), ou não(false) aceite
  */
 void Gestor::arquivar(bool aceite) {
@@ -876,7 +877,7 @@ void Gestor::arquivar(bool aceite) {
 }
 
 /**
- * Este método escreve os pedidos que ainda não foram processados no ficheiro pendentes.csv, para
+ * Este método escreve os pedidos que ainda não foram processados no ficheiro "pendentes.csv", para
  * poderem ser guardados quando a aplicação fecha, e lidos quando a aplicação é reiniciada
  */
 void Gestor::writePedidosPendentes(){
@@ -1023,7 +1024,7 @@ void Gestor::pedidoAlter() {
 }
 
 /**
- * Este ficheiro limpa o ficheiro student_classes.csv, para voltar a escrevê-lo com as alterações feitas, guardando assim,
+ * Este ficheiro limpa o ficheiro "student_classes.csv", para voltar a escrevê-lo com as alterações feitas, guardando assim,
  * as alterações quando o programa termina
  */
 void Gestor::writeEstudantes() {
@@ -1138,7 +1139,7 @@ void Gestor::filterTP(list<Slot>& horario) {
  * @param temp Horario a ser verificado
  * @param toAdd Turmas que se pretendem adicionar ao horário
  * @param toRem Turmas que se pretendem remover ao horºario
- * @return
+ * @return Retorna true se não houver desiquilibrio entre turmas
  */
 bool Gestor::verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<UcTurma> toRem){
     list<string> ucs;
@@ -1157,7 +1158,7 @@ bool Gestor::verifyClasses(vector<Horario> temp, vector<UcTurma> toAdd, vector<U
 /**
  * Verifica se não há desiquilibrio entre as turmas
  * @param temp Horário a ser verificado
- * @param ucs Unidades curriculares onde ocorreram as mudamças de turma
+ * @param ucs Unidades curriculares onde ocorreram as mudanças de turma
  * @return Retorna falso se pelo menos uma UC estiver em desiquilibrio, retorna verdadeiro em qualquer outro caso
  */
 bool Gestor::testCap(const vector<Horario>& temp, const list<string>& ucs) {

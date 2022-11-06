@@ -56,7 +56,7 @@ void Horario::addAula(Slot aula) {
 
 /**
  *
- * @return Retorna o número de estudnates
+ * @return Retorna o número de estudantes
  */
 int Horario::getNumEstudantes() const {
     return numEstudantes;

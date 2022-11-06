@@ -19,7 +19,7 @@ class Horario {
      */
     string codUC;
     /**
-     * Código da Tumra
+     * Código da Turma
      */
     string codTurma;
     /**
