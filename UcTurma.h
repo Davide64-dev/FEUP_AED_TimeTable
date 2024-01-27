@@ -1,7 +1,3 @@
-//
-// Created by Davide Teixeira on 19/10/2022.
-//
-
 #ifndef UNTITLED3_UCTURMA_H
 #define UNTITLED3_UCTURMA_H
 

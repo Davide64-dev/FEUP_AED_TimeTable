@@ -1,7 +1,3 @@
-//
-// Created by Davide Teixeira on 19/10/2022.
-//
-
 #include "Slot.h"
 /**
  *

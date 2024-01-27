@@ -1,7 +1,3 @@
-//
-// Created by Davide Teixeira on 22/10/2022.
-//
-
 #include <list>
 #include "Pedido.h"
 #include "Slot.h"

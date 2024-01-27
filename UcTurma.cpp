@@ -1,6 +1,3 @@
-//
-// Created by Davide Teixeira on 19/10/2022.
-//
 #include <iostream>
 #include <string>
 #include "UcTurma.h"

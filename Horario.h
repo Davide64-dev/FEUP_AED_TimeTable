@@ -1,7 +1,3 @@
-//
-// Created by Davide Teixeira on 19/10/2022.
-//
-
 #ifndef UNTITLED3_HORARIO_H
 #define UNTITLED3_HORARIO_H
 
@@ -10,6 +6,7 @@
 #include "UcTurma.h"
 
 using namespace std;
+
 /**
  * Esta classe pretende armazenar todas os pares Uc/Turma existentes, com o respetivo horário
  */

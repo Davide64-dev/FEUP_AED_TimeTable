@@ -1,7 +1,3 @@
-//
-// Created by Davide Teixeira on 19/10/2022.
-//
-
 #ifndef UNTITLED3_SLOT_H
 #define UNTITLED3_SLOT_H
 

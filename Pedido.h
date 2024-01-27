@@ -1,7 +1,3 @@
-//
-// Created by Davide Teixeira on 22/10/2022.
-//
-
 #ifndef UNTITLED3_PEDIDO_H
 #define UNTITLED3_PEDIDO_H
 
